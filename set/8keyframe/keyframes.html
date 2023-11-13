@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .hi-div {
+      height: 500px;
+    }
+    .ani-font {
+      font-size: 2em;
+      width: 258px;
+      font-family: sans-serif;
+      position: absolute;
+      top: 80px;
+      left: 400px;
+      animation: slide 1s ease-out;
+      /* animation속성 하나로 표현하기 때문에
+속성 순서에 맞게 값을 넣어주면 된다 */
+    }
+
+    @keyframes slide {
+      from {
+        left: 100px;
+        opacity: 0;
+      }
+      to {
+        left: 400px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes hide {
+      from {
+        left: 400px;
+        opacity: 1;
+      }
+      to {
+        left: -100px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes rotate_animation {
+        0% {
+          transform: rotate(-10deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        100% {
+          transform: rotate(-10deg);
+        }
+    }
+
+      .aniex2{
+        width:70px;
+        height:62px;
+        background-image: url("./image/header2.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        animation: rotate_animation 3s ease infinite;
+      }
+  </style>
+  <body>
+    <h1 class="ani-font">
+      가을의 시작을 함께할 애니버서리 블렌드 묵직한 바디감과 스파이시한 끝맛이
+      매력적인 애니버서리 블렌드를 만나보세요
+    </h1>
+    <div class="hi-div"></div>
+    <!-- hi-div태그안에 height를 넣어주면 가독성이 더 좋아질것 같다. -->
+
+    <div class="aniex2"></div>
+
+    <script src="./keyframesjs.js"></script>
+  </body>
+</html>

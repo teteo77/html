@@ -1,0 +1,583 @@
+*{padding:0;margin:0}
+
+ul li{list-style: none;
+}
+
+.header-customer{
+    border: 1px solid gold;
+    width: 100%;
+    height: 120px;
+}
+
+.header-customer > ul{
+    margin-top:23px;
+    margin-left:1200px;
+}
+
+
+.header-customer > ul > li{
+    float:left;
+}
+
+.header-customer > ul > li::after {
+    margin:0px 12px;
+    content: " | ";
+    float: right;
+    display: block;
+}
+
+.header-customer > ul > li:last-child::after{
+    content: none;
+}
+
+
+/* .header-customer-line::after{
+    width: 12px;
+    margin: 0px 12px;
+    background-color: rgb(217, 217, 217);
+} */
+/* header-customer에 float:left때문에 이효과는 덮혀 버린다 */
+
+
+
+
+
+.category-wrap{
+    border: 1px solid gold;
+    width: 100%;
+    /* height:120px; */
+    /* float:left; */
+    /* margin: 0 auto; */
+    text-align: center;
+
+}
+
+.menu {
+    width: 800px;
+    overflow: hidden;
+    /* margin: 0 auto; */
+    margin: 0 0 0 700px;
+    
+  }
+
+.menu > li{
+    border: 1px solid orange;
+    display: table-cell;
+    /* width: 700px; */
+    width: 15.3%;
+}
+
+.category{
+    /* display: none; */
+    overflow: hidden;
+    height: 0; /*ul의 높이를 안보이게 처리*/
+    list-style: none;
+}
+
+.menu >li:hover{
+    /* display: block; */
+    transition-duration: 0.5s;
+    background-color: #94a9ff;
+}
+
+.menu >li:hover .category{
+    /* display: block; */
+    height: 200px; /*서브메뉴 li한개의 높이 50*5*/
+    transition-duration: 1s;
+}
+
+
+.main-banner{
+    width: 100%;
+    height: 646px;
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_top_bg.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.banner-letter{
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_top_logo.png');
+    width: 34%;
+    height: 19%;
+    margin: 200px 0px 0px 250px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.banner-button{
+    border: 2px solid #155c34;
+    width: 150px;
+    height: 50px;
+    margin: 369px 0px 0px 373px;
+    position: absolute;
+    border-radius: 5%;
+    text-align : center;
+    line-height : 45px;
+}
+
+.juice-image1{
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_top_drink1.png');
+    width: 34%;
+    height: 69%;
+    margin: 50px 0px 0px 750px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.juice-image2{
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_top_drink2.png');
+    width: 34%;
+    height: 74%;
+    margin: 75px 0px 0px 1050px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.juice-image3{
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_top_drink3.png');
+    width: 34%;
+    height: 61%;
+    margin: 75px 0px 0px 1350px;
+    background-repeat: no-repeat;
+    position: absolute;
+    /* box-sizing: border-box; */
+}
+
+
+
+.main-line{
+    height: 62px;
+    position: relative;
+    width: 100%;
+}
+
+.main-line-left{
+    height: 62px;
+    width: 50%;
+    background: #111;
+    left: 0;
+    position: absolute;
+    top: 0;
+    border: 1px solid gold;
+    text-align: center;
+}
+
+.main-line-right{
+    height: 62px;
+    width: 50%;
+    background: #f6f5ef;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+}
+/* 
+.main-line-bg{
+    height: 62px;
+    left: 50%;
+    margin-left: -640px;
+    width: 1280px;
+} */
+
+/* .main-line-bgl{
+    height: 62px;
+    width: 730px;
+}
+
+.main-line-inner-l{
+    width: 85%;
+    height: 33px;
+    float: left;
+    position: relative;
+}
+.main-line-ttl{
+    background-size: 65px auto;
+    height: 17px;
+    left: 0;
+    top: 10px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -20000px;
+    width: 65px;
+    vertical-align: top;
+    max-width: 100%;
+} */
+
+
+.swiper {
+    height:62px;
+}
+
+.swiper-slide{
+    color:white;
+}
+
+
+
+.main-banner2{
+    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_promotion_bg.jpg') center/cover no-repeat;
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+@keyframes slide2 {
+    from {
+      left: 0px;
+      opacity: 0;
+    }
+    to {
+      left: 0px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes hide2 {
+    from {
+      left: 0px;
+      opacity: 1;
+    }
+    to {
+      left: 0px;
+      opacity: 0;
+    }
+  }
+
+.main-banner2-image{
+    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_promotion_img.png');
+    background-repeat: no-repeat;
+    width:372px;
+    height:500px;
+    margin: 0px 0px 0px 275px;
+    position: absolute;
+}
+
+@keyframes slide {
+    from {
+      left: 400px;
+      opacity: 0;
+    }
+    to {
+      left: 0px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes hide {
+    from {
+      left: 0px;
+      opacity: 1;
+    }
+    to {
+      left: 400px;
+      opacity: 0;
+    }
+  }
+
+.main-banner2-ani-font{
+    
+    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_autumn_promotion_txt_2.png');
+    position: absolute;
+    margin: 150px 0px 0px 800px;
+    width:500px;
+    height:500px;
+    background-repeat: no-repeat;
+    /* animation: slide 1s ease-out; */
+}
+
+.main-banner2-button{
+    width:100px;
+    height:40px;
+    margin: 300px 0px 0px 800px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.main-banner3{
+    width: 100%;
+    height: 400px;
+    background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2023/230811_pc_reserve_bg.jpg");
+    background-repeat: no-repeat;
+    position: relative;
+}
+/* R/별 부분 @media로 해상도 설정 해주기*/
+.main-banner3-image{
+    background: url('https://image.istarbucks.co.kr/img/event/2023/230811_pc_reserve_logo.png');
+    background-repeat: no-repeat;
+    width:372px;
+    height:92px;
+    margin: 70px 0px 0px 610px;
+    position: absolute;
+}
+
+.main-banner3-button{
+    width:127px;
+    height:50px;
+    margin: 225px 0px 0px 700px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.main-banner3-image2{
+    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/230811_pc_reserve_coffee_bg.png');
+    background-repeat: no-repeat;
+    width:100%;
+    height:400px;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+}
+
+.main-banner4{
+    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/230814_1_pc_pick_bg.jpg') center center fixed no-repeat #45434c;
+    width:100%;
+    height:800px;
+    position: relative;
+}
+
+.main-banner4-text{
+    color:white;
+    margin: 250px 0px 0px 150px;
+    position: absolute;
+    font-size:50px;
+}
+
+.main-banner4-text2{
+    color:white;
+    margin: 350px 0px 0px 150px;
+    position: absolute;
+}
+
+.main-banner4-button{
+    margin: 450px 0px 0px 476px;
+    position: absolute;
+    width:50px;
+    height:50px;
+    border-radius: 5px;
+}
+
+.main-banner4-image{
+    width: 100%;
+    height: 646px;
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2023/autumn_img.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 100px 0px 0px 700px;
+}
+
+.main-banner5{
+    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_bg_pc.png') no-repeat 50% 100%;
+    width:100%;
+    height:400px;
+    position: relative;
+}
+
+.main-banner5-image{
+    background: url('https://image.istarbucks.co.kr/upload/common/img/etc/reserve_text_pc.png');
+    margin: 150px 0px 0px 440px;
+    position: absolute;
+    width:590px;
+    height:250px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+}
+
+.main-banner5-button{
+    margin: 250px 0px 0px 550px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.main-banner5-image2{
+    background: url(https://image.istarbucks.co.kr/upload/common/img/etc/reserve_visual_pc.png);
+    width:500px;
+    height:500px;
+    margin: 0px 0px 0px 900px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.main-banner6{
+    background: url(https://www.starbucks.co.kr/common/img/main/store_bg.jpg);
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.main-banner6-image{
+    background: url("https://image.istarbucks.co.kr/img/event/2022/221212_main_story_1.png");
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    margin: 0px 0px 0px 157px
+}
+
+.main-banner6-image2{
+    background: url("https://image.istarbucks.co.kr/img/event/2022/221212_main_story_2.png");
+    width: 500px;
+    height: 300px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin:150px 0px 0px 400px;
+    /* z-index: 0; */
+}
+
+.main-banner6-image3{
+    background: url(https://www.starbucks.co.kr/common/img/main/store_exp_img03.png);
+    width:500px;
+    height:300px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin:0px 0px 0px 550px
+}
+
+.main-banner6-text{
+    width:300px;
+    position: absolute;
+    margin: 150px 0px 0px 750px;
+}
+
+.main-banner6-text2{
+    width:300px;
+    position:absolute;
+    margin: 250px 0px 0px 750px;
+
+}
+
+.footer{
+    background-color: #155c34;
+    height:700px;
+    width:100%;
+    position: relative;
+    
+}
+
+.footer-in-line{
+    position: absolute;
+    background-color: #94a9ff;
+    width: 100%;
+    height:95px;
+    margin-top: 500px;
+    
+    /* float:left; */
+    /* display: flex; */
+}
+
+/* .footer-in-line > ul {
+    
+} */
+
+.footer-in-line > ul >li {
+    float:left;
+    /* margin: 0 auto; */
+}
+
+.footer-in-line-image1{
+    background-image: url(../images/image1.jpg);
+    width:150px;
+    height:50px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.footer-in-line-image2{
+    background-image: url(../images/image2.jpg);
+    width:150px;
+    height:50px;
+    background-repeat: no-repeat;
+    
+}
+
+.footer-in-line-image3{
+    background-image: url(../images/image3.jpg);
+    width:150px;
+    height:50px;
+    background-repeat: no-repeat;
+    
+}
+
+.footer-in-line-image4{
+    background-image: url(../images/image4.jpg);
+    width:150px;
+    height:50px;
+    background-repeat: no-repeat;
+    
+}
+
+.footer-in-line-image5{
+    background-image: url(../images/image5.jpg);
+    width:150px;
+    height:50px;
+    background-repeat: no-repeat;
+    
+}
+.footer-in-line-image6{
+    background-image: url(../images/image6.jpg);
+    width:150px;
+    height:50px;
+    background-repeat: no-repeat;
+    
+}
+.footer-in-line-image7{
+    background-image: url(../images/image7.jpg);
+    width:150px;
+    height:50px;
+    background-repeat: no-repeat;
+    
+}
+
+.footer-menu{
+    width: 100%;
+    height: 400px;
+    /* margin: 50px 0px 0px 175px; */
+    margin:50px 175px;
+    position: absolute;
+}
+
+.footer-menu > li > ul{
+    float:left;
+    width:15%
+}
+
+.aside-tage{
+    display: block;
+    width:100%;
+    height:25px;
+    text-align: center;
+}
+.aside-tage > ul{
+    margin: 0 auto;
+}
+
+.aside-tage > ul > li{
+    display: inline-block;
+    font-size: 11px;
+    
+}
+/* ul에 margin:0auto하고 li에 float:left하면 중앙정렬이 안되는데 왜지 */
+/* display: inline-block; 가끔쓰는데 뭔지 모르겠다. */
+
+.aside-tage > ul > li::after {
+    margin:0px 12px;
+    content: " | ";
+    float: right;
+    display: block;
+}
+
+.guide-wrap{
+    width:100%;
+    height:500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.guide-div{
+    border:solid 1px black;
+    border-radius: 10%;
+    width:150px;
+    height:30px;
+    /* float:left; */
+    display: inline-block;
+    text-align: center;
+}

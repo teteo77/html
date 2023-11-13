@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .exinlineblock {
+      border: solid 1px gold;
+      width: 100%;
+      height: 200px;
+      /* text-align: center; 가로 중앙 정렬을 위해 부모 요소에 텍스트 정렬을 설정합니다. */
+    }
+
+    .exinlineblock > ul {
+      /* width: 800px; */
+      width: max-content;
+      margin: 150px auto;
+      list-style: none;
+    }
+
+    .exinlineblock > ul > li {
+      float: left;
+      background-color: #5778ff;
+      line-height: 40px;
+    }
+  </style>
+  <body>
+    <div class="exinlineblock">
+      <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+      </ul>
+    </div>
+  </body>
+</html>

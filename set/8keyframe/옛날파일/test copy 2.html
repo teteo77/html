@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <style>
+    .header-wrap {
+      /* border: 1px solid gold; */
+      /* height: 500px; */
+      /* display: flex;
+      justify-content: center;
+      align-items: center; 세로 가운데 정렬 */
+    }
+
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0);
+        /* 왼쪽,  아래에서 위로, 지정한 크기 만큼 z축으로 이동 */
+        /*  ㄴ z축이 뭔지 모르겠다 */
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
+
+    .test_obj {
+      position: relative;
+      opacity: 1; /* 초기에 숨기기 */
+      animation: fadeInRight 1.7s forwards; /* forwards를 사용하여 애니메이션 종료 시 상태 유지 */
+      animation-delay: 0s; /* 원하는 딜레이 값으로 수정 */
+      font-size: 100px;
+      padding-bottom: 25px;
+      font-weight: bold;
+    }
+  </style>
+
+  <body>
+    <div class="header-wrap">
+      <div class="header">
+        <div class="header-left">
+          <div class="test_obj">하나하나 정확히</div>
+          <div class="test_obj2">느리지만 천천히</div>
+        </div>
+        <div class="header-right">
+          <div class="test_obj3">항상 노력하는 개발자</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

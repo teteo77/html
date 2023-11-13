@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header-customer {
+        border: 1px solid gold;
+        width: 100%;
+        height: 120px;
+      }
+
+      .header-customer > ul {
+        margin-top: 23px;
+        margin-left: 1200px;
+      }
+
+      .header-customer > ul > li {
+        float: left;
+      }
+
+      .header-customer > ul > li::after {
+        margin: 0px 12px;
+        content: " | ";
+        float: right;
+        display: block;
+      }
+
+      .header-customer > ul > li::after {
+        margin: 0px 12px;
+        content: " | ";
+        float: right;
+        display: block;
+      }
+
+      .header-customer > ul > li:last-child::after {
+        content: none;
+      }
+
+      /* .top-banner-link > ul > li:nth-child(1) {
+              background-image: "url(http://masigray.com/images/common/sns_blog.png)";
+              width: "23px";
+              height: "23px";
+              margin-right: "5px";
+            } */
+
+      .nthex > li:nth-child(1) {
+        background-image: url("http://masigray.com/images/common/sns_blog.png");
+        width: "23px";
+        height: "23px";
+        margin-right: "5px";
+        background-repeat: no-repeat;
+      }
+      .nthex > li:nth-child(2) {
+        background-image: url("http://masigray.com/images/common/sns_insta.png");
+        width: "23px";
+        height: "23px";
+        margin-right: "5px";
+        background-repeat: no-repeat;
+      }
+      .nthex > li:nth-child(3) {
+        background-image: url("http://masigray.com/images/common/sns_facebook.png");
+        width: "23px";
+        height: "23px";
+        margin-right: "5px";
+        background-repeat: no-repeat;
+      }
+
+      /* nth-child(3) : 3번째 태그 선택
+      nth-child(2n) : 2의 배수로 선택할 때
+      nth-child(2n+4) : 4번째 태그 선태 후 2의 배수로 선택
+      nth-child(odd) : 홀수 선택
+      nth-child(even) : 짝수 선택
+      nth-last-child(3) : 뒤에서 3번째 태그 선택
+      nth-child(-n+4) : 처음부터 4번째 태그까지 선택 */
+    </style>
+  </head>
+  <body>
+    <nav class="header-customer">
+      <ul>
+        <li><a>Sign In</a></li>
+        <div class="header-customer-line"></div>
+        <li><a>My Starbucks</a></li>
+        <div class="header-customer-line"></div>
+        <li><a>Customer Service & Ideas</a></li>
+        <div class="header-customer-line"></div>
+        <li><a>Find a Store</a></li>
+      </ul>
+    </nav>
+    <ul class="nthex">
+      <li class="image1"></li>
+      <li class="image2"></li>
+      <li class="image3"></li>
+    </ul>
+  </body>
+</html>

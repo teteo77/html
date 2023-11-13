@@ -1,0 +1,5 @@
+* {margin:0; padding:0;}
+/* body에 기본적인 값으로 margin, padding값이 들어가있는데 초기화 시켜준다. */
+ul li{
+    list-style: none;
+}

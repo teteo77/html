@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+  </head>
+  <style>
+    .wrapper {
+      border: 1px solid gold;
+      padding: 16px;
+      width: calc(100% - 32px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrapper2 {
+      border: 1px solid gold;
+      margin-top: 50px;
+      padding: 16px;
+      width: calc(100% - 500px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      calc(100% - 32px); 넓이가 100%이면 왼쪽으로-32px만큼 당겨줌
+    </div>
+
+    <div class="wrapper2">
+      calc(100% - 64px);넓이가 100%이면 왼쪽으로-64px만큼 당겨줌
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+.html-wrap{
+    
+}
+
+.top-banner-wrap{
+    width:100%;
+    height:50px;
+    background: rgb(156, 115, 115);
+}
+
+.top-banner{
+
+}
+
+.left-banner{
+    float:left;
+    padding-left:10px;
+    padding-top:10px;
+}
+/* 
+텍스트 수직 정렬이 아니라 padding-top으로 하면 되나?
+*/
+
+.seller-center{
+    
+}
+
+.seller-center::after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 14px;
+    margin-top: 2px;
+    margin-left: 11px;
+    background-color: rgb(226, 226, 226);
+}
+/* 참고 사이트는 ul li인데
+내가 div로 해서 마켓컬리 껄로 넣음 */
+
+.right-banner{
+    float:right;
+}
+

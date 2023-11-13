@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- li태그 하나만 높이에 맞춰서 표시 -->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul li {
+      list-style: none;
+    }
+    .clearfix:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    body {
+      background: green;
+      overflow-y: scroll;
+      padding-top: 50px;
+    }
+    header {
+      margin-top: 20px;
+      background: linear-gradient(
+        white 50px,
+        rgba(255, 255, 255, 0.5) 50px,
+        rgba(255, 255, 255, 0.5)
+      );
+      height: 50px;
+      overflow: hidden;
+      transition: height 0.4s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    nav {
+      width: 960px;
+      margin: 0 auto;
+    }
+    nav > ul > li {
+      float: left;
+      line-height: 50px;
+      margin-right: 40px;
+      position: relative;
+    }
+    nav > ul > li ul {
+      width: 100%;
+      position: absolute;
+      display: none;
+    }
+
+    nav > ul > li ul li {
+      white-space: nowrap;
+    }
+
+    nav > ul > li:hover ul {
+      display: block;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <ul class="clearfix mainmenu">
+          <li>
+            1st menu
+            <ul class="submenu">
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+          <li>
+            2nd menu
+            <ul class="submenu">
+              <li>2nd menu menu</li>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+          <li>
+            3rd menu
+            <ul class="submenu">
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+          <li>
+            4th menu
+            <ul class="submenu">
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+      similique, quaerat iure, dolor tempora tempore ratione minus atque
+      perferendis quibusdam mollitia expedita ducimus consequatur doloremque
+      minima rerum voluptas, nostrum architecto?
+    </p>
+    <!-- li태그 하나만 높이에 맞춰서 표시 -->
+    <script>
+      var header = document.querySelector("header"),
+        mainMenuList = document.querySelectorAll(".mainmenu > li"),
+        subMenu = document.querySelectorAll(".submenu"),
+        headerHeight = header.offsetHeight,
+        subMenuHeight = 0;
+
+      console.log(subMenu);
+
+      for (var i = 0; i < mainMenuList.length; i++) {
+        mainMenuList[i].addEventListener("mouseover", function () {
+          subMenuHeight = this.querySelector("ul").offsetHeight;
+          header.style.height = headerHeight + subMenuHeight + "px";
+        });
+        mainMenuList[i].addEventListener("mouseout", function () {
+          header.style.height = headerHeight + "px";
+        });
+      }
+    </script>
+  </body>
+</html>

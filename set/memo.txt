@@ -1,0 +1,92 @@
+모르는거 나중에 정리하기
+
+left: 0;
+
+transition-duration: 0.5s;
+transition: height 0.4s;
+    ㄴ 카테고리 4-2에서 사용했음
+
+display: inline-block;
+    ㄴ정리 하기
+
+text-align: center;
+     ㄴ 정리하기
+
+
+display: flex;
+    ㄴhtml css 50%양쪽으로 배치했을때 사용
+    ㄴ 이걸 쓰는게 적절한지 모르겠다.
+
+text-align: center;
+
+linear-gradient
+
+jQuery 05 [ image caption animation ] jQuery 이미지 캡션 애니메이션, find, filter
+    ㄴ 6:56
+    ㄴ :nth-child(1)
+    ㄴ nth-last-child(-n+2)
+    ㄴ .menu li:nth-child(1){
+    margin-right: auto;
+    }
+    /*오른쪽 메뉴 분할*/
+    .menu li:nth-child(6){
+        margin-right: auto;
+    }
+    ㄴ https://blogpack.tistory.com/859
+    ㄴ 해당글에 hover기능도 있는데 정리 해두기
+
+div, background-image 
+    ㄴ 태그나 속성등 기본적으로 부여되어있는 값 찾아보기
+
+
+홈페이지들이 body말고 wrap에 감싸져 있는데
+    ㄴ wrap없이 width:100%; 하면 넓이가 밖으로 나가서 가로 스크롤바가 생겨서 그런가?
+    ㄴ 항상 body하고 wrap에 한번더 감싸져 있어서 의문이긴 했음.
+
+div 들 여러게 있으면 중앙 정렬 하는법
+
+display: table-cell
+
+width: max-content;
+
+offsetHeight
+
+white-space: nowrap;
+
+vertical-align: baseline;
+
+display:inline
+    ㄴ 너비나 높이에 영향을 받지 않는다
+
+outline: none;
+    ㄴ outline이 뭐지 border: none과 같이 쓰는거 같은데
+
+text-align: left;
+    ㄴ naver검색창 만들때 input정렬 할떄 사용
+
+vertical-align:
+
+display:inline-flex
+
+for="search-input"
+    ㄴ for가 뭐지
+
+gap: 50px;
+    ㄴ gap속성 뭔지 찾아보고 공부하기
+
+
+부모도 position: absolute; 자식도 position: absolute;일때 어떻게 속성이 적용되는거지?
+
+white-space: nowrap;
+    ㄴ 줄바꿈을 강제로 안하게 한다.
+
+
+
+
+left: 70%;
+top: 78%;
+position: absolute;
+    ㄴ꾸며주기 이미지 넣어 줄때는 %로 해주기
+        ㄴ 크기에 맞게 배치되기 때문이다.
+    ㄴ 예시만들어서 정리 해야 한다.
+

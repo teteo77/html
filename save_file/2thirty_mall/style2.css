@@ -1,0 +1,60 @@
+.header-top{
+    width:100%;
+    height:30px;
+    background: rgb(156, 115, 115);
+}
+
+.header-top-left{
+    position: relative;
+    float: left;
+    padding-left: 10px;
+    list-style:none;
+}
+
+.header-top-left li{
+    position: relative;
+    float: left;
+}
+
+.header-top-left li a{
+    display: inline-block;
+    color: #000;
+    font-size: 12px;
+    padding: 8px 10px 0 10px;
+    text-decoration: none;
+}
+/* 
+li a를 수평 정렬 하려면
+    ㄴ li에 floast:Left 값 설정
+    ㄴ a에 display: inline-block; 값 설정하기
+*/
+
+.header-top-left li:first-child a::after{
+    content: none;
+}
+/* 
+ul li 첫번째 요소만 선택해서 적용
+    ㄴ li:first-child를 이용해서 수정함
+*/
+.header-top-left li a::after{
+    content: "";
+    display: block;
+    height: 9px;
+    width: 1px;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    top: 14px;
+}
+
+.header-top-right{
+    float:right;
+}
+
+.header-top-right li{
+    float:right;
+}
+
+.header-top-right li a{
+    display: inline-block;
+}

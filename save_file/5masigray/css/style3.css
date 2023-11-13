@@ -1,0 +1,250 @@
+.top-banner{
+    height:50px;
+    /* border: 1px solid gold; */
+    position: relative;
+    margin: 0 auto;
+    width:80%;
+}
+
+/* .top-banner-link{
+    
+} */
+
+
+.top-banner-link > ul{
+    float:right;
+    margin-top:14px;
+    margin-right:14px;
+    position: relative;
+
+}
+
+.top-banner-link > ul > li {
+    float:left;
+}
+
+.top-banner-link > ul > li::after {
+    margin: 0px 12px 0px 0px;
+    
+    display: block;
+}
+
+.top-banner-link > ul > li:nth-child(1){
+    background-image: url('http://masigray.com/images/common/sns_blog.png');
+    width:23px;
+    height:23px;
+    margin-right:5px;
+}
+
+.top-banner-link > ul > li:nth-child(2) {
+    background-image: url('http://masigray.com/images/common/sns_insta.png');
+    width:23px;
+    height:23px;
+    margin-right:5px;
+}
+
+.top-banner-link > ul > li:nth-child(3) {
+    background-image: url('http://masigray.com/images/common/sns_facebook.png');
+    width:23px;
+    height:23px;
+}
+
+/* .top-banner-link > ul > .image1 {
+    background-image: url('http://masigray.com/images/common/sns_blog.png');
+    width:23px;
+    height:23px;
+    margin-right:5px;
+}
+
+.top-banner-link > ul > .image2 {
+    background-image: url('http://masigray.com/images/common/sns_insta.png');
+    width:23px;
+    height:23px;
+    margin-right:5px;
+}
+
+.top-banner-link > ul > .image3 {
+    background-image: url('http://masigray.com/images/common/sns_facebook.png');
+    width:23px;
+    height:23px;
+} */
+
+.category-wrap{
+    width:80%;
+    margin: 0 auto;
+    height:100px;
+    border: 1px solid blue;
+    position: relative;
+    
+}
+
+.category-wrap-fixed{
+    position: fixed;
+    width: 80%;
+}
+
+.category-image{
+    background-image: url(https://www.masigray.com:5021/images/common/logo.png);
+    width:200px;
+    height:47px;
+    background-repeat: no-repeat;
+    margin: 25px 50px 0px 0px;
+    float:left;
+    display: block;
+}
+
+.category{
+    float:right;
+    /* margin-left:150px; */
+    width:1200px;
+    position: absolute;
+    margin: 26px 0px 0px 350px;
+    overflow: hidden;
+}
+
+.category-menu{
+    float:left;
+    height: 24px;
+    transition: height 0.4s;
+}
+
+.category-menu > li{
+    float:left;
+    /* position: relative; */
+    margin-right: 40px;
+    width:90px;
+    text-align: center;
+    font-size:18px;
+}
+/* .category-menu > li > a{
+    
+} */
+
+
+.category-list{
+    /* display: none; */
+    /* position: absolute; */
+    line-height: 30px;
+    font-size: 14px;
+    margin-top: 28px;
+    
+}
+
+@keyframes fadeup{
+    from {
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout{
+    from {
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}
+
+.category-list > li{
+    /* position: absolute; */
+    /* display: block; */
+    white-space: nowrap;    
+    color: #999;
+    
+    /* animation: fadeinup 1.5s; */
+}
+
+.category-menu:hover {
+    height:210px;
+}
+
+.swiper {
+    width: 100%;
+    height: 700px;
+  }
+
+.swiper-slide .image1{
+    background-image: url('https://www.masigray.com:5021/images/main/main_visual01.jpg');
+    width:100%;
+    height:100%;
+}
+
+.swiper-slide .image2{
+    background-image: url('https://www.masigray.com:5021/images/main/main_visual03.jpg');
+    width:100%;
+    height:100%;
+}
+
+.swiper-slide .image3{
+    background-image: url('https://www.masigray.com:5021/images/main/main_visual02.jpg');
+    width:100%;
+    height:100%;
+}
+
+.content{
+    border: solid 1px gold;
+    width: 1002px;
+    height: 700px;
+    text-align: center;
+    /* display: table; */
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    /* float:left; */
+    /* display: inline-block; */
+    
+}
+
+.content > ul > li:nth-child(1){
+    background-image: url('https://www.masigray.com:5021/images/main/mb01_bg.jpg');
+    /* border: solid 1px black; */
+    height: 323px;
+    width: 500px;
+    /* position: absolute; */
+    float:left;
+    /* display: inline-block; */
+    /* display: list-item; */
+    /* display: block; */
+}
+
+.content > ul > li:nth-child(1) > div{
+    background-image: url('https://www.masigray.com:5021/images/main/mb01_img.png');
+    width:200px;
+    height:47px;
+    margin:50px 0px 0px 50px;
+
+}
+
+.content > ul > li:nth-child(1) > hr{
+    width: 58px;
+    height: 1px;
+    margin: 25px auto;
+    background: #fff;
+}
+
+.content > ul > li:nth-child(1) > h2{
+    color: #fff;
+    line-height: 22px;
+}
+
+
+.content > ul > li:nth-child(2){
+    background-image: url('https://www.masigray.com:5021/images/main/mb02_bg.jpg');
+    /* border: solid 1px black; */
+    height: 323px;
+    width: 500px;
+    /* position: absolute; */
+    float:left;
+    /* display: inline-block; */
+    /* display: list-item; */
+}
+.content > ul > li:nth-child(3){
+    border: solid 1px black;
+    height: 323px;
+    width: 500px;
+    /* position: absolute; */
+    float:left;
+    /* display: inline-block; */
+    /* display: list-item; */
+}

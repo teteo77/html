@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flexgapex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* 전체에 10공간을 준다 */
+      }
+
+      .flexgapex .test-child {
+        width: 180px;
+        height: 180px;
+        background: gray;
+        color: white;
+        font-size: 3em;
+      }
+      /* justify-content: space-around */
+      /* ㄴ 정리하기 */
+      /* justify-content 전체적으로 한번식 보면서 이해하기 */
+    </style>
+  </head>
+  <body>
+    <div class="flexgapex">
+      <div class="test-child">1</div>
+      <div class="test-child">2</div>
+      <div class="test-child">3</div>
+      <div class="test-child">4</div>
+      <div class="test-child">5</div>
+      <div class="test-child">6</div>
+      <div class="test-child">7</div>
+      <div class="test-child">8</div>
+      <div class="test-child">9</div>
+    </div>
+  </body>
+</html>

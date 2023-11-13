@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <style>
+    .header-wrap {
+      /* border: 1px solid gold; */
+      /* height: 500px; */
+      /* display: flex;
+      justify-content: center;
+      align-items: center; 세로 가운데 정렬 */
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center; /* 세로 가운데 정렬 */
+      padding: 187px 750px 50px 50px; /* 탑 라이트 바텀 레프트 */
+      width: 100%;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(100%);
+        /* transform: translateX(100%); */
+        /* transform: translate(100%, 100%); */
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      /* Added margin for spacing */
+    }
+
+    .test_obj {
+      position: relative;
+      opacity: 0; /* 초기에 숨기기 */
+      animation: fadeInUp 1s forwards; /* forwards를 사용하여 애니메이션 종료 시 상태 유지 */
+      animation-delay: 0.5s; /* 원하는 딜레이 값으로 수정 */
+      font-size: 100px;
+      padding-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .test_obj2 {
+      position: relative;
+      opacity: 0; /* 초기에 숨기기 */
+      animation: fadeInUp 1s forwards; /* forwards를 사용하여 애니메이션 종료 시 상태 유지 */
+      animation-delay: 1.5s; /* 원하는 딜레이 값으로 수정 */
+      font-size: 69px;
+      font-weight: bold;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end; /* Align to the right */
+      margin-left: auto; /* Push to the right side */
+    }
+
+    .test_obj3 {
+      font-size: 85px;
+      font-weight: bold;
+      padding-right: 150px;
+    }
+  </style>
+
+  <body>
+    <div class="header-wrap">
+      <div class="header">
+        <div class="header-left">
+          <div class="test_obj">하나하나 정확히</div>
+          <div class="test_obj2">느리지만 천천히</div>
+        </div>
+        <div class="header-right">
+          <div class="test_obj3">항상 노력하는 개발자</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

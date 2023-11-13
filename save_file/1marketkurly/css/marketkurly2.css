@@ -1,0 +1,634 @@
+.top-banner-wrap{
+    text-align: center;
+    transition: margin 0.4s linear 0s;
+    background-color: rgb(95, 0, 128);
+    
+}
+/* 
+text-align: class안에 텍스트 위치를 지정해줌
+transition: transtition밑에 다른 속성이 있다
+                ㄴ 마우스가 올라갔을때 애니메이션을 지정해주는 속성이다.
+                ㄴ 왜있는지 모르겠다.
+*/
+.top-banner{
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+}
+/*  */
+
+.top-banner-href{
+    display: block;
+    font-size: 14px;
+    line-height: 42px;
+    color: rgb(255, 255, 255);
+    height: 42px;
+    text-decoration: none;
+}
+/*글시체가 다르다 */
+
+.header-wrap{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header {
+    position: relative;
+    width: 1050px;
+    height: 100px;
+    margin: 0px auto;
+    letter-spacing: -0.3px;
+}
+/*
+position: relative;
+    ㄴ 요소 자기 자신을 기준으로 배치
+    ㄴ 원래 위치를 기준으로 위쪽(top), 아래쪽(bottom), 왼쪽(left), 오른쪽(right)에서 얼마만큼 떨어질 지 결정한다.
+margin: 0px auto;
+    ㄴ 중앙 정렬을 해준다.
+letter-spacing: -0.3px;
+    ㄴ 글자사이 간격 조절
+*/
+
+.header-customer {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 20;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 12px;
+}
+/* 
+position: absolute;
+    ㄴ parent(부모 요소)가 child(자식 요소)의 기준점이 된다.
+z-index: 20;
+    ㄴ 겹치기 순서 지정 숫자가 높을수록 앞으로 온다.
+
+*/
+
+.header-customer-signup{
+    display: block;
+    color: rgb(95, 0, 128);
+    cursor: pointer;
+    vertical-align: middle;
+}
+/* 
+cursor: pointer;
+    ㄴ 태그 위에 위치하는 마우스 커서의 모양을 바꿀 수 있다.
+vertical-align: middle;
+    ㄴ 인라인, 인라인 블록 또는 테이블 셀 상자의 수직 정렬을 설정한다.
+*/
+
+.header-customer-line{
+    width: 1px;
+    height: 13px;
+    margin: 0px 12px;
+    background-color: rgb(217, 217, 217);
+}
+
+.header-customer-signin{
+    display: block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.header-customer-line2{
+    width: 1px;
+    height: 13px;
+    margin: 0px 12px;
+    background-color: rgb(217, 217, 217);
+}
+
+.header-customer-center-wrap{
+    line-height: 35px;
+    position: relative;
+}
+
+.header-customer-center-wrap:hover .header-customer-center-menu{
+    display:block;
+}
+
+.header-customer-center{
+    display: block;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: 0;
+}
+
+.header-customer-center-span{
+    width: 8px;
+    height: 5px;
+    background-image: url(https://res.kurly.com/pc/ico/1908/ico_down_16x10.png);
+    background-size: cover;
+    background-position: center center;
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+.header-customer-center-menu{
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 34px;
+    width: 130px;
+    padding: 3px 9px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: rgb(255, 255, 255);
+}
+/*
+마우스가 올라갔을때 메뉴바 드롭되게 설정했다.
+
+display: none;
+    ㄴ 화면상 어떤 영역도 차지하지 않고 숨김
+position: absolute;
+    ㄴ 마우스가 올라갔을때 드롭 메뉴를 정렬해줌
+다른설정들도 메뉴 드롭 됬을때 넓이나 탑 설정하게 해둠
+
+*/
+
+.header-customer-notice{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.header-customer-alwaysquestion{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.header-customer-inquiry{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.header-customer-bulkorder{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.header-under-wrap{
+    height: 100px;
+    padding-top: 36px;
+    
+}
+/* 로고 서치 높낮이 설정 */
+
+.header-under{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 63px;
+}
+
+.header-under-logo{
+    flex: 0 0 82px;
+}
+
+.header-under-button{
+    font-weight: 500;
+    color: rgb(95, 0, 128);
+    flex-shrink: 0;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+/* 
+boarder: 0;
+outline: 0;
+background-color: transparent;
+    ㄴ 버튼 디자인 초기화
+    ㄴ background-color: transparent;는 투명을 의미함
+*/
+
+.header-under-button::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 14px;
+    margin-top: 5px;
+    margin-left: 11px;
+    background-color: rgb(226, 226, 226);
+}
+
+.header-under-button2{
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: rgb(181, 181, 181);
+    cursor: pointer;
+    position: relative;
+    margin-left: 22px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.header-under-button2::after{
+    content: "";
+    position: absolute;
+    display: block;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgNyA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTUuMTA4IDd2LS4wMDdMMS45MTEgMi41NzdWN0guMDQ2VjBoMS44NjdsMy4xOTYgNC40MTlWMGgxLjg2N3Y3SDUuMTA4eiIgZmlsbD0iI0ZBNjIyRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo=) 0px 0px no-repeat;
+    width: 10px;
+    height: 10px;
+    top: 3px;
+    right: -13px;
+}
+
+.header-under-serach-wrap{
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+    letter-spacing: -0.3px;
+}
+
+.header-under-search{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: absolute;
+    left: 325px;
+    top: -55px;
+    width: 400px;
+    height: 48px;
+    padding-left: 14px;
+    border: 1px solid rgb(95, 0, 128);
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
+}
+
+#search{
+    width: 300px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: -0.33px;
+}
+
+#search-button{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    bottom: 3px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==) 0px 0px no-repeat;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.header-under-icon-wrap{
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+}
+
+.header-under-icon{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    right: -6px;
+    top: -49px;
+}
+
+.header-under-icon-position{
+    width: 36px;
+    height: 36px;
+    margin-right: 20px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTM2IDM2SDBWMGgzNnoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4LjcgNikiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjciPgogICAgICAgICAgICA8cGF0aCBkPSJNOS4zMDYgMjRTMCAxNi41NDQgMCA5LjMwNmE5LjMwNiA5LjMwNiAwIDAgMSAxOC42MTIgMEMxOC42MTIgMTYuNTQ0IDkuMzA2IDI0IDkuMzA2IDI0eiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICAgICAgICAgIDxjaXJjbGUgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgY3g9IjkuMjEyIiBjeT0iOS4xMjMiIHI9IjIuNzg0Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K) 50% 50% no-repeat;
+    cursor: pointer;
+}
+
+.header-under-icon-heart{
+    width: 36px;
+    height: 36px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yOC45MjcgOC44OTNhNi40NiA2LjQ2IDAgMCAwLTkuMTM5IDBsLTEuODI5IDEuODI4LTEuODI3LTEuODI4YTYuNDYyIDYuNDYyIDAgMSAwLTkuMTQgOS4xMzhMOC44MiAxOS44Nmw4LjQzMiA4LjQzNGExIDEgMCAwIDAgMS40MTQgMGw4LjQzMy04LjQzNGgwbDEuODI4LTEuODI4YTYuNDYgNi40NiAwIDAgMCAwLTkuMTM4eiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNyIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==) 50% 50% no-repeat;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.header-under-icon-cart-wrap{
+    position: relative;
+    margin-left: 20px;
+}
+
+.header-under-icon-cart{
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTM2IDM2SDBWMGgzNnoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1LjE2NCA2LjU0NykiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjciPgogICAgICAgICAgICA8cGF0aCBkPSJtMjUuNjggMy42Ni0yLjcyIDExLjU3SDcuMzdMNC42NiAzLjY2eiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIyMC41MiIgY3k9IjIwLjc4IiByPSIyLjE0Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjkuODEiIGN5PSIyMC43OCIgcj0iMi4xNCIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAwaDMuOGwxLjc2IDcuNSIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==);
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+
+}
+
+.header-category-wrap{
+    min-width: 1050px;
+    letter-spacing: -0.3px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-category{
+    position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 1050px;
+    height: 56px;
+    margin: 0px auto;
+}
+
+.header-category-category-wrap{
+    box-sizing: border-box;
+    margin: 0;
+}
+/*
+box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+    ㄴ box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 0px 0px;
+    ㄴ 이렇게 설정하면 옆쪽에 살짝 그림자 있는거 없어지긴함
+*/
+
+.header-category-category{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.header-category-category-image{
+    width: 16px;
+    height: 14px;
+    margin-right: 14px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMTZ2MS43SDBWMHptMCA2LjE1aDE2djEuN0gwdi0xLjd6bTAgNi4xNWgxNlYxNEgwdi0xLjd6IiBmaWxsPSIjMzMzIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg==) 0px 0px / 16px 14px no-repeat;
+}
+
+.header-category-category-text{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgb(51, 51, 51);
+}
+
+.header-category-list-wrap{
+    display: flex;
+    margin-left: 30px;
+}
+
+.header-category-newproduct{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 150px;
+    height: 55px;
+    padding-top: 18px;
+    line-height: 20px;
+    text-align: center;
+}
+.header-category-newproduct-text{
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.header-category-best{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 150px;
+    height: 55px;
+    padding-top: 18px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.header-category-best-text{
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+
+}
+
+.header-category-thriftshopping{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 150px;
+    height: 55px;
+    padding-top: 18px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.header-category-thriftshopping-text{
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.header-category-benefit{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 150px;
+    height: 55px;
+    padding-top: 18px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.header-category-benefit-text{
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.header-category-package-wrap-wrap{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.header-category-package-href{
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-category-package-wrap{
+    height: 32px;
+    padding: 6px 16px;
+    border-radius: 18px;
+    border: 1px solid rgb(238, 238, 238);
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.32px;
+
+}
+
+.header-category-package{
+    font-weight: 500;
+    color: rgb(95, 0, 128);
+}
+
+.body-wrap{
+    position: relative;
+}
+
+.body{
+    position: relative;
+}
+
+.body-just-div{
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+    z-index: 9999;
+}
+
+.body-content-wrap{
+    opacity: 1;
+    box-sizing: border-box;
+    margin: 0;
+}
+/*
+opacity: 1;
+    ㄴ 투명도 정도를 수정합니다.
+*/
+
+.body-content{
+    position: relative;
+    max-width: 1900px;
+    height: 370px;
+    margin: 0px auto 40px;
+}
+
+.body-slide-wrap{
+    touch-action: pan-y;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.swiper-slide{
+    cursor: pointer;
+    width: 1035px;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+
+.swiper-slide img{
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-list-wrap{
+    width: 1050px;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+
+.product-list{
+    margin-bottom: 27px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.product-list-wrap{
+    width: 1050px;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+
+.product-list{
+    margin-bottom: 27px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.product-list-text-wrap{
+    position: relative;
+    display: flex;
+    min-height: 48px;
+    padding: 8px 0px 8px 8px;
+}
+
+.product-list-text{
+    color: rgb(51, 51, 51);
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.26px;
+    font-weight: 500;
+}
+
+.swiper2{
+    overflow: hidden;
+    width: 1050px;
+}

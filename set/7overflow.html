@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .overflow-ex {
+      border: 1px solid gold;
+      width: 150px;
+      height: 50px;
+      overflow: visible;
+    }
+    .overflow-ex2 {
+      margin-top: 50px;
+      border: 1px solid gold;
+      width: 250px;
+      height: 50px;
+      overflow: hidden;
+    }
+  </style>
+  <body>
+    <div class="overflow-ex">
+      overflow 컨텐츠를 자르지 숨기지 않고 밖에도 드러나게 한다
+    </div>
+
+    <div class="overflow-ex2">
+      overflow는 박스 크기에 벗어나는 내용을 들어낼지 숨길지 결정한다
+      <br />
+      overflow:hidden은 박스 크기게 벗어나는 컨텐츠는 숨긴다
+    </div>
+  </body>
+</html>

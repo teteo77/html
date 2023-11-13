@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- 내려오는 모션 주기 -->
+  <!-- header에 transition: height 0.4s; -->
+  <!-- js에는 모션주는 기능이 없기때문에 css로 준다 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul li {
+      list-style: none;
+    }
+    .clearfix:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    body {
+      background: green;
+      overflow-y: scroll;
+    }
+    header {
+      margin-top: 20px;
+      background: linear-gradient(
+        white 50px,
+        rgba(255, 255, 255, 0.5) 50px,
+        rgba(255, 255, 255, 0.5)
+      );
+      height: 50px;
+      overflow: hidden;
+      transition: height 0.4s;
+    }
+
+    nav {
+      width: 960px;
+      margin: 0 auto;
+    }
+    nav > ul > li {
+      float: left;
+      line-height: 50px;
+      margin-right: 40px;
+      position: relative;
+    }
+    nav > ul > li ul {
+      width: 100%;
+      /* display: none; */
+      position: absolute;
+    }
+    /* ul은 공간을 주면 틀어지기 때문에 absolute로 부모를 상대 지정 해준다 */
+    nav > ul > li ul li {
+      white-space: nowrap;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <ul class="clearfix">
+          <li>
+            1st menu
+            <ul>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+          <li>
+            2nd menu
+            <ul>
+              <li>2nd menu menu</li>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+          <li>
+            3rd menu
+            <ul>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+          <li>
+            4th menu
+            <ul>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+              <li>2nd menu</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <script>
+      var header = document.querySelector("header"),
+        nav = document.querySelector("nav");
+
+      nav.addEventListener("mouseover", function () {
+        header.style.height = "270px";
+      });
+
+      nav.addEventListener("mouseout", function () {
+        header.style.height = "50px";
+      });
+    </script>
+  </body>
+</html>

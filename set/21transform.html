@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @keyframes blink_animation2{
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+      }
+
+      .transformex .transformex-image {
+        background: no-repeat center/contain url("./image/image1.png");
+        transform: rotateZ(60deg);
+        width: 8%;
+        height: 9%;
+        left: 10%;
+        top: 20%;
+        position: absolute;
+        /* animation: blink_animation2 2s steps(1, end) infinite; */
+      }
+    </style>
+</head>
+<body>
+    <div class="transformex">
+        <div class="transformex-image"></div>
+    </div>
+    <span>개발자 도구에서 transform 클릭하면 이미지를 UI로 돌려볼수 있다.</span>
+    
+</body>
+</html>
+
+transform: rotateZ(60deg);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      @media (width: 500px) {
+        body {
+          background-color: red;
+        }
+      }
+      /* width가 500px일때 background-color: red로 변경 */
+
+      @media (max-width: 1000px) {
+        body {
+          background-color: orange;
+        }
+      }
+      /* 1000px이하 일때 background-color: orange 변경 */
+
+      @media (min-width: 1000px) {
+        body {
+          background-color: yellow;
+        }
+      }
+      /* 1000pxpx이상일대 background-color: yellow 변경 */
+    </style>
+  </head>
+  <body>
+    반응형 디자인 화면의 크기에 최적화된 모습을 보여준다. width가 500px일때
+    background-color: red로 변경 500px이하 일때 background-color: orange 변경
+    500px이상일대 background-color: yellow 변경
+  </body>
+</html>
