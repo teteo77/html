@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .transitionex {
+        width: 100px;
+        height: 50px;
+        background: rgb(166, 184, 179);
+        transition: width 1s;
+        margin-bottom: 250px;
+        white-space: nowrap;
+      }
+      .transitionex:hover {
+        width: 150px;
+      }
+
+      .transitionex2 {
+        width: 50px;
+        height: 50px;
+        background: rgb(119, 173, 155);
+        transition: width 2s, height 4s;
+        white-space: nowrap;
+      }
+      .transitionex2:hover {
+        width: 150px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="transitionex">
+      transition을 사용하면 속성 값을 일정 시간 동안 부드럽게 변경(한 값에서
+      다른 값으로) 할 수 있다.
+    </div>
+
+    <div class="transitionex2">
+      width 와 height 속성에 transition 효과를 추가
+    </div>
+  </body>
+</html>
