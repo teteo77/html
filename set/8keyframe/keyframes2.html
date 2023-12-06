@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <!-- 전체적으로 다시 정리 보면서 정리하기 아직잘 모르겠다 -->
+  </head>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
+
+    .keyframes1 {
+      width:50px;
+      height:50px;
+      border:1px solid red;
+      position: relative;
+      animation: fadeInUp 1s;
+      margin-bottom:25px;
+    }
+
+    .keyframes2 {
+      width:50px;
+      height:50px;
+      border:1px solid red;
+      animation: fadeInUp 1s;
+      animation-delay: 1s;
+      margin-bottom:25px;
+    }
+
+    .keyframes3{
+      width:50px;
+      height:50px;
+      border:1px solid red;
+      animation: fadeInUp 1.2s ease-out forwards 0.75s;
+      /* ㄴ animation속성 뒤에 0.75s숫자를 줘서 몇초뒤에 실행될지 지정할수 있다.  */
+      white-space: nowrap;
+
+      /* animation-delay: 0s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite; */
+    }
+
+
+  </style>
+  <body>
+    <div class="keyframes1"></div>
+    <div class="keyframes2"></div>
+    <div class="keyframes3">skill.style.animation = "slide_up 1.2s ease-out forwards 0.75s";<br>
+      ㄴ 맨뒤에 숫자 줘서 몇초뒤에 나오게 할수 있음<br>
+      ㄴ 속성 따로 줄 필요가 없다<br>
+      ㄴ transition: property duration function delay<br>
+      ㄴ   기본값      all      0        ease     0<br>
+      ㄴ /* property duration function delay */<br>
+      ㄴ transition: width 1s ease-in 1s;<br>
+      ㄴ 출처: https://inpa.tistory.com/entry/CSS-📚-트랜지션-트랜스폼-애니메이션 [Inpa Dev 👨‍💻:티스토리]<br>
+      ㄴ forwards, 대기, 시작 프레임(from)에 설정한 스타일을 적용하지 않고 대기한다.<br>
+    </div>
+    
+  </body>
+</html>

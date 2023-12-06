@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 제이쿼리(Jquery)의 변수에 인덱스 번호를 부여하여 eq() 메소드로 요소를 뽑아낸다.
+    js에서 리스트 형태에서 가져오는 것과 똑같다. -->
+    <!-- https://yongku.tistory.com/entry/JavaScriptJquery-Jquery-eq-%EB%A9%94%EC%86%8C%EB%93%9C%EB%9E%80 -->
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div>
+    <h1>1번 그룹</h1>
+    <ul id="ul-grp-1">
+      <li><a href="#">그룹1 - 0번 자리</a></li>
+      <li><a href="#">그룹1 - 1번 자리</a></li>
+      <li><a href="#">그룹1 - 2번 자리</a></li>
+      <li><a href="#">그룹1 - 3번 자리</a></li>
+      <li><a href="#">그룹1 - 4번 자리</a></li>
+      <li><a href="#">그룹1 - 5번 자리</a></li>
+      <li><a href="#">그룹1 - 6번 자리</a></li>
+      <li><a href="#">그룹1 - 7번 자리</a></li>
+      <li><a href="#">그룹1 - 8번 자리</a></li>
+      <li><a href="#">그룹1 - 9번 자리</a></li>
+      <li><a href="#">그룹1 - 10번 자리</a></li>
+      <li><a href="#">그룹1 - 11번 자리</a></li>
+      <li><a href="#">그룹1 - 12번 자리</a></li>
+      <li><a href="#">그룹1 - 13번 자리</a></li>
+      <li><a href="#">그룹1 - 14번 자리</a></li>  
+    </ul>
+
+    <hr>
+
+    <h1>2번 그룹</h1>
+    <ul id="ul-grp-2">
+      <li><a href="#">그룹2 - 0번 자리</a></li>
+      <li><a href="#">그룹2 - 1번 자리</a></li>
+      <li><a href="#">그룹2 - 2번 자리</a></li>
+      <li><a href="#">그룹2 - 3번 자리</a></li>
+      <li><a href="#">그룹2 - 4번 자리</a></li>
+      <li><a href="#">그룹2 - 5번 자리</a></li>
+      <li><a href="#">그룹2 - 6번 자리</a></li>
+      <li><a href="#">그룹2 - 7번 자리</a></li>
+      <li><a href="#">그룹2 - 8번 자리</a></li>
+      <li><a href="#">그룹2 - 9번 자리</a></li>
+      <li><a href="#">그룹2 - 10번 자리</a></li>
+      <li><a href="#">그룹2 - 11번 자리</a></li>
+      <li><a href="#">그룹2 - 12번 자리</a></li>
+      <li><a href="#">그룹2 - 13번 자리</a></li>
+      <li><a href="#">그룹2 - 14번 자리</a></li>  
+    </ul>    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#ul-grp-1 li:eq('+0+')').css({'border':'1px solid #000'});
+      $('#ul-grp-1 li:eq('+3+')').css({'border':'2px solid red'});
+      $('#ul-grp-1 li:eq('+7+')').css({'border':'3px solid green'});
+      
+      $('#ul-grp-2 li:eq('+2+')').css({'border':'5px solid pink'});
+      $('#ul-grp-2 li:eq('+5+')').css({'border':'5px solid blue'});
+      $('#ul-grp-2 li:eq('+10+')').css({'border':'5px solid #32a4a8'});
+    });
+  </script>
+</body>
+</html>

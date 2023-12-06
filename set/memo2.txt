@@ -9,3 +9,7 @@ display:flex와 position: relative;를 같이 쓰면 어떤 속성들이 적용�
 
 gap: 50px;
     ㄴ gap속성 뭔지 찾아보고 공부하기
+
+animation:ani4 ease-in-out 2.5s 1;
+    ㄴ 뒤에오는 2.5s 1;속성값이 뭔지 정리하기
+    ㄴ 가시안참조반응형웹3 파일에 해당 소스 있음

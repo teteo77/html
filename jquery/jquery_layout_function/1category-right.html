@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .fa-solid, .fas {
+            font-weight: 900;
+        }
+
+        .fa-solid .fa-bars {
+            
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{margin:0px; padding:0px; list-style: none;}
+            .screen_out {display: none;}
+            header {background:#000; height:80px; position: fixed; width:100%; z-index: 10;}
+            header button {position: absolute; left: 50px; top:50%; transform: translateY(-50%); 
+                overflow: hidden; border:1px solid red; display: block; width:60px; height:60px; z-index: 30;}
+            
+            header h1 {position: absolute; left: 50px; top:50%; transform: translateY(-50%);}
+            header h1 a {text-indent: -9999px; overflow: hidden; border:1px solid red; display: block; width:60px; height:60px;}
+            header nav {margin:auto; width:fit-content; height: 100%; display: flex; align-items: center;}     
+            header nav ul {display: flex;}
+
+
+
+            @media (max-width: 1200px){
+                header nav ul.on {
+                    left: 0;
+                }
+            }
+            @media (max-width: 1200px){
+                    header nav ul {
+                    position: fixed;
+                    left: -100%;
+                    top: 0;
+                    background: rgba(0,0,0,0.9);
+                    width: 100%;
+                    height: 100%;
+                    z-index: 20;
+                    backdrop-filter: blur(5px);
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    transition: ease all .3s;
+                }
+            }
+
+
+            header nav li a {display: block; padding:10px 20px; color:#fff; text-decoration: none; font-weight: 700;}
+            
+            #home {padding-top: 100px;}
+            .menu {border: 2px solid #FF968A; box-sizing: border-box; margin-bottom: 50px; height: 100vh;}
+            .menu article {font-size: 50px;}
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1><a href="#"></a></h1>
+            <h2 class="screen_out">주요서비스</h2>
+            <button>
+                <i class="fa-solid fa-bars fa-2xl"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Reference</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="menu" id="home"><article id="home_wrap">home</article></section>
+            <section class="menu" id="about"><article id="about_wrap">about</article></section>
+            <section class="menu" id="product"><article id="product">product</article></section>
+            <section class="menu" id="contact"><article id="contact">Contact</article></section>
+            <section class="menu" id="contact"><article id="Reference">reference</article></section>
+        </main>
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // 모바일 메뉴
+
+    // 사용자
+
+        // 메뉴 클릭시 이동
+        $("nav li").click(function(){
+        var menu = $("nav li").index(this);
+        var move = $(".menu").eq(menu).offset().top;
+        $("html").animate({
+            scrollTop:move
+            
+        },500)
+        // 모바일메뉴라면 창닫기
+        var chk_mobile = $(this).parent().hasClass("on");
+        console.log($(this).parent())
+        if(chk_mobile) {
+            $("nav ul").removeClass("on");
+            $("header>button i").addClass("fa-bars");
+            $("header>button i").removeClass("fa-xmark");
+        }
+        return false;
+    })
+
+    // 모바일용 메뉴
+    $("header>button").click(function(){
+        $("nav ul").toggleClass("on");
+        $("header>button i").toggleClass("fa-burger");
+        $("header>button i").toggleClass("fa-xmark");
+    })
+
+    // //   메뉴 클릭시 이동
+    // $("nav li").click(function(){
+    //     var menu = $("nav li").index(this);
+    //     var move = $(".menu").eq(menu).offset().top;
+    //     $("html").animate({
+    //         scrollTop:move
+    //     },500)
+    //     // return false;
+    //     let chk_mobile = $(this).parent().hasClass("on");
+    //     if(chk_mobile){
+    //         $("nav ul").removeClass("on");
+    //         $("header>button i").addClass("fa-bars");
+    //         $("header>button i").removeClass("fa-xmark");
+    //     }
+    //     return false;
+    //   })
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .transformex4 {
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      margin-bottom: 45px;
+
+      transition-property: width, background-color; /* 어떤 css 프로퍼티를 transition할지 지정 */
+      transition-duration: 2s, 2s; /* width와 bg-color가 2초동안 변화 */
+    }
+    .transformex4:hover { /* 마우스를 올리면 transition발동해서 적용될 상태 */
+      width: 300px;
+      background-color: blue;
+    }
+    /* 출처: https://inpa.tistory.com/entry/CSS-📚-트랜지션-트랜스폼-애니메이션 [Inpa Dev 👨‍💻:티스토리] */
+
+    .transformex5 {
+      width: 100px;
+      height: 50px;
+      background-color: brown;
+      margin-bottom: 45px;
+
+      transition-property: width;
+      transition-duration: 2s; /* width가 2초에 걸쳐 변화 */
+    }
+
+    .transformex5:hover{
+      width:300px;
+      background-color: tomato;
+    }
+
+    .transformex6 {
+      width: 100px;
+      height: 50px;
+      background-color: brown;
+      margin-bottom: 10px;
+
+      transition-property: width;
+      transition-duration: 2s; /* width가 2초에 걸쳐 변화 */
+    }
+
+    .transformex6:hover{
+        width:300px;
+        transition-duration: 2s;
+    }
+
+    .transformex7 {
+      width: 100px;
+      height: 50px;
+      background-color: brown;
+      margin-bottom: 10px;
+      
+      transition: width 2s, opacity 4s; /* 축약 표현 */
+    }
+
+    .transformex7:hover{
+        /* 이거 어떻게 적용하지? */
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="transformex4">transformex4</div>
+    <div class="transformex5">transformex5</div>
+    <div class="transformex6">transformex6</div>
+    <div class="transformex7">transformex7</div>
+    
+</body>
+</html>

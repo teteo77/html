@@ -27,6 +27,32 @@
         position: absolute;
         /* animation: blink_animation2 2s steps(1, end) infinite; */
       }
+      .transformex2-wrap{
+        width:500px;
+        height:500px;
+        border:1px solid tomato;
+        margin-top:200px;
+
+      }
+      .transformex2{
+        position: absolute;
+        width:50px;
+        height:50px;
+        border:1px solid rgb(152, 170, 170);
+        transform: translate(100%, 100%);
+      }
+      .transformex3{
+        position: absolute;
+        width:50px;
+        height:50px;
+        border:1px solid cadetblue;
+        transform: translateY(-100%);
+      }
+
+
+    
+    /* 출처: https://inpa.tistory.com/entry/CSS-📚-트랜지션-트랜스폼-애니메이션 [Inpa Dev 👨‍💻:티스토리] */
+      
     </style>
 </head>
 <body>
@@ -34,6 +60,11 @@
         <div class="transformex-image"></div>
     </div>
     <span>개발자 도구에서 transform 클릭하면 이미지를 UI로 돌려볼수 있다.</span>
+
+    <div class="transformex2-wrap">
+        <div class="transformex2"></div>
+        <div class="transformex3">transformex3</div>
+    </div>
     
 </body>
 </html>

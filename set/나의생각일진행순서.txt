@@ -1,4 +1,6 @@
 1. 레이아웃 잡기
 
-2. @media확인 하면서 html작성
 
+2. @media확인,생각 하면서 html작성
+    확장프로그램: web developer
+        ㄴResize- view Responsive Layouts

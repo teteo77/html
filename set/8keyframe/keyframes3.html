@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .keyex-wrap{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid red;
+            width:100%;
+            height:1000px;
+        }
+        /* @keyframes visual-rolling2-1 {
+            0% {
+                left: 150px;
+                opacity: 0;
+            }
+
+            50% {
+                left: 150px;
+                opacity: 0;
+            }
+            60% {
+                left: 0px;
+                opacity: 1;
+            }
+            90% {
+                left: 0px;
+                opacity: 1;
+            }
+            100% {
+                left: -150px;
+                opacity: 0;
+            }
+        } */
+        @keyframes visual-rolling2-1 {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(0%);
+                opacity: 1;
+                
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+
+        .keyex{
+            background-color: brown;
+            width: 150px;
+            height:150px;
+            animation: visual-rolling2-1 4s ease-out;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+        .keyex2{
+            background-color: brown;
+            width: 150px;
+            height:150px;
+            animation: visual-rolling2-1 4s ease-out;
+            animation-delay: 0.1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+        .keyex3{
+            background-color: brown;
+            width: 150px;
+            height:150px;
+            animation: visual-rolling2-1 4s ease-out;
+            animation-delay: 0.2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        .paused-animation {
+    animation-play-state: paused;
+}
+    </style>
+    <!-- .keyex부분 50%에서 css로 중간에 멈추게 못하나? animation-delay: 1; 안먹힌다. -->
+        
+</head>
+<body>
+    <div class="keyex-wrap">
+    <div class="keyex"></div>
+    <div class="keyex2"></div>
+    <div class="keyex3"></div>
+</div>
+<script>
+// JavaScript
+// JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.keyex, .keyex2, .keyex3');
+
+    function animateInfinitely() {
+        elements.forEach(function(element) {
+            element.classList.add('paused-animation');
+        });
+
+        setTimeout(function() {
+            elements.forEach(function(element) {
+                element.classList.remove('paused-animation');
+            });
+            // 재귀 함수 호출하여 일정한 간격으로 반복
+            setTimeout(animateInfinitely, 2000); // 5초 후에 다시 호출
+        }, 2000); // 2초 후에 애니메이션 다시 시작
+    }
+
+    // 초기 호출
+    animateInfinitely();
+});
+</script>
+    
+</body>
+</html>

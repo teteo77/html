@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {margin: 0; padding: 0; list-style: none; font-family: "Noto Sans KR";}
+    .screen_out {display: none;}
+    
+    header {background: #ccccee; height: 80px; width: 100%; position: fixed; z-index: 1000;}
+    header h1 {position:absolute; top:70px; left:50px; transform: translateY(-100%)}
+    header h1 a {text-indent: -9999px; overflow: hidden; background-color: tomato; display: block; width: 60px; height: 60px;}
+    header nav {margin: auto; width: fit-content; height: 100%; display: flex; align-items: center;}
+    header nav ul {display: flex;}
+    header nav li {float: left; list-style: none; padding: 30px 30px;}
+    header nav li a {color: black; text-decoration: none; font-size: 25px;}
+    
+    section {margin: auto; padding: 100px;}
+    
+    #home {border: 2px solid #FF968A; box-sizing: border-box; margin-bottom: 50px; height: 100vh;}
+    #home_wrap {border: 1px solid #ccccee; height: 100%;}
+
+    #about {border: 2px solid #FF968A; box-sizing: border-box; margin-bottom: 50px; height: 100vh;}
+    #about_wrap {border: 1px solid #ccccee; height: 100%;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href=#>레이아웃 정리 페이지</a></h1>
+        <h2 class="screen_out">메인서비스</h2>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home"><article id="home_wrap"></article></section>
+        <section id="about"><article id="about_wrap"></article></section>
+        <section id="product"><article id="product"></article></section>
+        <section id="contact"><article id="contact"></article></section>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+      </nav>
+
+
+<script>
+          //   매뉴 클릭시 이동
+          let menuItems = document.querySelectorAll("nav ul li");
+            let handleMoveMenu = (e) => {
+                console.log(e.target);
+            };
+            menuItems.forEach(item => {
+                item.addEventListener('click', handleMoveMenu);
+            });
+            // querySelectorAll을 사용하고
+            // li선택문에 반복문을 사용하면 다중 선택이 된다. 
+</script>
+<!--  -->
+<script>
+      //   매뉴 클릭시 이동
+    //   let menu = document.querySelectorAll("nav ul li");
+
+    //   let handleMoveMenu = (e) => {
+    //     console.log(e.target);
+    //   }
+
+    //   menu.addEventListener('click', handleMoveMenu);
+        // querySelectorAll를 사용해도
+        // li선택문에 반복문을 넣어주지 않으면 단일 선택이됨
+</script>
+</body>
+</html>

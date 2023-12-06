@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- toggleClass는 html에 class를 추가하는 함수다. -->
+    <!-- C:\Users\tj\ajh\ajh\html\jquery\jquery_layout_function\category-right-view\category-right-mobilebox2.html -->
+    <!-- ㄴ 참조 -->
+    <style>
+        li:nth-child(1){background: black;}
+        li:nth-child(2){background: black;}
+    </style>
+</head>
+<body>
+    <header>
+        <button>(켜기버튼)개발자 모드를 키고 ul에 값이 들어가고 삭제되는걸 보면서 클릭하기</button>
+        <nav>
+            <ul>
+                <li>온이 켜졌어요</li>
+                <li>온이 제거됬어요</li>
+            </ul>
+        </nav>
+    </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $("header>button").click(function(){
+        $("nav ul").toggleClass("on");
+        // toggleClass는 껏다 켯다하는 기능이다
+            // ㄴ removeClass따로 안줘도 된다.
+
+        // Check and set background color based on the presence of class "on"
+        let ulcheck = $("nav ul").hasClass("on");
+        if(ulcheck){
+            console.log("ul에 on이 추가 됬어요");
+            $("li:nth-child(1)").css("background", "white");
+            $("li:nth-child(2)").css("background", "black");
+        } else {
+            console.log("ul에 on이 제거 됬어요.");
+            $("li:nth-child(1)").css("background", "black");
+            $("li:nth-child(2)").css("background", "white");
+        }
+    });
+
+
+    // var chk_mobile = $("nav li").parent().hasClass("on");
+    // if(chk_mobile) {
+    //     $("nav ul").removeClass("on");
+    // }
+    
+    // $("header>button").click(function(){
+    //     $("nav ul").toggleClass("on");
+    //     $("header>button i").toggleClass("fa-burger");
+    //     $("header>button i").toggleClass("fa-xmark");
+    // })
+    </script>
+</body>
+</html>

@@ -7,7 +7,7 @@ window.onload = function () {
     
     // swiper 자동재생 다음페이지 넘어가는 시간 1000에 1초
     autoplay: {
-      delay: 5000,
+      delay: 2000,
     },
 
     // If we need pagination
