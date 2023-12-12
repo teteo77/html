@@ -95,3 +95,6 @@ margin-top, padding-top, top 어떤 차이인지 공부 해야한다.
 
 텍스트 정렬 이미지 정렬 차이 정리
     ㄴ flex로도 어떤 차이인지 정리하기
+
+{display: flex; flex-direction: column; flex-wrap: wrap;}
+    ㄴ 정리하기
