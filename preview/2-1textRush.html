@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  background:#000;
+}
+
+#load {
+  position:absolute;
+  width:600px;
+  height:36px;
+  left:50%;
+  top:40%;
+  margin-left:-300px;
+  overflow:visible;
+  user-select:none;
+  cursor:default;
+}
+
+#load div {
+  position:absolute;
+  width:20px;
+  height:36px;
+  opacity:0;
+  font-family:Helvetica, Arial, sans-serif;
+  animation:move 3.5s linear infinite;
+  transform:rotate(180deg);
+  color:#35C4F0;
+}
+/* 2 setTimeout이나 setInterval을 이용해서 애니메이션 주기를 줘야 하는데 
+애니메이션 재생시간을 animation:move 3.5로 해서 일단 진행 */
+/* 1 div nth-child(1)추가  */
+#load div:nth-child(1) {
+  animation-delay:0.0s;
+}
+#load div:nth-child(2) {
+  animation-delay:0.2s;
+}
+#load div:nth-child(3) {
+  animation-delay:0.4s;
+}
+#load div:nth-child(4) {
+  animation-delay:0.6s;
+}
+#load div:nth-child(5) {
+  animation-delay:0.8s;
+}
+#load div:nth-child(6) {
+  animation-delay:1s;
+}
+#load div:nth-child(7) {
+  animation-delay:1.2s;
+}
+#load div:nth-child(8) {
+  animation-delay:1.4s;
+}
+#load div:nth-child(9) {
+  animation-delay:1.6s;
+}
+#load div:nth-child(10) {
+  animation-delay:1.8s;
+}
+
+@keyframes move {
+  0% {
+    left:0;
+    opacity:0;
+  }
+	35% {
+		left: 41%; 
+		-moz-transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+		-o-transform:rotate(0deg);
+		transform:rotate(0deg);
+		opacity:1;
+	}
+	65% {
+		left:59%; 
+		-moz-transform:rotate(0deg); 
+		-webkit-transform:rotate(0deg); 
+		-o-transform:rotate(0deg);
+		transform:rotate(0deg); 
+		opacity:1;
+	}
+	100% {
+		left:100%; 
+		-moz-transform:rotate(-180deg); 
+		-webkit-transform:rotate(-180deg); 
+		-o-transform:rotate(-180deg); 
+		transform:rotate(-180deg);
+		opacity:0;
+	}
+}
+    </style>
+</head>
+<body>
+    <div id="load">
+		<div>K</div>
+		<div>C</div>
+		<div>O</div>
+        <div>L</div>
+        <div>B</div>
+        <div>E</div>
+        <div>T</div>
+        <div>I</div>
+        <div>H</div>
+        <div>W</div>
+      </div>
+    
+</body>
+</html>

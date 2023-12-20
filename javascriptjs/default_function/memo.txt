@@ -1,0 +1,2 @@
+3setInterval, 4setTimeout
+    ㄴ 화살표 함수 풀어서 작성 하기
