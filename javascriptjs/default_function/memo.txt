@@ -1,6 +1,7 @@
 3setInterval, 4setTimeout
     ㄴ 화살표 함수 풀어서 작성 하기
 
-3setInterval2, 3setInterval2
+
+3setInterval2, 3setInterval2; setInterval안에 넘겨줘야할 값이 하나일때 두개일때 정리하기
     ㄴ 3setInterval2 값을 하나 넘겨줄때,
     ㄴ 3setInterval3 값을 여러개 넘겨줄때 문법 정리하기

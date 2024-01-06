@@ -112,7 +112,6 @@
       $("nav li").click(function () {
         var menu = $("nav li").index(this);
         var move = $(".menu").eq(menu).offset().top;
-
         $("html").animate(
           {
             scrollTop: move,
@@ -122,54 +121,14 @@
         return false;
       });
 
-      // 페이지네이션
-      // $("nav li").each(function () {
-      //   $("#main_page").append("<span></span>");
-      // });
-      // $("#main_page span").eq(0).addClass("on");
-      // $("#main_page span").click(function () {
-      //   var menu = $("#main_page span").index(this);
-      //   var move = $(".menu").eq(menu).offset().top;
-      //   $("html").animate(
-      //     {
-      //       scrollTop: move,
-      //     },
-      //     500
-      //   );
-      //   return false;
-      // });
-
       // 스크롤이벤트
       $(window).scroll(function () {
-        var t = $(this).scrollTop();
         var h = $(window).height() / 2; //화면높이의 반
         var menu2 = $(".menu").eq(1).offset().top - h;
         var menu3 = $(".menu").eq(2).offset().top - h;
         var menu4 = $(".menu").eq(3).offset().top - h;
         var menu5 = $(".menu").eq(4).offset().top - h;
         var menu6 = $(".menu").eq(5).offset().top - h;
-
-        // 현재 메뉴 표현
-        $("nav li, #main_page span").removeClass("on");
-        if (t >= 0 && t < menu2) {
-          $("nav li").eq(0).addClass("on");
-          $("#main_page span").eq(0).addClass("on");
-        } else if (t > menu2 && t < menu3) {
-          $("nav li").eq(1).addClass("on");
-          $("#main_page span").eq(1).addClass("on");
-        } else if (t > menu3 && t < menu4) {
-          $("nav li").eq(2).addClass("on");
-          $("#main_page span").eq(2).addClass("on");
-        } else if (t > menu4 && t < menu5) {
-          $("nav li").eq(3).addClass("on");
-          $("#main_page span").eq(3).addClass("on");
-        } else if (t > menu5 && t < menu6) {
-          $("nav li").eq(4).addClass("on");
-          $("#main_page span").eq(4).addClass("on");
-        } else {
-          $("nav li").eq(5).addClass("on");
-          $("#main_page span").eq(5).addClass("on");
-        }
       });
     </script>
   </body>

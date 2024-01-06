@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .scrollex{
+            height:3000px;
+        }
+    </style>
+</head>
+<!-- Window.scroll() 메서드는 문서 내 창을 특정 위치로 스크롤합니다. -->
+<body>
+    <button onclick="scroll(0, 100);">click to scroll to the 100th pixel</button>
+    <div class="scrollex"></div>
+</body>
+<script>
+    window.scroll({
+  top: 500,
+  left: 100,
+  behavior: "smooth",
+});
+</script>
+</html>

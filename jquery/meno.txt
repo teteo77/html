@@ -1,3 +1,6 @@
+2clickmenu_scrollevent
+    ㄴ 113번줄 var menu = $("nav li").index(this); 이해 안된다
+
 윈도우 도큐먼트 html body 순으로 
 
 window객체 호출해서 변화주는거 작성하기

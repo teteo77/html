@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery</title>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor.</h1>
+  </body>
+  <!-- .after()는 선택한 요소 뒤에 새 요소를 추가하거나, 다른 곳에 있는 요소를 이동시킬 수 있다. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $( document ).ready( function() {
+      $( 'h1' ).after( '<p>Hello World!</p>' );
+    } );
+  </script>
+</html>
