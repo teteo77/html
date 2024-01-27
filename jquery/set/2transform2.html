@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-cir{ position: absolute; border-radius: 50%; z-index: 1; left: 26.4062%; top: 13.6017%; 
+            border: 1px solid rgb(77, 152, 240); height: 18px; width: 18px; 
+            transform: translate3d(0px, 0px, 0px);}
+            
+    </style>
+</head>
+<body>
+
+    <div class="bg-cir"></div>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // 3-3 동그라미 움직이기 위한 함수 추가
+        setInterval(function() {
+            let num = Math.floor(Math.random() * 23); // 0에서 9까지의 랜덤한 정수
+            let num2 = Math.floor(Math.random() * 23);
+            $(".bg-cir").css({ "transform": "translate3d(" + num + "px, " + num + "px, 0)"});
+        }, 2000);
+    </script>
+
+<!-- step: function (now, fx) {
+    $(this).css({"transform": "translate3d(0px, " + now + "px, 0px)"});
+}, -->
+</body>
+</html>
