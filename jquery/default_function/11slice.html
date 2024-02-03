@@ -45,7 +45,7 @@ function colorEm() {
   if ( end === $div.length ) {
     end = undefined;
     // undefined값도 null이기 때문에
-    // 57번 삼항 연산자에서 null이 된다
+    // 51번 if(end)문과 57번 삼항 연산자에서 null이 된다
   }
   $div.css( "background", "" );
   if ( end ) {
