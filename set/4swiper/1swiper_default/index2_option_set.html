@@ -8,7 +8,10 @@
   <style>
     .swiper { width: 600px; height: 300px;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <body>
     <!-- Slider main container -->
@@ -34,10 +37,19 @@
     <script>
       const swiper = new Swiper(".swiper", {
         // Optional parameters
-        direction: "vertical",
+          // 세로 슬라이드
+        // direction: "vertical",
+          // 가로 슬라이드
+        direction: 'horizontal',
+        // 슬라이드 넘어가는 시간
+        // speed:1000,
+
+        // 슬라이드 반복 여부
         loop: true,
         autoplay: {
           delay: 2000,
+          // 사용자가 상호작용하면 멈췄다가 다시 슬라이드 실행
+          // disableOnInteraction: false,
         },
 
         // If we need pagination

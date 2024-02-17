@@ -19,7 +19,9 @@
         <div class="swiper-slide">Slide 1</div>
         <div class="swiper-slide">Slide 2</div>
         <div class="swiper-slide">Slide 3</div>
-        ...
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
       </div>
       <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
@@ -34,8 +36,13 @@
     <script>
       const swiper = new Swiper(".swiper", {
         // Optional parameters
-        direction: "vertical",
+        direction: "horizontal",
         loop: true,
+        autoplay: 3000,
+        slidesPerView: 3,
+        // effect 커버플로우 추가
+        effect: 'coverflow',
+        
         autoplay: {
           delay: 2000,
         },
@@ -54,6 +61,16 @@
         // And if we need scrollbar
         scrollbar: {
           el: ".swiper-scrollbar",
+        },
+
+        // 커버플로우 옵션 설정
+        coverflow: {
+            rotate: 0,
+            stretch: 100,
+            depth: 150,
+            modifier: 1.5,
+            slideShadows : true,
+
         },
       });
     </script>

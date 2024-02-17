@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <style>
+        * {margin:0; padding:0;list-style: none;}
+        nav {border: 1px solid red; width: 1200px; margin:0 auto;}
+        nav section {border: 1px solid red; height:65px; display: flex; justify-content: flex-end; align-items: center;}
+        
+        nav section a { margin: 0 2px;}
+        nav section a:nth-child(1) { width:23px; height:23px; background: url(./img/sns_blog.png);}
+        nav section a:nth-child(2) { width:23px; height:23px; background: url(./img/sns_facebook.png);}
+        nav section a:nth-child(3) { width:23px; height:23px; background: url(./img/sns_insta.png); margin-right:15px;}
+
+        nav ul {display: flex; justify-content: center; align-items: center;}
+        nav ul img {margin-right: auto; margin-left:15px}
+
+        .menu {border: 1px solid red; width:80px; margin:10px 30px; position: relative;}
+        .menu:hover li {display: block;}
+        /* nav ul li:hover .menu li {display: block;} */
+        .menu li {display: none;}
+
+        main .swiper-button-prev { background:url(./img/btn_arrow.png) no-repeat; width:55px; height:98px; background-size: 196%; position: absolute; left:10%;}
+        main .swiper-button-next { background:url(./img/btn_arrow.png) no-repeat -54px 0px; width:55px; height:98px; background-size: 196%; position: absolute; right:10%}
+        .swiper-button-next::after, .swiper-button-prev::after { display: none; }
+
+        #main_banner {width: 1000px; height:646px; border:1px solid red; margin: 100px auto 100px; display: flex; flex-wrap: wrap;}
+        #main_banner ul { display: flex;  flex-wrap: wrap;}
+        #main_banner ul li {width:500px; height:323px;}
+
+
+        #main_banner ul li:nth-child(n+3):nth-child(-n+6) { width: 250px;}
+        #main_banner ul li:nth-child(3) { display: flex; justify-content: center; align-items: center; }
+        #main_banner ul li:nth-child(4) { display: flex; justify-content: center; align-items: center; }
+        #main_banner ul li:nth-child(5) {background: #cd1e10;}
+        #main_banner ul li:nth-child(6) {background: #007E3A;}
+
+        #main_menu { width:100%; height:600px;  background: url("./img/main-menu-cover.jpg") center center; background-size: cover; box-sizing: border-box;}
+        #main_menu .s_second { width:900px; height:600px;  display: flex; }
+        /* #main_menu .swiper-wrapper { width:400px; display: flex;} */
+        #main_menu .swiper-slide { display: flex; justify-content: center; align-items: center; }
+        
+        #main_menu .swiper-button-prev { background:url(./img/btn_arrow.png) no-repeat; width:55px; height:98px; background-size: 196%; position: absolute; left:0%;}
+        #main_menu .swiper-button-next { background:url(./img/btn_arrow.png) no-repeat -54px 0px; width:55px; height:98px; background-size: 196%; position: absolute; right:0%}
+
+        #main_store { height:508px; width:100%; background:url(img/main-store-bg.png) center; background-size:cover; padding:100px 0px;  }
+        /* #main_store { height:961px; width:100%; background:url(img/main-store-bg.png); background-size:cover; } */
+
+        #main_container {height:500px;}
+        
+        footer { width:100%; border: 1px solid red; box-sizing: border-box; background: #262626;}
+        footer .container {margin:20px 0}
+        footer .container ul { display: flex; justify-content: center; }
+        footer .container ul li a {color:#9e9e9e; text-decoration: none; margin:0px 15px;}
+
+        
+
+
+
+        
+    </style>
+    <!-- swiper cdn 호출 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- swiper cdn js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <section>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </section>
+            <ul>
+                <img src="./img/logo.png" alt="#">
+                <li>
+                    <ul class="menu">마시그레이
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="menu">메뉴
+                        <li><a herf="#">메뉴1</a></li>
+                        <li><a herf="#">메뉴1</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="menu">프랜차이즈
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="menu">매장안내
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="menu">공지사항
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#"></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="menu">고객의소리
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="swiper s_first">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img width="100%" src="./img/main_visual01.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img width="100%" src="./img/main_visual02.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img width="100%" src="./img/main_visual03.jpg" />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+      
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+      
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
+
+          <section id="main_banner">
+            <ul>
+                <li>
+                    <img src="./img/mb01_bg.jpg" alt="">
+                </li>
+                <li>
+                    <img src="./img/mb02_bg.jpg" alt="">
+                </li>
+                <li>
+                    <img src="./img/franchise_ico01.png" alt="">
+                </li>
+                <li>
+                    <img src="./img/franchise_ico02.png" alt="">
+                </li>
+                <li></li>
+                <li></li>
+            </ul>
+          </section>
+
+
+          <section id="main_menu">
+            <div class="swiper s_second">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <img src="./img/menu_slide01.png">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/menu_slide02.png">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/menu_slide03.png">
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+          
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+          
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+          </section>
+          <section id="main_store">
+
+          </section>
+          <section id="main_container">
+
+
+          </section>
+
+        </main>
+
+
+        <footer>
+            <section class="container">
+                <ul>
+                    <li><a href="#">점주의 방</a></li>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                    <li><a href="#">가맹문의</a></li>
+                    <li><a href="#">고객의 소리</a></li>
+                </ul>
+            </section>
+        </footer>
+
+    <script>
+          const swiper = new Swiper(".s_first", {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true, //슬라이드 반복 여부
+            speed:1000,
+
+            // swiper 자동재생 다음페이지 넘어가는 시간 1000에 1초
+            autoplay: {
+            delay: 2000,
+            },
+            // If we need pagination
+            pagination: {
+              el: '.swiper-pagination',
+            },
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const swiper2 = new Swiper(".s_second", {
+            // Optional parameters
+            direction: "horizontal",
+            loop: true,
+            speed:1000,
+
+            autoplay: {
+            delay: 2000,
+            },
+
+            // If we need pagination
+            pagination: {
+            el: ".swiper-pagination",
+            },
+
+            // Navigation arrows
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+            el: ".swiper-scrollbar",
+            },
+      });
+    </script>
+</body>
+
+</html>
