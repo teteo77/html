@@ -71,10 +71,6 @@ display:inline-flex
 for="search-input"
     ㄴ for가 뭐지
 
-gap: 50px;
-    ㄴ gap속성 뭔지 찾아보고 공부하기
-
-
 부모도 position: absolute; 자식도 position: absolute;일때 어떻게 속성이 적용되는거지?
 
 white-space: nowrap;
@@ -108,3 +104,42 @@ margin-top, padding-top, top 어떤 차이인지 공부 해야한다.
 
 <li>구체성 점수가 높은것 : 인라인 > 아이디 > 클레스 > 태그(요소)</li>
     ㄴ 정리하기 html수업 15번 파일
+
+
+margin으로자리 잡아준 태그는 위에 공간이 생겨도 자동으로 따라간다
+    ㄴ position으로 준 태그는 위에 공간이 생겨도 그대로 고정이다
+
+자식을 정렬 할때는 flex
+    ㄴ 자신을 정렬 할때는 margin:auto; display:block; width:fit-content로 해주면 된다.
+
+구체성 문제는 !important를 주면 된다.
+
+header li:not(:first-child) a:hover{ background-position-y: -50px !important;}
+    ㄴ L-html 22-2파일 16번줄
+
+속성이 inpuy type을 지정해주는 방법 main .login[type=password]
+    ㄴ 정리하기
+
+main #auto+label속성 선택자에서 +는 #auto다음에있는 label을 뜻한다
+    ㄴ 정리하기
+
+translateY정리하기
+
+main #auto ~ p는 #auto 다음에 있는 p라는 뜻이다
+    ㄴ 정리하기
+
+display: inline-block;
+    ㄴ 정리하기
+
+포폴 사이트 about부분 objectfit, cover속성 주기, 배경색 좀더 연하게 해주기- 색상 코드 사이트 탐색
+    ㄴ contact부분 영어 한글 통일
+    ㄴ 글씨크기 제일 작은걸로 기준 잡기 자꾸 작아지면 안됨
+
+검색해서 나온 디자인이 흔하고 좋은 디자인이나
+    ㄴ 개인적인 생각에 디자인이지만 검색해서 안나온다면 좋지 않은 디자인이다
+        ㄴ 개인적은 생각은 홈페이지 메인으로 하지말고 작품 보기에 넣어야 한다.
+
+margin 겹침 현상 공부하기
+
+html 파일 set/L-html파일안에 저장하기
+
