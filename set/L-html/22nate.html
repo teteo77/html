@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이트 로그인</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0; padding:0; list-style: none;}
+        summary, button {cursor: pointer;}
+        .screen_out {display: none;}
+        header ul {display: flex; background:#efefef; border-bottom:1px solid #9f9f9f;}
+        header a {display: block; width:78px; height:34px;text-indent: -9999px; overflow:hidden; background:url(img/22_menu.png); transition: ease all .3s;}
+        header li:nth-child(2) a {background-position: -80px 0;}
+        header li:nth-child(3) a {background-position: -316px 0;}
+        header li:nth-child(4) a {background-position: -394px 0;}
+        header li:not(:first-child) a:hover {background-position-y: -50px ;}
+        main {height:2214px; background:url(img/22_bg.png) center top no-repeat; padding-top:82px; box-sizing: border-box; border-bottom:1px solid #eee; box-sizing: border-box;}
+        main::before {content:""; height:400px; background:#f2f2f2; width:100%; position: absolute;top:35px; z-index: -1;}
+        main::after {content:""; height:529px; top:1022px; width:100%; border-top:1px solid #eee; border-bottom:1px solid #eee; position: absolute;}
+        main>div {background:#fff; width:440px; border-radius: 4px; box-shadow: 0 2px 5px 0 #ccc; margin:auto; padding:32px 39px; box-sizing: border-box; position: relative;}
+        main h1 a {display: block; width:64px; height:18px; text-indent: -9999px; overflow: hidden; background:url(img/22_logo.png); margin:0 auto 34px;}
+        main fieldset {border:none;}
+        main .login {border:1px solid #e5e5e5; height:51px; width:100%; border-radius: 2px; padding:0 15px; box-sizing: border-box; font-size:14px; outline: none;}
+        main .login:focus {border-color:#fa4647;}
+        main fieldset div {width:218px; height:115px; background: url(img/22_id.png); font-size:11px; padding:18px 17px 0; box-sizing: border-box; position: absolute; margin-top:-166px; display: none;}
+        main fieldset input:focus+div {display: block;}
+        main fieldset div p:last-child {margin-top:7px; color:#fa4647;}
+        main fieldset div strong {color:#569bd2}
+        main .login[type=password] {margin:9px 0;}
+        main #auto+label {font-size:12px; color:#666; transform: translateY(-2px); display: inline-block;}
+        main #auto ~ p {border:1px solid #fa4647; width:155px; color:#858585; font-size:11px; padding:8px 10px; box-sizing: border-box; letter-spacing: -1px; position: absolute; left:0; top:0; display: none;}
+        main #auto ~ p a {color: #fa4647; padding-left:5px;}
+        main #auto ~ p a::after {content:""; position: absolute;border-left:3px solid #fa4647; border-top:3px solid transparent; border-bottom: 3px solid transparent; margin:5px 0 0 4px;}
+        main #auto:checked ~ p {display: block;}
+        main fieldset>a {position:absolute; right:39px; font-size: 11px; color:#999;}
+        main button {display: block; width:100%; height:50px; border:none; background:#fa4647; border-radius:2px; color:#fff; font-weight: bold; font-size:15px; margin:26px 0 36px;}
+        main ul {display: flex; justify-content: center; gap:20px}
+        main ul a {color:#999; font-size: 12px;}
+        main li:not(:first-child)::before {content:""; position: absolute; height:13px; border-left:1px solid #ddd; margin:6px 0 0 -10px;}
+        footer {width:660px; margin:105px auto; position: relative;}
+        footer h2 {font-weight:400; font-family: "Noto Sans";}
+        footer p {position: absolute; right:0; top:-5px; display: flex; gap:15px;}
+        footer p a {width:198px; height:58px; border:1px solid #ccc; text-indent: -9999px; overflow: hidden; background:url(img/22_android.png) center no-repeat}
+        footer p a:last-child {background-image: url(img/22_ios.png);}
+        footer address {font-style: normal;color:#aaa; font-size: 12px; margin-top:5px;}
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <h2 class="screen_out">주요서비스</h2>
+        <ul>
+            <li><a href="#">네이트홈 바로가기</a></li>
+            <li><a href="#">메일</a></li>
+            <li><a href="#">문자</a></li>
+            <li><a href="#">주소록</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div>
+        <h1><a href="#" title="네이트홈 바로가기">네이트 로그인</a></h1>
+        <form action="" method="post">
+            <fieldset>
+                <legend class="screen_out">로그인 정보</legend>
+                <input type="text" placeholder="네이트 ID" class="login">
+                <div>
+                    <p><strong>엠파스, 라이코스, 넷츠고</strong> 아이디는 계정까지 모두 입력 해 주세요</p>
+                    <p>예) empal 메일의 경우<br>
+                        @empas.com을 입력해주세요
+                    </p>
+                </div>
+                <input type="password" placeholder="네이트 비밀번호" class="login">
+                <input type="checkbox" id="auto"> 
+                <label for="auto">로그인유지</label>
+                <p>개인정보 보호를 위해<br>
+                    개인PC에서만<br>
+                    사용해 주세요. <a href="#">도움말보기</a> </p>
+                <a href="#" target="_blank">IP보안 <strong>ON</strong></a>
+                <button type="submit">로그인</button>
+            </fieldset>
+        </form>
+        <h2 class="screen_out">기타 로그인 정보</h2>
+        <ul>
+            <li><a href="#">아이디찾기</a></li>
+            <li><a href="#">비밀번호 찾기</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+        <h2 class="screen_out">네이트 메일의 장점</h2>
+        <ul class="screen_out">
+            <li>
+                <p>쉽고 빠른 편집</p>
+                <p>메일 선택후 내 메일함으로 끌어당겨 보세요. 손쉽게 이동 및 삭제를 할 수 있습니다.</p>
+            </li>
+            <li>
+                <p>스마트한 우측 뷰</p>
+                <p>쓰기에서 자주 사용하는 메일주소를 저장할 수 있으며 편지함에서는 분할 모드로 미리보기를 할 수 있습니다.</p>
+            </li>
+            <li>
+                <p>간편하고 빠른 간단쓰기</p>
+                <p>메일 쓰기에서 우측 아이콘을 통해 간단쓰기가 가능합니다.</p>
+            </li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <h2>네이트메일 App</h2>
+    <p>
+        <a href="#" target="_blank">Android 앱다운로드</a>
+        <a href="#" target="_blank">iOS 앱다운로드</a>
+    </p>
+    <address>&copy; SK Communications</address>
+</footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이어</title>
+    <style>
+        div {background:red; width:100px; height:100px; position: absolute;}
+        div:nth-of-type(1) {z-index: 100;}
+        div:nth-of-type(2) {background:green; margin:50px 0 0 50px; z-index: 101;}
+    </style>
+</head>
+<body>
+<h1>레이어(layer)</h1>
+<ul>
+    <li>z-index 값이 높은 것</li>
+    <li>레이어속성(absolute, fixed...)</li>
+    <li>relative 속성</li>
+    <li>콘텐츠(글, 이미지...)</li>
+    <li>배경이미지</li>
+    <li>배경색</li>
+</ul>
+<div></div>
+<div></div>
+</body>
+</html>

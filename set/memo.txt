@@ -143,3 +143,10 @@ margin 겹침 현상 공부하기
 
 html 파일 set/L-html파일안에 저장하기
 
+margin으로 설정한 값들은 UX에서 화면을 줄여도 자동으로 따라가지만
+    ㄴ position은 화면을 줄여도 따로 논다. 라고한다. L-html nate참조
+
+img태그에 쓰이는 object-fit: cover; object-position: center;
+    ㄴ 정리하기
+
+배경이미지를 줄때 background로 줘야 하나요? img로 하니까 잘 안되요

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        div {width:0; height:0; border-top:100px solid red; border-left:126px solid transparent; border-right:126px solid transparent; margin:170px auto; transform-origin: center -15px; }
+        div::before, div::after {content:""; position: absolute; width:170px; height:170px; background:red; border-radius: 50%; margin:-249px 0 0 -155px;}
+        div::after {margin-left:-15px; border-radius: 50% 50% 50% 0;}
+        div:nth-of-type(1) {animation: action linear 10s infinite;}
+        div:nth-of-type(3) {transform-origin: bottom;rotate:-30deg;animation : action3 ease-in-out .5s infinite alternate;}
+        @keyframes action {
+            0% { rotate:0}
+            100% { rotate:360deg}
+        }
+        div:nth-of-type(2) {animation : action2 ease .5s infinite;}
+        @keyframes action2 {
+            0% { transform: scale(1);}
+            25% {transform: scale(1.2);}
+            50% {transform: scale(.8);}
+            75% {transform: scale(1.1);}
+            100% { transform: scale(1);}
+        }
+        @keyframes action3 {
+            0% {rotate:-30deg}
+            100% {rotate:30deg}
+        }
+    </style>
+</head>
+<body>
+<h1>Animation</h1>
+<ul>
+    <li>animation: action ease 1s 1 (애니메이션명, 가속도, 애니메이션 시간, 횟수)</li>
+    <li>forward : 애니메이션 마지막에 멈추게 하는 속성</li>
+    <li>alternate : 짝수프레임에 왕복모션을 적용</li>
+</ul>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

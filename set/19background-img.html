@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .exbg1 {width:100%; height:500px; background: url(./img/exbg1.jpg) no-repeat center/cover; margin-bottom:50px;}
+        .exbg1-2{ width:100%; height:500px; background: url(./img/exbg1.jpg); background-repeat:no-repeat ; background-position: center; background-size:cover;}
+
+        .eximg{ }
+
+    </style>
+</head>
+background: url() 반복여부, 위치/크기
+background: url(./image/header1.png) no-repeat center/contain;
+<body>
+    <div class="exbg1"></div>
+    <div class="exbg1-2"></div>
+
+    <img width="50%" height="100%" src="./img/eximg.jpg" style="margin-top: 50px; margin-left: 50px; object-position: center; object-fit: cover;">
+        <!-- ㄴ width="50%" height="100%"를 줘도 이미가 짤리지 않고 원본사이즈로 나온다. 그래서 object position, fit으로 속성을 줘도 어떤게 바뀐지 모르겠다.
+                ㄴobject-position: center; object-fit: cover;은 적용 시켜도 어떤게 바뀐지 모르겠다
+             
+             ㄴ mdn문서 참고시 다른 속성이 더있음 srcset, resize등등
+        -->
+            
+
+</body>
+</html>

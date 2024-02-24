@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 변수 / 계산기</title>
+    <style>
+        :root {
+            --mainColor : purple;
+            --subColor : black;
+        }
+        div {border:5px solid var(--mainColor); display:flex;}
+        div p {margin:0; background:var(--subColor); height:100px; display: flex; align-items: center; justify-content: center; width:100px; color:#fff}
+        div p:nth-child(2) {background:var(--mainColor); width:calc(100% - 200px)}
+        div p:nth-child(3) {background:var(--subColor); }
+    </style>
+</head>
+<body>
+<h1>CSS 변수 / 계산기</h1>
+<h2>CSS변수(:root)</h2>
+<ul>
+    <li>보통 CSS 최상단에 변수선언</li>
+    <li>변수선언 :root { --변수명:값 } </li>
+    <li>변수사용 var(--변수명)</li>
+</ul>
+<h2>계산기 calc()</h2>
+<ul>
+    <li>일종의 계산기 역할</li>
+    <li>단위가 달라도 계산이 가능</li>
+    <li>연산자(+-/*) 양옆으로 띄어쓰기 필수</li>
+</ul>
+
+<div>
+    <p>콘텐츠</p>
+    <p>콘텐츠</p>
+    <p>콘텐츠</p>
+</div>
+</body>
+</html>

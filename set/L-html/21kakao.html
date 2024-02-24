@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakao</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0; padding:0; list-style: none; font-family:"Noto Sans KR";}
+        label, button {cursor: pointer;}
+        .screen_out {display: none;}
+        body { min-height:100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+        main {padding-top:50px;}
+        main h1 {width:88px; height:27px; background:url(img/21_1.png) 0 0/100px; text-indent: -9999px; overflow: hidden; margin:0 auto 40px;}
+        main>div {border:1px solid #e0e0e0; width:580px; padding: 50px 69px; box-sizing: border-box;}
+        main fieldset {border:none; position: relative;}
+        main .info {display:block ; width:100%; box-sizing: border-box; height: 55px; border:none; border-bottom: 2px solid #ccc; color:#191919; font-size:18px; outline: none;}
+        main .info:focus {border-color:#191919}
+        /* TIP */
+        main button+p {display: none;}
+        main .delete {position: absolute; width:20px; height:20px; text-indent:-9999px; overflow: hidden; border:none; background:url(img/21_2.png) -50px -25px/300px; position: absolute; right:0; margin-top:-37px; display: none;}
+        main .info:focus+.delete {display: block;}
+        main .info:focus+.delete+p {display: block; font-size:12px; color:#4c4c4c; margin:10px 0;}
+        main .info:focus+.delete+p strong {color:#e65f32;}
+        main #auto {display: none;}
+        main #auto+label {font-size:14px; color:#4c4c4c; padding-left:25px;margin:30px 0 40px; display: block; width:fit-content}
+        main #auto+label::before {content:""; position: absolute; width:20px; height:20px; margin:1px 0 0 -25px; background:url(img/21_2.png) 0 0/300px}
+        main #auto:checked+label::before {background-position: -25px 0;}
+        main summary {position: absolute; margin:-59px 0 0 154px; width:18px; height:18px; text-indent:-9999px; overflow: hidden; cursor: pointer; background:url(img/21_2.png) -120px -110px / 300px}
+        main summary+p {position: absolute; background:rgba(0,0,0,.8); color:#fff; font-size:12px; width:300px; padding:8px 12px; border-radius: 3px; margin-top:-27px;}
+        main summary+p a {display: block; color:#1a1915; text-decoration: none;}
+        main .bt {display: block; width:100%; display: flex; justify-content: center; align-items: center; height:50px; background:#fee500; border:none; border-radius: 3px; text-decoration: none; font-size:16px; color:#191919;}
+        main .bt:hover {background:#fada0a;}
+        main a.bt {background:#f0f0f0;}
+        main a.bt:hover {background:#ebebeb;}
+        main p span {margin:auto; display: block; width:fit-content; color:#4c4c4c; font-size:12px; padding:15px 8px; background:#fff;}
+        main p span::before {content:"";position: absolute; width:100%; border-top:1px solid #f0f0f0;left:0; z-index: -1; top:24px}
+        main form+p {position: relative;}
+        main ul {display: flex;gap:30px; margin-top:25px;}
+        main li:first-child {flex:1}
+        main ul a {color:#191919; font-size:12px; text-decoration: none;}
+        main li:nth-child(3)::before {content:""; position: absolute; border-left:1px solid #ebebeb; height:13px; margin: 7px 0 0 -15px}
+        footer {padding:30px 0 50px;}
+        footer ul {display: flex; gap:15px}
+        footer li a {color:#4c4c4c; font-size:12px; text-decoration: none;}
+        footer select {border:none; font-size:12px; }
+        footer address {color: #7f7f7f; font-size:11px; font-style:normal; text-align: center; margin-top:8px;}
+        footer address a {color:#7f7f7f; font-weight: 700; text-decoration: none;}
+    </style>
+</head>
+<body>
+<main>
+    <h1>다음카카오 로그인</h1>
+    <div>
+        <form action="#" method="post">
+            <fieldset>
+                <legend class="screen_out">다음카카오 로그인 정보</legend>
+                <input type="text" placeholder="카카오메일 아이디, 이메일, 전화번호" class="info">
+                <button class="delete">지우기</button>
+                <p><strong>TIP</strong> 카카오메일이 있다면 메일아이디만 입력해 보세요.</p>
+                <input type="password" placeholder="비밀번호" class="info">
+                <button class="delete">지우기</button>
+                <input type="checkbox" id="auto"> 
+                <label for="auto">간편로그인 정보 저장</label>
+                <details>
+                    <summary>도움말</summary>
+                    <p>로그인한 계정의 정보가 저장됩니다. 개인정보 보호를 위해 개인 기기에서만 사용해 주세요. <a href="#">도움말 보기</a></p>
+                </details>
+                <button type="submit" class="bt">로그인</button>
+            </fieldset>
+        </form>
+        <p><span>또는</span> <a href="#" class="bt">QR코드 로그인</a></p>
+        <h2 class="screen_out">로그인 관련 정보</h2>
+        <ul>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">계정찾기</a></li>
+            <li><a href="#">비밀번호 찾기</a></li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <h2 class="screen_out">사이트 이용정보</h2>
+    <ul>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#"><strong>개인정보 처리방침</strong></a></li>
+        <li><a href="#">운영정책</a></li>
+        <li><a href="#">고객센터</a></li>
+        <li><a href="#">공지사항</a></li>
+        <li>
+            <select>
+                <option>한국어</option>
+                <option>English</option>
+                <option>日本語</option>
+            </select>
+        </li>
+    </ul>
+    <address>Copyright &copy; <a href="#">KaKao Corp.</a> All rights reserved.</address>
+</footer>
+</body>
+</html>

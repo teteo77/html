@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글</title>
+    <style>
+        * {padding:0; margin:0; list-style: none;}
+        .screen_out {display: none;}
+        button, label {cursor: pointer;}
+        header {padding: 12px 18px}
+        header ul {display: flex; align-items: center; gap:10px}
+        header li:nth-child(2) {flex:1;}
+        header a {color: #212121;font-size:14px; text-decoration: none;  padding:5px}
+        header li:last-child a {display:block; height:36px; width:96px; background:#1a73e8; border-radius: 5px; color:#fff; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
+        header li:nth-child(2)~li a,
+        header li:nth-child(2)~li button {font-size: 13px;}
+        header button {border:none; width:36px; height:36px; display: block; padding:0; border-radius: 50%; background:url(img/20_1.svg) center/23px no-repeat; text-indent: -999px; overflow: hidden; }
+        header button:hover {background-color:#f0f0f0;}
+        header li:last-child a:hover {background:#1b66c9; box-shadow: 0 2px 3px 0 #ccc;}
+        header li:not(:last-child) a:hover {text-decoration: underline;}
+        main {height:calc(100vh - 160px); display: flex;flex-direction: column; justify-content: center;align-items: center; }
+        main h1 {width:270px; height:90px; text-indent: -9999px; overflow: hidden; background:url(img/20_2.png) center/contain no-repeat; margin-bottom:26px;}
+        main fieldset {border:1px solid #dfe1e5; height:48px; width:584px; border-radius: 24px; display: flex;}
+        main fieldset::before {content:""; width:48px; background:url(img/20_3.svg) center/20px no-repeat}
+        main fieldset:hover {box-shadow: 0 1px 3px 1px #ddd;}
+        main input {flex:1; border: none; outline: none;}
+        main fieldset button {width:44px; text-indent: -9999px; overflow: hidden; background:url(img/20_4.svg) center/24px no-repeat; border:none;}
+        main fieldset button:nth-child(3) {text-indent: 0; margin-right:10px; display: none;}
+        main fieldset input:focus+button:nth-child(3) {display: block;}
+        main fieldset button:nth-child(3)::after {content:""; border-right:1px solid #dfe1e5; height:30px; position: absolute; margin:-14px 0 0 25px;}
+        main fieldset button:nth-child(4) {background:url(img/20_5.png) center/19px no-repeat}
+        main fieldset button:nth-child(5) {background:url(img/20_6.svg) center/24px no-repeat}
+        main fieldset button:nth-child(6) {background:url(img/20_7.svg) center/24px no-repeat}
+        main div {display: flex;gap:15px;justify-content: center; margin:35px 0 150px 0;}
+        main .bt {background:#f8f9fa; border:1px solid transparent; padding:8px 17px; border-radius: 3px; color:#202124; font-size:14px; text-decoration: none;}
+        main .bt:hover {border:1px solid #dadce0; box-shadow: 0 1px 2px 0 #dadce0;}
+        footer {height:100px; background:#f2f2f2;}
+        footer p {height:50px; border-bottom:1px solid #dadce0; display: flex; align-items:center; padding:0 30px; color:#202124; box-sizing: border-box;}
+        footer ul {display: flex; padding:0 30px}
+        footer li:nth-child(3) {flex:1;}
+        footer a, footer button {text-decoration: none; font-size:14px; color:#202124; border:none; background:none; height:50px; display: block; line-height: 50px; padding:0 10px; width:fit-content}
+        footer a:hover, footer button:hover {text-decoration: underline;}
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <h2 class="screen_out">주요서비스</h2>
+        <ul>
+            <li><a href="#">Google 정보</a></li>
+            <li><a href="#">스토어</a></li>
+            <li><a href="#">Gmail</a></li>
+            <li><a href="#">이미지</a></li>
+            <li><button>Google 앱</button></li>
+            <li><a href="#">로그인</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Google</h1>
+    <form action="https://www.google.com/search">
+        <fieldset>
+            <legend class="screen_out">구글 통합 검색</legend>
+            <input type="text" name="q">
+            <button><span class="screen_out">지우기</span></button>
+            <button>입력도구</button>
+            <button>음성검색</button>
+            <button>이미지로 검색</button>
+        </fieldset>
+        <div>
+            <button class="bt">Goolge 검색</button>
+            <a href="#" class="bt">I'm Feeling Lucky</a>
+        </div>
+    </form>
+</main>
+<footer>
+    <h2 class="screen_out">사이트 이용정보</h2>
+    <p><span class="screen_out">접속지역 : </span>대한민국</p>
+    <ul>
+        <li><a href="#">광고</a></li>
+        <li><a href="#">비즈니스</a></li>
+        <li><a href="#">검색의 원리</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">약관</a></li>
+        <li><button>설정</button></li>
+    </ul>
+</footer>
+</body>
+</html>

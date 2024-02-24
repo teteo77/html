@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin:0; padding:0; list-style: none;}
+        .so { display: none; }
+        header {width:100%; padding:12px 18px; font-size:13px;  box-sizing: border-box;}
+        header ul {display: flex; align-items: center; gap:10px;}
+        header ul li:nth-child(2) {flex:1}
+        header a { color: #202124; text-decoration: none;  padding:5px}
+        header button { width:36px;height:36px;background:url(./img/20_1.svg) no-repeat center/23px; border:none; }
+        header li:last-child a { display:block; width:86px; height:25px; background:#1A73E8; border-radius:2px; display: flex; justify-content: center; align-items: center; color:white}
+
+        main {height:calc(100vh - 160px); display: flex;flex-direction: column; justify-content: center;align-items: center; }
+        main h1 { width:272px; height: 92px; background: url(./img/20_2.png) no-repeat center; text-indent: -999999px; overflow: hidden; margin-bottom: 26px;}
+        
+        
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2 class="so">주요서비스</h2>
+            <ul>
+                <li><a href="#">Google 정보</a></li>
+                <li><a href="#">스토어</a></li>
+                <li><a href="#">Gmail</a></li>
+                <li><a href="#">이미지</a></li>
+                <li><button></button></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Google</h1>
+    <form action="www.google.com/search">
+        <fieldset>
+            <legend>구글 통합 검색</legend>
+        </fieldset>
+    </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
