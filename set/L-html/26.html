@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 관련속성</title>
+    <style>
+        body {padding-bottom:200px;}
+        div {border: 1px solid red}
+        /* p {border: 5px solid green; transform: translate(50px, -50px)} */
+        /* p {border: 5px solid green; transform: rotate(45deg)} */
+        #window { border:5px solid brown; width:400px; height:400px; margin:50px auto; display: flex; background: url(./img/25.webp) center/cover; transform-style: preserve-3d}
+        #window span{ border:10px solid rgb(136, 34, 34); width:50%; background:rgba(255,255,255,0.2)}
+        #window span:first-child {transform-origin: left; transition: ease all .3s;}
+        #window:hover span:first-child { transform: rotateY(-130deg)}
+        #window span:nth-child(2) {transform-origin: right; transition: ease all .3s;}
+        #window:hover span:nth-child(2) { transform: rotateY(130deg)}
+        .stage2{ perspective: 200px; }
+        #cube {border:1px solid red; width:200px; height:100px; margin:auto; transform-style: preserve-3d;}
+        #cube span {position: absolute; width:100px; height:100px; border: 1px solid red;}
+        #cuve span:nth-child(1) {transform: translateZ(50px), rotateY(100deg);}
+
+
+    </style>
+</head>
+<!-- 
+랜더링 상에서 움직인다 라는말은 
+좌표를 margin으로 민거랑 같은 효과지만 실제로는 여백을 줘서 는거지만 
+translate는 밀지않고 밀려나기만 한다 
+
+-->
+<body>
+    <h1>3D 관련속성</h1>
+    <ul>
+        <li>translate(10px, 0): 렌더링상에서의 이동</li>
+        <li>rotate(45deg): 렌더링상의 회전</li>
+        <li>scale(0.5) : 렌더링상의 확대/축소</li>
+        <li>skew(30deg) : 렌더링상의 비틀기</li>
+        <li>transform-style: preserver-3d: 자식들을 3D로 랜더링함</li>
+        <li>perspective</li>
+        <li></li>
+    </ul>
+    <div>
+        <p>글자내용</p>
+    </div>
+    <div id="stage">
+        <div id="window">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="stage">
+        <div id="cube"></div>
+
+    </div>
+
+    
+</body>
+</html>

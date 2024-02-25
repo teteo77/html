@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형웹</title>
+    <style>
+        #ex {display: flex; gap:20px; flex-wrap: wrap; justify-content: center;}
+        #ex li {background: red; width:200px; height: 200px;list-style: none;}
+        @media (max-width:880px) {
+            #ex li {background: green;}
+        }
+        @media (max-width:660px) {
+            #ex li {width:calc(100% - 20px) / 2}
+        }
+        @media (max-width:460px) {
+            #ex li {width:100%;}
+        }
+        @media (orientation:1d) {
+            #ex li {width:100%;}
+        }
+        /* 
+        반응형웹은 디자인에 맞게 해야한다
+        표준 사이트 기준으로 하는것이 아니다.
+
+        
+        */
+    </style>
+</head>
+<body>
+<h1>반응형웹</h1>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<ul id="ex">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

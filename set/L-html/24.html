@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {width:100px; position: fixed; left:0; top:0; height:100px; object-fit: contain; animation: car linear 3s;}
+        @keyframes car {
+            0% {left:0; top:0; }
+            24%{rotate:0deg; }
+            25% {left:calc(100% - 100px); top:0 }
+            26% {rotate:90deg}
+            49% {rotate:90deg}
+            50% {left:calc(100% - 100px); top:calc(100% - 100px); }
+            51% {rotate:180deg}
+            74% {rotate:180deg}
+            75% {left:calc(0%); top:calc(100% - 100px);}
+            76% {rotate: 270deg}
+            98% {rotate:270deg}
+            99% {left:0}
+            100% {rotate:360deg}
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation II</h1>
+    <img src="./img/car.webp">
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation III</title>
+    <style>
+        div {border: 1px solid red; width: 71px; height: 105px; display: inline-block; background: url(./img/25.webp); animation: action steps(4) forwards 1s;}
+        @keyframes action { 
+            0% {background-position-x:0;}
+            100% {background-position-x: -284px;}
+        }
+        div:nth-of-type(2) {background-position-y: -105px;}
+        div:nth-of-type(3) {background-position-y: -210px;}
+        div:nth-of-type(4) {background-position-y: -315px;}
+        
+
+    </style>
+</head>
+<body>
+    <h1>Animation III</h1>
+    <img src="./img/25.webp">
+    <h2>IS, Sprite Animaiton</h2>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    
+</body>
+</html>
