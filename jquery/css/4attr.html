@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<!-- jquery에서 attr를 이용해서 다중 선언을 할수 있다. -->
+<body>
+    <div class="exheight">
+
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $(".exheight").css("height", "200px");
+            // $(".exheight").css("background", "darkorange");
+
+            // 배열 방식
+            $(".exheight").css({
+                "background": "darkorange",
+                "height": "200px"
+            });
+
+            // attr방식
+            // $(".exheight").attr("style", "background: darkorange; height: 200px;");
+
+        })
+
+    </script>
+</body>
+</html>

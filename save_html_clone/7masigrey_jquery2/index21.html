@@ -17,12 +17,11 @@
         nav ul { display: flex; justify-content: center; align-items: center;}
         nav ul img {margin-right: auto; margin-left:20px}
 
-        nav #menu_wrap { height: 50px; margin-bottom: 17px;}
-
-        .menu { width:80px; margin:10px 30px; position: relative; margin-bottom: 20px;}
-        .menu:hover li {display: block;}
-        /* nav ul li:hover .menu li {display: block;} */
-        .menu li {display: none;}
+        nav #menu_wrap { height: 50px; margin-bottom: 17px; }
+        nav #menu_wrap>li>a { width:80px; margin:10px 30px; margin-bottom: 20px; font-size: 18px; display: block; text-align: center; white-space: nowrap; text-decoration: none; color:black}
+        nav>ul ul {position: absolute; display:none; z-index: 5; background: #fff; width:7.5%}
+        nav ul ul li {width:100%;}
+        nav ul ul a {text-decoration:none; display: block; text-align: center;}
 
         main .swiper-button-prev { background:url(./img/btn_arrow.png) no-repeat; width:55px; height:98px; background-size: 196%; position: absolute; left:10%;}
         main .swiper-button-next { background:url(./img/btn_arrow.png) no-repeat -54px 0px; width:55px; height:98px; background-size: 196%; position: absolute; right:10%}
@@ -65,7 +64,7 @@
         #main_banner ul li:nth-child(6) h3 { color: white; font-size: 25px; font-weight: normal;}
         #main_banner ul li:nth-child(6) div:nth-child(3) { width:50px; height: 1px; background: #00BFB2; margin:20px 0}
         #main_banner ul li:nth-child(6) p {color: #fff; text-align:center}
-        #main_banner ul li:nth-child(6) form input { }
+        #main_banner ul li:nth-child(6) form input {  }
         #main_banner ul li:nth-child(6) form div { background: url();}
 
 
@@ -132,7 +131,8 @@
             <ul id="menu_wrap">
                 <img src="./img/logo.png" alt="#">
                 <li>
-                    <ul class="menu">마시그레이
+                  <a href="#">마시그레이</a>
+                    <ul class="menu">
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
@@ -141,7 +141,8 @@
                     </ul>
                 </li>
                 <li>
-                    <ul class="menu">메뉴
+                  <a href="#">메뉴</a>
+                    <ul class="menu">
                         <li><a herf="#">메뉴1</a></li>
                         <li><a herf="#">메뉴1</a></li>
                         <li><a herf="#">메뉴</a></li>
@@ -150,7 +151,8 @@
                     </ul>
                 </li>
                 <li>
-                    <ul class="menu">프랜차이즈
+                  <a href="#">프랜차이즈</a>
+                    <ul class="menu">
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
@@ -159,7 +161,8 @@
                     </ul>
                 </li>
                 <li>
-                    <ul class="menu">매장안내
+                  <a href="#">매장안내</a>
+                    <ul class="menu">
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
@@ -168,7 +171,8 @@
                     </ul>
                 </li>
                 <li>
-                    <ul class="menu">공지사항
+                  <a href="#">공지사항</a>
+                    <ul class="menu">
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
@@ -177,7 +181,8 @@
                     </ul>
                 </li>
                 <li>
-                    <ul class="menu">고객의소리
+                  <a href="#">고객의소리</a>
+                    <ul class="menu">
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
                         <li><a herf="#">메뉴</a></li>
@@ -385,7 +390,24 @@
                 </div>
             </section>
         </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $("nav>ul>li").mouseover(function(){
+        $("nav ul ul").hide();
+        $("ul ul").show();
+        // 이부분에 header height넣어서 일정 공간 차지하게 하기
+        // $("header").attr("style", "height: 280px;");
+        
+        
 
+    })
+    // 2뎁스 메뉴 벗어날때 안보이게
+    $("nav ul").mouseleave(function(){
+        $("ul ul").hide();
+        // $("header").attr("style", "height: fit-content");
+    })
+    </script>
+      
     <script>
           const swiper = new Swiper(".s_first", {
             // Optional parameters
