@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션 예제 - 픽토그램 그리기</title>
+    <style>
+        body {padding-bottom:400px}
+        #stage {border:1px dashed gray; padding:20px; position: relative; width:234px}
+        #stage #girl {position: absolute; left:150px; top:20px} 
+        ul {border:1px solid red; padding:0; margin:0; width:100px; height:250px; position: relative;}
+        li {list-style: none; background:#000; position: absolute; text-indent: -9999px; overflow: hidden;}
+        li:nth-child(1) {width:47px; height:47px; left:27px; border-radius: 40px;}
+        /* 
+            - 어깨 : 60 x 50(top: 50px)
+            - 팔 : 20 x 90
+            - 배 : 50 x 50 (top: 50px)
+            - 다리 : 22 x 100
+        */
+        li:nth-child(2), li:nth-child(3) {width:20px; height:90px; border-radius: 22px 0 22px 22px; top:50px;}
+        li:nth-child(3) {right:0; border-radius: 0 22px 22px 22px;}
+        li:nth-child(4) {width:60px; height:50px; top:50px; left:20px}
+        li:nth-child(5) {width:50px; height:50px; top:100px; left:25px}
+        li:nth-child(6), li:nth-child(7) {width:22px; height:100px; border-radius:0 0 22px 22px; left:25px; bottom:0;}
+        li:nth-child(7) {right:25px; left:auto; }
+        /* 여자 */
+        #girl li:nth-child(2) {rotate:15deg; left:2px; top:49px;}
+        #girl li:nth-child(3) {rotate:-15deg; right:2px; top:49px;}
+        #girl li:nth-child(5) {border-bottom:80px solid #000; border-left:21px solid transparent; border-right:21px solid transparent; border-top:none; width:50px; height:0; background:none; left:4px}
+
+        #ex span {width:0; height:0; border:100px solid red; display: inline-block;}
+        #ex span:nth-child(1) {border-right : 100px solid orange; border-bottom: 100px solid green; border-left:100px solid blue;}
+        #ex span:nth-child(2) {border-top:100px solid transparent; border-bottom:100px solid transparent; border-right:none}
+        #ex span:nth-child(3) {border-right:100px solid orange; border-bottom:100px solid blue; border-left:100px solid green; width:50px; height:50px}
+        #ex span:nth-child(4) {border-bottom:100px solid red; border-left:100px solid transparent; border-right:100px solid transparent; border-top:none; width:50px;}
+    </style>
+</head>
+<body>
+<h1>포지션 예제 - 픽토그램 그리기</h1>
+<img src="img/10.png">
+<div id="stage">
+    <ul id="man">
+        <li>머리</li>
+        <li>왼팔</li>
+        <li>오른팔</li>
+        <li>어깨</li>
+        <li>배</li>
+        <li>왼다리</li>
+        <li>오른다리</li>
+    </ul>
+    <ul id="girl">
+        <li>머리</li>
+        <li>왼팔</li>
+        <li>오른팔</li>
+        <li>어깨</li>
+        <li>배</li>
+        <li>왼다리</li>
+        <li>오른다리</li>
+    </ul>
+</div>
+
+<h2>보더를 활용한 삼각형/사다리꼴 그리기</h2>
+<div id="ex">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>

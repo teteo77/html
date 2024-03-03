@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT&G 장학재단</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {padding:0; margin:0; list-style: none; box-sizing: border-box;}
+        body {font-family: "Noto Sans KR", sans-serif;}
+        a {text-decoration: none;}
+        summary, button, label {cursor: pointer;}
+        .screen_out {display: none;}
+        header {height:100px;display: flex; justify-content: space-between; align-items: center; max-width:1440px; margin:auto; padding:0 20px;}
+        header h1 {}
+        header h1 a {display: block; width:174px; height:43px; background:url(img/port_logo.png); text-indent: -9999px; overflow: hidden;}
+        header nav {}
+        /* 메인메뉴 */
+        header nav .main_menu {display: flex; gap:50px}
+        header nav .main_menu::after {content:""; position: absolute; width:100%; height:300px; background:#fff; left:0; top:101px; pointer-events: none; display: none;}
+        header nav .main_menu:hover::after {display: block;}
+        header nav .main_menu>li {position: relative;}
+        header nav .main_menu>li>a {height:100px; display: flex; align-items: center; font-weight: 600; color:#111; font-size:20px; font-weight: 600;}
+        header nav .main_menu>li:last-child>a {color: #2e84f5;}
+        header nav .main_menu>li:last-child>a::before {content:url(img/port_iconLibrary.svg); width:36px; height:36px; margin-right:10px}
+        header nav .main_menu>li+li::before {content:""; position: absolute; width:4px; height:11px; background:url(img/port_gnbDots.svg); top:45px; margin-left:-27px}
+        header nav .main_menu>li::after {content:""; position: absolute; width:0; height:3px; background:#2e84f5; transition: ease all .3s;margin-top:-3px;}
+        header nav .main_menu>li:hover::after {width:100%;}
+        /* 서브메뉴 */
+        header nav .main_menu ul {display: none; width:123.61px;  top:100px; position: absolute; height:300px; margin-left:-25px; padding-top:15px; z-index: 300;}
+        header nav .main_menu ul a {display: block; text-align: center; padding: 5px 0; color: #666;}
+        header nav .main_menu ul a:hover {color:#000; text-decoration: underline;}
+        header nav .main_menu:hover ul {display: block;}
+        header .top_menu {display: flex; gap:20px; align-items: center;}
+        header .top_menu a {font-size:15px; color:#666; font-weight: 400;}
+        header .top_menu i {color:#666;}
+        header .top_menu>li:not(li:nth-child(2)~li) {margin-right:10px;}
+        header .top_menu>li:not(li:nth-child(2)~li)::after {content:""; position: absolute; height:16px; border-left:1px solid #d9d9d9; margin:5px 0 0 15px}
+        header .top_menu select {border:2px solid #e8e8e8; border-radius: 50px; width:134px; height:28px; font-size:12px; color:#666; padding:2px 0 0 10px;}
+        header .top_menu summary {text-indent: -999px; overflow: hidden; width:18px; height:28px; background:url(img/port_iconSearch.svg) center/contain no-repeat}
+        header .top_menu details>div {background:#fff; height:195px; width:100%; position: absolute; top:101px; left:0; display: flex; justify-content: center; align-items: center;z-index: 200;}
+        header .top_menu details::after {position: fixed; left:0; top:101px; width:100%; background:rgba(0,0,0,.5); height:calc(100vh - 101px) ; border:1px solid red; content:""; display: none;}
+        header .top_menu details[open]::after {display: block;}
+        header .top_menu details div div:nth-of-type(1) {width:100%; max-width: 650px; position: absolute; display: flex;justify-content: flex-end;top:76px}
+        header .top_menu details div div:last-child {position: absolute; width:100%; max-width: 1440px; top:20px; padding:0 20px; display: flex; justify-content: flex-end;}
+        header .top_menu details input {width:100%; max-width:650px; height:44px; background:#f6f6f6; border-radius: 100px; border:none; font-size:18px; color:#111; display: block; padding:2px 0 0 30px}
+        header .top_menu details input::placeholder {transform: translateY(3px);}
+        header .top_menu details button[type=submit] {height:44px; background:#2E84F5; border-radius: 100px; border:none; font-size:18px; color:#fff; padding:2px 30px 0; position: absolute;}
+        header .top_menu details button[type=submit]::before {content:url(img/port_iconSearchW.svg); width:16px; margin-right:5px;}
+        header .top_menu details button[type=button] {background:url(img/port_iconCloseB.svg) center/14px no-repeat; border:none; width:20px; height:20px; text-indent: -9999px; overflow: hidden;}
+        header .burger {border:none; background:transparent;  width:20px; height:28px; position: relative;}
+        header .burger::before,
+        header .burger::after {content:""; position: absolute; width:18px; height:3px; background: #8bd0be; left:0; top:5px; box-shadow: 0 12px 0 0 #8bd0be;}
+        header .burger::after {width:13px; top:11px; box-shadow: none;}
+        main {border-top:1px solid #ddd; border-bottom:1px solid #ddd; display: flex; gap:15px; justify-content: center; padding:40px 20px;}
+        main #notice {width:820px; height:740px; background:url(img/port_main_1.png) center/cover; border-radius: 10px; padding:20px; display: flex; flex-direction: column; justify-content: space-between;}
+        main #notice>div:nth-of-type(2) {background:#fff; border-radius: 10px;}
+        main #info {max-width:calc(1440px - 820px - 15px - 40px); width:100%;height:740px;}
+        main #info>ul {display: flex; background:#f2f2f2; border-radius: 100px;;}
+        main #info>ul>li {flex:1;}
+        main #info>ul>li input {display: none;}
+        main #info>ul>li label {display: flex;width:100%; height: 50px; justify-content: center; align-items: center; font-size:20px; color:#333; font-weight: 500;}
+        main #info article+article {display: none;}
+        main>button {position: fixed; right:20px; bottom:150px;}
+        main>button:nth-of-type(1) {margin-bottom:50px;}
+    </style>
+</head>
+<body>
+<header>
+    <h1><a href="#">KT&G 장학재단 홈</a></h1>
+    <nav>
+        <h2 class="screen_out">메인메뉴</h2>
+        <ul class="main_menu">
+            <li>
+                <a href="#">사업소개</a>
+                <ul class="sub_menu">
+                    <li><a href="#">상상장학사업</a></li>
+                    <li><a href="#">특성화장학사업</a></li>
+                    <li><a href="#">사업 아카이브</a></li>
+                    <li><a href="#">지원현황</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">장학신청</a>
+                <ul class="sub_menu">
+                    <li><a href="#">신규선발</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">커뮤니티</a>
+                <ul class="sub_menu">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">온라인 문의</a></li>
+                    <li><a href="#">뉴스룸</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">재단소개</a>
+                <ul class="sub_menu">
+                    <li><a href="#">인사말</a></li>
+                    <li><a href="#">히스토리</a></li>
+                    <li><a href="#">CI소개</a></li>
+                    <li><a href="#">홍보 영상</a></li>
+                    <li><a href="#">정보 공개</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">전자도서관</a>
+            </li>
+        </ul>
+    </nav>
+    <h2 class="screen_out">탑메뉴</h2>
+    <ul class="top_menu">
+        <li><a href="#"><i class="fa-solid fa-house"></i> <span class="screen_out">첫페이지</span></a></li>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li>
+            <select>
+                <option>한국어</option>
+                <option>English</option>
+                <option>bahasa indonesia</option>
+                <option>pyccknn</option>
+                <option>turkee</option>
+                <option>kaaak</option>
+            </select>
+        </li>
+        <li><details>
+            <summary>검색</summary>
+            <div>
+                <input type="text" placeholder="검색어를 입력해 주세요">
+                <div><button type="submit">검색</button></div>
+                <div><button type="button">닫기</button></div>
+            </div>
+        </details></li>
+        <li><button class="burger"><span class="screen_out">메뉴</span></button></li>
+    </ul>
+</header>
+<main>
+    <section id="notice">
+        <h2 class="screen_out">공지사항</h2>
+        <div>
+            <ul>
+                <li>
+                    <p>모두의 배움에 대한 상상에 답하다,</p> 
+                    <p>KT&G 장학재단</p>
+                    <P>KT&G장학재단이 젊은 미래를 지원합니다.</P>
+                </li>
+            </ul>
+            <div>페이지네이션 자리</div>
+        </div>
+        <div>
+            <h2>공지사항</h2>
+            <ul>
+                <li>[공지]2024 문화예술 장학사업 자격유지 심사 2024-02-22</li>
+                <li>멘토/멘티 매칭(변경) 신청 방법 2024-01-25</li>
+                <li>이메일 사용 중단 안내 2024-02-16</li>
+            </ul>
+            <button>이전</button>
+            <button>다음</button>
+        </div>
+    </section>
+    <section id="info">
+        <h2 class="screen_out">주요서비스 안내</h2>
+        <ul>
+            <li><input type="radio" id="info_work" name="tab_menu"><label for="info_work">사업소개</label></li>
+            <li><input type="radio" id="info_plan" name="tab_menu"><label for="info_plan">전체일정</label></li>
+            <li><input type="radio" id="info_news" name="tab_menu"><label for="info_news">뉴스룸</label></li>
+        </ul>
+        <article>
+            <h3>사업소개</h3>
+            <ul>
+                <li>
+                    <p>중,고교 장학사업</p>
+                    <p>자신의 잠재력을 발견할 수 있도록 학습활동을 지원합니다.</p>
+                    <a href="#">중등 장학사업</a>
+                </li>
+                <li>
+                    <p>대학 장학사업</p>
+                    <p>안정적인 학업을 지속할 수 있도록 학습활동을 지원합니다.</p>
+                    <a href="#">대학 장학사업</a>
+                </li> 
+                <li>
+                    <p>특성화 장학사업</p>
+                    <p>다양한 분야에 있는 학생들이 비전을 이룰 수 있도록 지원합니다.</p>
+                    <a href="#">특성화 장학사업</a>
+                </li> 
+                <li>
+                    <p>커뮤니케이션</p>
+                    <p>우수한 교육 프로그램과 다양한 체험 콘텐츠를 제공합니다.</p>
+                    <a href="#">커뮤니케이션</a>
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h3>전체 일정</h3>
+            <button>이전월</button>
+            <select>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+            </select>
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            <button>다음월</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href="">1</a></td>
+                        <td><a href="">2</a></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><a href="">3</a></td>
+                        <td><a href="">4</a></td>
+                        <td><a href="">5</a></td>
+                        <td><a href="">6</a></td>
+                        <td><a href="">7</a></td>
+                        <td><a href="">8</a></td>
+                        <td><a href="">9</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">10</a></td>
+                        <td><a href="">11</a></td>
+                        <td><a href="">12</a></td>
+                        <td><a href="">13</a></td>
+                        <td><a href="">14</a></td>
+                        <td><a href="">15</a></td>
+                        <td><a href="">16</a></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><a href="">17</a></td>
+                        <td><a href="">18</a></td>
+                        <td><a href="">19</a></td>
+                        <td><a href="">20</a></td>
+                        <td><a href="">21</a></td>
+                        <td><a href="">22</a></td>
+                        <td><a href="">23</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">24</a></td>
+                        <td><a href="">25</a></td>
+                        <td><a href="">26</a></td>
+                        <td><a href="">27</a></td>
+                        <td><a href="">28</a></td>
+                        <td><a href="">29</a></td>
+                        <td><a href="">30</a></td>
+
+                    </tr>
+                    <tr>
+                        <td><a href="">31</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>2024-03-03(일)</p>
+            <p>일정이 존재하지 않습니다.</p>
+        </article>
+        <article>
+            <h3>뉴스룸</h3>
+            <ul>
+                <li>
+                    <img src="#" alt="장학증서 수여식">
+                    <p>과학기술 인재육성 장학사업 장학증서 수여식 개최</p>
+                    <p>KT&G장학재단은 KIST미래재단과 협약을 맺고 과학기술 인재육성 장학사업에 총 1억원을 기부했다. KIST 장학심사위원회를 통하여 국내 및 외국인 유학생 등 총 33명의 장학생을 선발하였다. [관련기사 : 세계일보]</p>
+                    <p>등록일 : 2024-01-10</p>
+                </li>
+                <li>
+                    <img src="#" alt="장학증서 수여식">
+                    <p>과학기술 인재육성 장학사업 장학증서 수여식 개최</p>
+                    <p>KT&G장학재단은 KIST미래재단과 협약을 맺고 과학기술 인재육성 장학사업에 총 1억원을 기부했다. KIST 장학심사위원회를 통하여 국내 및 외국인 유학생 등 총 33명의 장학생을 선발하였다. [관련기사 : 세계일보]</p>
+                    <p>등록일 : 2024-01-10</p>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <button>전자도서관 바로가기</button>    
+    <button>온라인 문의 바로가기</button> 
+</main>
+<footer>
+    <h2 class="screen_out">사이트 이용안내</h2>
+    <ul class="bar">
+        <li>개인정보처리방침</li>
+        <li>이용약관</li>
+        <li>이메일 무단 수집 거부</li>
+        <li>오시는 길</li>
+    </ul>
+    <address>[04785] 서울특별시 성동구 뚝섬로 13길 38 (성수동2가, 상상플래닛) 5층 501호 TEL 070-4124-6451~2</address>
+    <p>Copyright &copy; 2023 KT&G장학재단. All Right reserved.</p>
+    <h3 class="screen_out">관련사이트 바로가기</h3>
+    <ul>
+        <li><a href="#">유튜브</a></li>
+        <li>   
+            <select>
+                <option>관련 사이트</option>
+                <option>KT&G</option>
+                <option>KGC 인삼공사</option>
+                <option>KT&G 복지재단</option>
+                <option>KT&G 상상마당</option>
+                <option>KT&G 상상univ</option>
+                <option>서울시 교육청</option>
+            </select>
+        </li>
+    </ul>
+</footer>
+</body>
+</html>

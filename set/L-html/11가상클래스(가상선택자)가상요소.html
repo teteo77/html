@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스(가상선택자) / 가상요소</title>
+    <style>
+        #ex1 li:first-child {border:1px solid green}
+        #ex1 li:last-child {border:1px solid blue}
+        #ex1 li:nth-child(2) {border:1px solid red}
+        .box:nth-of-type(2) {border: 1px dashed red}
+        a:link {color: gray; text-decoration: none;}
+        a:visited {color: red; }
+        a:hover {color:blue; text-decoration: underline; font-size:20px;}
+        a:active {background:blue; color:#fff;}
+        button {background:#ccc; color:#000; border:none; padding:5px 10px}
+        button:focus {background:#000; color:#ccc;}
+        input[type=text]:focus {width:100%}
+        input + span {color:gray;}
+        input:checked + span {color:#000; font-weight: bold;}
+        #ex1 li:empty {background:red}
+        #tag li:first-child::before {border:1px solid red; content: ""; margin-right:20px}
+        #tag li:first-child::after {border:1px solid blue; content: "나는 가상요소"; margin-left:20px}
+        #tag input::placeholder {color:red;}
+    </style>
+</head>
+<body>
+<h1>가상클래스(가상선택자) / 가상요소</h1>
+<h2 class="box">가상클래스(가상선택자)</h2>
+<h2 class="box">가상클래스(가상선택자)</h2>
+<ul id="ex1" class="box">
+    <li>:first-child / :last-child : 형제번호가 1번째/마지막인 요소</li>
+    <li>:nth-child(n) : 형제번호가 n번째인 요소</li>
+    <li>:nth-of-type(n) : 형제중의 같은 태그!!!의 순번이 n번째인 요소</li>
+    <li>:link / :visited : a 태그의 링크주소가 방문하지 않은 경우/ 방문했던 주소인 경우 <a href="http://naver.com">네이버</a> <a href="http://naver.com">네이버</a></li>
+    <li>:hover / :active : 마우스 올렸을 때/ 마우스 눌렀을 때</li>
+    <li>:focus : 포커스(활성화) 되었을 때 <button>버튼</button> <input type="text"></li>
+    <li>:checked : 체크가 되었을 때 <input type="checkbox"> <span>동의합니다.</span> <span>나는 다른 span</span></li>
+    <li>:empty : 자식이 비어있을 때</li>
+    <li></li>
+</ul>
+<h2>가상요소</h2>
+<ul class="box" id="tag">
+    <li>::before : 선택자 앞부분에 가상의 태그를 삽입</li>
+    <li>::after : 선택자 앞부분에 가상의 태그를 삽입</li>
+    <li>::placeholder : input의 placeholder 선택자 <input placeholder="아이디"></li>
+    <li>가상요소는 content 속성은 필수, 특정태그(input, img, video...)는 작동안함</li>
+</ul>
+</body>
+</html>

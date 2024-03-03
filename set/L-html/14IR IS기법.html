@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR/IS 기법</title>
+    <style>
+        span {border:1px solid red; width:50px; height:73px; display: inline-block; text-indent: -9999px; overflow: hidden; background:url(img/weather.png) -33px -42px}
+        #weather {padding:0; display: flex; flex-wrap: wrap;gap:10px}
+        #weather li {border:1px dashed gray; list-style: none; width:66px; height:60px; background:url(img/weather.png) -26px -38px; text-indent: -9999px; overflow: hidden;}
+        #weather li:nth-child(2) {background-position: -108px -38px;}
+        #weather li:nth-child(3) {background-position: -189px -38px;}
+        #weather li:nth-child(4) {background-position: -269px -38px;}
+        #weather li:nth-child(5) {background-position: -349px -38px;}
+        #weather li:nth-child(6) {background-position: -430px -38px;}
+        #weather li:nth-child(7) {background-position: -25px -160px;}
+        #weather li:nth-child(8) {background-position: -106px -160px;}
+        #weather li:nth-child(9) {background-position: -186px -160px;}
+        #weather li:nth-child(10) {background-position: -267px -160px;}
+        #weather li:nth-child(11) {background-position: -347px -160px;}
+        #weather li:nth-child(12) {background-position: -425px -155px;}
+    </style>
+</head>
+<body>
+<h1>IR/IS 기법</h1>
+<h2>IR(Image Replacement), 이미지 대치기법</h2>
+<ul>
+    <li>IR기법이란 마크업(html)은 텍스트로 하고 CSS에서는 이미지로 교체하는 기법</li>
+    <li>마크업 : 오늘의 날씨 : 맑음</li>
+    <li>CSS : <span>오늘의 날씨 : 맑음</span></li>
+</ul>
+<h2>IS(Image Sprite)기법</h2>
+<ul>
+    <li>과거에는 이미지용량을 줄이는게 최적화였지만 현재에는 용량보다 갯수를 줄이는게 최적화에 유리</li>
+    <li>날씨범례
+        <ul id="weather">
+            <li>맑음(낮)</li>
+            <li>맑음(밤)</li>
+            <li>구름조금(낮)</li>
+            <li>구름조금(밤)</li>
+            <li>구름많음(낮)</li>
+            <li>구름많음(밤)</li>
+            <li>흐림</li>
+            <li>약한비</li>
+            <li>비</li>
+            <li>강한비</li>
+            <li>약한눈</li>
+            <li>눈</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹폰트 / 그래픽폰트(폰트어썸)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'Warhaven';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'Warhaven';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenR.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'SUITE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Light.woff2') format('woff2');
+            font-weight: 300;
+        }
+        @font-face {
+            font-family: 'SUITE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'SUITE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Medium.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'SUITE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: 'SUITE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-SemiBold.woff2') format('woff2');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'SUITE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Bold.woff2') format('woff2');
+            font-weight: 800;
+        }
+        @font-face {
+            font-family: 'SUITE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Heavy.woff2') format('woff2');
+            font-weight: 900;
+        }
+        #noto {font-family: "Noto Sans KR"; font-size:40px}
+        #noto li:nth-child(1) {font-weight: 100;}
+        #noto li:nth-child(2) {font-weight: 200;}
+        #noto li:nth-child(3) {font-weight: 300;}
+        #noto li:nth-child(4) {font-weight: 400;}
+        #noto li:nth-child(5) {font-weight: 500;}
+        #noto li:nth-child(6) {font-weight: 600;}
+        #noto li:nth-child(7) {font-weight: 700;}
+        #noto li:nth-child(8) {font-weight: 800;}
+        #noto li:nth-child(9) {font-weight: 900;}
+
+        #noon {font-size:40px}
+        #noon li:nth-child(1) {font-family: Warhaven; font-weight: 400;}
+        #noon li:nth-child(2) {font-family: Warhaven; font-weight: 700;}
+        #noon li:nth-child(3) {font-family: SUITE; font-weight: 300;}
+        #noon li:nth-child(4) {font-family: SUITE; font-weight: 400;}
+        #noon li:nth-child(5) {font-family: SUITE; font-weight: 500;}
+        #noon li:nth-child(6) {font-family: SUITE; font-weight: 600;}
+        #noon li:nth-child(7) {font-family: SUITE; font-weight: 700;}
+        #noon li:nth-child(8) {font-family: SUITE; font-weight: 800;}
+        #noon li:nth-child(9) {font-family: SUITE; font-weight: 900;}
+        #fa {font-size:40px}
+        #fa .fa-house {color:red}
+        #fa .fa-address-card {color:red; font-size:20px}
+    </style>
+</head>
+<body>
+<h1>웹폰트 / 그래픽폰트(폰트어썸)</h1>
+<h2>웹폰트</h2>
+<ul>
+    <li>웹상에 있는 폰트파일을 연결(다운)하여 표현하는 방식</li>
+    <li>구글웹폰트 : https://fonts.google.com
+        <ul id="noto">
+            <li>노토산스 코리아 100</li>
+            <li>노토산스 코리아 200</li>
+            <li>노토산스 코리아 300</li>
+            <li>노토산스 코리아 400</li>
+            <li>노토산스 코리아 500</li>
+            <li>노토산스 코리아 600</li>
+            <li>노토산스 코리아 700</li>
+            <li>노토산스 코리아 800</li>
+            <li>노토산스 코리아 900</li>
+        </ul>
+    </li>
+    <li>눈누 : https://noonnu.cc/
+        <ul id="noon">
+            <li>워헤이븐 400</li>
+            <li>워헤이븐 700</li>
+            <li>스위트 300</li>
+            <li>스위트 400</li>
+            <li>스위트 500</li>
+            <li>스위트 600</li>
+            <li>스위트 700</li>
+            <li>스위트 800</li>
+            <li>스위트 900</li>
+        </ul>
+    </li>
+</ul>
+<h2>그래픽폰트(폰트어썸)</h2>
+<p></p>
+<ul id="fa">
+    <li><i class="fa-solid fa-house"></i> Home</li>
+    <li><i class="fa-solid fa-address-card"></i> About</li>
+    <li><i class="fa-solid fa-address-book"></i> Portfolio</li>
+    <li><i class="fa-solid fa-file-signature"></i> Contact</li>
+</ul>
+</body>
+</html>

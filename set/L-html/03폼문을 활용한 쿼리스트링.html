@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼문을 활용한 쿼리스트링</title>
+</head>
+<body>
+<h1>폼문을 활용한 쿼리스트링</h1>  
+<h2>구글 통합검색</h2>  
+<form action="https://www.google.com/search">
+    <fieldset>
+        <legend>구글 통합 검색</legend>
+        <input type="text" name="q">
+        <button>통합검색</button>
+    </fieldset>
+</form>
+<h2>네이버 통합검색</h2>  
+<form action="https://search.naver.com/search.naver">
+    <fieldset>
+        <legend>네이버 통합 검색</legend>
+        <input type="text" name="query">
+        <button>통합검색</button>
+    </fieldset>
+</form>
+<h2>네이버 카테고리검색</h2>  
+<form action="https://search.naver.com/search.naver">
+    <fieldset>
+        <legend>네이버 카테고리 검색</legend>
+        <input type="text" name="query">
+        <select name="where">
+            <option value="nexearch">통합검색</option>
+            <option value="kin">지식인</option>
+            <option value="image">이미지</option>
+        </select>
+        <button>검색</button>
+    </fieldset>
+</form>
+</body>
+</html>

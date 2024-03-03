@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 주요속성</title>
+    <style>
+        #border li {border:3px solid red;}
+        #border li:nth-child(2) {border-color:green}
+        #border li:nth-child(3) {border-radius:10px 0 10px}
+        #border li:nth-child(4) {border:none; border-bottom:3px dashed green}
+
+        #font li:nth-child(1) {color:red;}
+        #font li:nth-child(5) {font-family: "noto sans serif", 굴림, serif; font-size:20px; font-weight: bold;}
+        #font li:nth-child(6) {line-height: 2;}
+        #font li:nth-child(7) {font : bold italic 20px/20px 궁서체, serif}
+        #font li:nth-child(10) {text-align:justify}
+        #font li:nth-child(11) {pointer-events: none;}
+        #font li:nth-child(13) {text-shadow : 2px -5px 0 red, 4px -7px 0 green}
+        a {pointer-events: none;}
+        #bg li {border:1px solid red; height:100px; background-image: url(01.jpg);}
+        #bg li:nth-child(2) {background-repeat: no-repeat;}
+        #bg li:nth-child(3) {background-repeat: no-repeat; background-size:cover}
+        #bg li:nth-child(4) {background-repeat: no-repeat; background-size:50px; background-position: bottom left}
+        #bg li:nth-child(5) {background-color:red; background-image: none;}
+        #bg li:nth-child(6) {background:none; background: url(01.jpg) no-repeat center right / 50px 50px}
+        #size li {border:1px solid green}
+        #size li:nth-child(1) {width:50%; height: 50px}
+        #size li:nth-child(2) {min-width:400px; width: 300px;}
+        #size li:nth-child(3) {max-width:400px}
+        #size li:nth-child(4) {margin:20px; padding:20px}
+        #size li:nth-child(5) {width:100px; height:50px; overflow: hidden;}
+        #dis span {border:1px solid red; width:100px; display: block;}
+        #dis div {border:1px solid red;}
+        #dis strong {display: none;}
+        #po span {background:red; color:#fff; padding: 10px; position: absolute; left:10px; top:100px; }
+        #po strong {background:red; color:#fff; padding: 10px; position: fixed; left:10px; top:100px; }
+        #po li:nth-child(4) {position: relative;}
+        #po em {background:red; color:#fff; padding: 10px; position: absolute; left:10px; top:10px; }
+    </style>
+</head>
+<body>
+<h1>CSS 주요속성</h1>
+<h2>외곽선(border)</h2>
+<ul id="border">
+    <li>border: 1px solid red;  // 선두께, 선타입(solid, dotted, dashed), 색상</li>
+    <li>border-color : green;  // 선색</li>
+    <li>border-radius : 10px   // 둥근모서리</li>
+    <li>border-top/bottom/left/right: 2px solid green // 한쪽방향에 대한 선설정</li>
+</ul>
+<h2>글자(font)</h2>
+<ul id="font">
+    <li>color : red  // 글자색</li>
+    <li>font-size : 20px // 글자크기</li>
+    <li>font-weight : bold // 글자 굵기(100~900)</li>
+    <li>font-style : italic // 이탤릭체 설정(italic, normal)</li>
+    <li>font-family : 궁서체 // 폰트(서체) 지정, 웹표준에서 최소 2개이상 지정을 권고</li>
+    <li>line-height : 100px <br>// 줄간격</li>
+    <li>font : bold italic 20px/20px 궁서체, serif // 폰트 대표속성</li>
+    <li>text-indent : 50px // 들여쓰기, 내어쓰기</li>
+    <li>letter-spacing: 10px // 자간설정</li>
+    <li>text-align : center // 글자정렬(left, center, right, justify) </li>
+    <li>user-select : none // 선택(드래그)방지</li>
+    <li>pointer-events : none // 이벤트(클릭, 드래그, 선택, 작동...) 방지</li>
+    <li>text-shadow : 2px 2px 4px #000 // 글자 그림자 효과</li>
+    <li>text-decoration : underline // 밑줄설정(none)</li>
+</ul>
+<h2>배경</h2>
+<ul id="bg">
+    <li>background-image : url(1.jpg) // 배경이미지 지정</li>
+    <li>background-repeat : no-repeat // 배경이미지 반복설정</li>
+    <li>background-size : 100px, 100%, cover, contain // 배경사이즈</li>
+    <li>background-position : center center, 50px 30% // 배경위치</li>
+    <li>backgound-color : red // 배경색 지정</li>
+    <li>background : none, url(01.jpg) no-repeat center right / 50px 50px // 배경 대표속성</li>
+    <li>background-attachment: fixed; // 배경이미지 고정</li>
+</ul>
+<h2>크기/여백</h2>
+<ul id="size">
+    <li>width / height : 100px, 100% // 폭, 높이</li>
+    <li>min-width / min-height : 400px // 최솟값</li>
+    <li>max-width / max-height : 400px // 최댓값</li>
+    <li>margin / padding : 20px // 선바같여백, 선안쪽여백</li>
+    <li>overflow : hidden // 넘치는 콘텐츠(내용)의 보임여부 설정</li>
+</ul>
+<h2>display 속성</h2>
+<ul id="dis">
+    <li>inline : <span>인라인</span>, 글자단위의 태그(a, strong, span, em...) // 크기지정 X, 여백 부분적으로 가능</li>
+    <li>block : <div>블록</div>, 박스단위의 태그(ul, li, h1~h6, form, div...) // 한줄에 한개, 크기지정 O, 여백 O </li>
+    <li>inline-block : 인라인블록, 크기지정 O, 여백지정 O, 글자정렬(img, table, input, video...)</li>
+    <li>none : 화면에 출력하지 않음 <strong>나는 안보임</strong></li>
+</ul>
+<h2>position 속성</h2>
+<ul id="po">
+    <li>static : 기본값(레이어 없이 바닥(body)에 놓여진 상태)</li>
+    <li>absolute : 레이어 개념으로 다른거의 영향을 주지 않고 개별적인 위치지정<span>absolute</span></li>
+    <li>fixed : 레이어개념으로 화면(고정)좌표로 위치지정 <strong>fixed</strong></li>
+    <li>relative : 레이어 속성을 주지 않고 자손의 좌표의 기준이 되게 지정
+        <em>absolute</em>
+    </li>
+</ul>
+<a href="http://naver.com">네이버</a>
+</body>
+</html>

@@ -150,3 +150,30 @@ img태그에 쓰이는 object-fit: cover; object-position: center;
     ㄴ 정리하기
 
 배경이미지를 줄때 background로 줘야 하나요? img로 하니까 잘 안되요
+
+header .top_menu>li:not(li:nth-child(2)~li) { border: 1px solid red }
+    ㄴ port에 나온거 보고 정리하기
+
+placeholder 높낮이 안맞을떄 trasnform으로 높낮이 조절 해주면 된다.
+header .top_menu details input::placeholder
+    ㄴ 정리하기
+     ㄴport\index2.html
+
+검색 아이콘 버튼 눌렀을때 검색창 나오게 하기 
+header .top_menu summary
+    ㄴ ㄴport\index2.html
+
+after before는 필수적으로 contact가 들어가야 한다.
+    ㄴ 정리하기
+
+
+header .top_menu details[open]::after {display: block;}
+    ㄴ C:\Users\TJ\ajh\port\index3-원본.html  [open]속성 정리하기
+
+after before 가상 요소를 쓰면 상황에 따라 div가 덜 들어 갈수 있다.
+    ㄴ 잘 활용 해야 한다. 아직은 이해 못했다.
+
+category 서브메뉴 정리하기
+    ㄴ port\index3-원본.html 보고 정리하기
+    ㄴ port\index4-원본.html 보고 정리하기
+

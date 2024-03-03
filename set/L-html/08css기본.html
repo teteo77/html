@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본</title>
+    <link href="08.css" rel="stylesheet">
+    <style>
+        /*  {}
+        li {}
+        #green {color:green}
+        /* .blue {color:blue} */
+        /* ul > span{border: 3px solid red;}
+        li:nth-child(3)~li {border:3px solid red;}
+        ul:nth-child(5) li:nth-child(1) {border:3px solid green;} */
+        /* ul:nth-child(3) li:nth-child(3) {border:3px solid blue;} */
+        /* input+input {border:3px solid purple}
+        h1+h2 {border:3px solid orange;}
+        ul:nth-child(3) li:nth-child(2)~li {border:3px solid navy;}
+        ul:nth-child(3) li:nth-child(2)~li, h2 {background:yellow} */ 
+        li {background:hsl(0, 100%, 50%);}
+    </style>
+</head>
+<body>
+<h1>CSS 기본</h1>
+<h2>CSS 작성방식</h2>
+<ul>
+    <li>HTML 문서에서 디자인을 꾸미는 모든 활동</li>
+    <li style="color:red">인라인 방식 : 태그(요소)에 style 속성으로 작성하는 방식, 비권고 방식</li>
+    <li>내부스타일 : style 태그로 작성하는 방식, 비권고 방식</li>
+    <li>외부스타일 : link태그로 불러오는 방식, 웹표준 권고사항</li>
+</ul>
+<h2>CSS 선택자⭐⭐⭐⭐⭐</h2>
+<ul>
+    <li>CSS 선택자란 스타일링 대상요소(태그) 또는 경로</li>
+    <li class="blue">* : 전체선택자</li>
+    <li>태그(li) : 요소선택자</li>
+    <li id="green"># : 아이디 선택자</li>
+    <li class="blue">. : 클래스 선택자</li>
+    <li>(빈칸) : 자손선택자</li>
+    <li>> : 자식선택자</li>
+    <li>:nth-child(숫자) : 형제번호가 (숫자)번째인 요소</li>
+    <li>[속성] : 속성선택자 <input type="text"> <input type="password"></li>
+    <li>+ : 형제선택자</li>
+    <li>~ : 선택자의 동생들을 선택</li>
+    <li>, : 그룹선택자</li>
+</ul>
+<h2>CSS에서의 색상표현</h2>
+<ul>
+    <li>색상명 : red</li>
+    <li>웹색상코드(16진수) : #FF000, #f00, 0~9+a~f</li>
+    <li>RGB : rgb(255,0,0)</li>
+    <li>RGBa : rgba(255,0,0,1)</li>
+</ul>
+<h2>CSS 단위</h2>
+<ul>
+    <li>pt, cm, mm... : 인쇄용, 비권고</li>
+    <li>px : 픽셀(모니터의 점한개), html 문서의 표준단위</li>
+    <li>% : (부모 요소에 대한) 배율단위</li>
+    <li>rem : 루트(html, body)가 가진 글자크기에 대한 배율단위</li>
+    <li>em : 부모가 가진 글자크기에 대한 배율단위</li>
+    <li>숫자 : x배</li>
+    <li>vh, vw : 뷰포트의 배율단위(%단위와 비슷)</li>
+</ul>
+</body>
+</html>
