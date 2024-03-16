@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .exdetails { border: 1px solid red; width:100%;}
+        .exdetails>div {background:#fff; height:195px; width:100%; position: absolute; top:101px; left:0; display: flex; justify-content: center; align-items: center;z-index: 200;}
+        .exdetails::after {position: fixed; left:0; top:101px; width:100%; background:rgba(0,0,0,.5); height:calc(100vh - 101px) ; border:1px solid red; content:""; display: none;}
+        .exdetails[open]::after {display: block;}
+        
+
+    </style>
+</head>
+<!-- 
+<details> 태그의 open 속성은 <details> 요소가 클릭하지 않아도 사용자에게 바로 보임을 명시합니다.
+open 속성은 불리언(boolean) 속성입니다.
+불리언 속성은 해당 속성을 명시하지 않으면 속성값이 자동으로 false 값을 가지게 되며, 명시하면 자동으로 true 값을 가지게 됩니다.
+    ㄴ details값에는 불리언 타입 open속성이 있는데 클릭해주면 true가 되면서 open속성이 추가 되는것 같다.
+-->
+
+<body>
+    <details class="exdetails">
+        <summary>details에 텍스트</summary>
+        <div>
+            details를 누르면 안에 내용이 보인다.
+        </div>
+    </details>
+</body>
+</html>

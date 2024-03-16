@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #exnoon li {font-size:40px}
+
+        @font-face {
+            font-family: 'Warhaven';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenR.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Warhaven';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+            font-weight: 700;
+        }
+        #exnoon li:nth-child(1) {font-family: Warhaven; font-weight: 400;}
+        #exnoon li:nth-child(2) {font-family: Warhaven; font-weight: 700;}
+
+        @font-face {
+            font-family: 'meetme';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        #exnoon li:nth-child(3) {font-family: meetme;}
+    </style>
+</head>
+<!-- WarhavenB,R이 나누어 지기 때문에 font-weight로 구분 되지만 meetme는 굵기 구분이 없어서 weight로 구분되지 않는다. -->
+<body>
+    <ul>
+        <li>눈누 : https://noonnu.cc/
+            <ul id="exnoon">
+                <li>워헤이븐 400</li>
+                <li>워헤이븐 700</li>
+                <li>밑미 폰트 normal</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

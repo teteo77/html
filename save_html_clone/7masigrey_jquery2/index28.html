@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0; padding:0;list-style: none; font-family: "Nanum Gothic";}
+        #quick_menu { position: fixed; right: 0; z-index: 2; margin:180px 10px 0 0;}
+        #quick_menu img { object-fit: cover; object-position: center; width:105px; height:105px; margin-top:10px}
+
+        header{overflow: hidden; height: 130px; width:100%; position: relative; background:white;}
+        nav { width: 1200px; margin:0 auto;}
+        nav section {height:27px; display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding:18px 0px;}
+        
+        /* nav section a { margin: 0 2px;} */
+        nav section a:nth-child(1) { width:23px; height:23px; background: url(./img/sns_blog.png);}
+        nav section a:nth-child(2) { width:23px; height:23px; background: url(./img/sns_facebook.png);}
+        nav section a:nth-child(3) { width:23px; height:23px; background: url(./img/sns_insta.png); margin-right:28px;}
+
+        nav ul { display: flex; justify-content: center; align-items: center;}
+        nav ul img {margin-right: auto; margin-left:20px}
+
+        nav #menu_wrap { height: 50px; margin-bottom: 17px; }
+        nav #menu_wrap>li>a { width:80px; margin:10px 30px; margin-bottom: 20px; font-size: 17px; display: block; text-align: center; white-space: nowrap; text-decoration: none; color:black}
+        nav>ul ul { background: #fff; width:7.5%; display: block; position: absolute; z-index: 5; margin-top: 12px;}
+        nav ul ul li { width:100%; }
+        nav ul ul a {text-decoration:none; display: block; text-align: center; width: 100%; line-height: 30px; font-size: 13px; color: #999; display: block; background: #fff; opacity:0;}
+
+
+
+        main .s_first { position: relative; top: 0px; left: 0px; width: 100%; max-width: 1986px; height: 700px}
+        main .swiper-button-prev { background:url(./img/btn_arrow.png) no-repeat; width:55px; height:98px; background-size: 196%; position: absolute; left:10%;}
+        main .swiper-button-next { background:url(./img/btn_arrow.png) no-repeat -54px 0px; width:55px; height:98px; background-size: 196%; position: absolute; right:10%}
+        .swiper-button-next::after, .swiper-button-prev::after { display: none; }
+
+        #main_banner {width: 1000px; height:646px; margin: 100px auto 100px; display: flex; flex-wrap: wrap;}
+        #main_banner ul { display: flex;  flex-wrap: wrap;}
+        #main_banner ul li {width:500px; height:323px; position: relative;  display: flex; justify-content: center; align-items: center; flex-direction: column;}
+
+        #main_banner ul #banner1 { width:500px; height: 323px; background: url(./img/mb01_bg.jpg) center/cover no-repeat;}
+
+        #main_banner ul #banner1 div:first-child { width:200px; height:47px; background: url(./img/mb01_img.png) center/cover no-repeat; margin:0 auto; display: block;}
+        #main_banner ul #banner1 div:nth-child(2) {width:50px;height: 1px; background: #fff;  margin:25px auto; display: block;}
+        #main_banner ul #banner1 a { display: flex; align-items: center; flex-direction: column; text-decoration: none; color:white}
+        #main_banner ul #banner1 p {text-align: center;}
+
+
+        #banner2 .s_forth { width: 100%; height: 100%;}
+        #banner2 .s_forth .b2s_btn{ top:16.5%}
+        #banner2 .s_forth .b2s_btnL { width:15px; height:23px; background: url(./img/btn_arrow2.png) 0px 0px/cover no-repeat;}
+        #banner2 .s_forth .b2s_btnR { width:15px; height:23px; background: url(./img/btn_arrow2.png) -15px 0px/cover no-repeat;}
+
+
+        #main_banner ul li:nth-child(n+3):nth-child(-n+6) { width: 250px;}
+
+        #main_banner ul li:nth-child(3) {background: #f3f3f3;}
+        #main_banner ul li:nth-child(3) a {display: flex; flex-direction: column; align-items: center; text-decoration: none;}
+        #main_banner ul li:nth-child(3) div {border-bottom: 1px solid #000; font-size:21px; font-weight: bold; padding-bottom:6px; margin:25px 0 9px 0; color:#000}
+        #main_banner ul li:nth-child(3) p { text-align: center; color: #8b8b8b;}
+        
+        #main_banner ul li:nth-child(4) {background: #fff;}
+        #main_banner ul li:nth-child(4) a {display: flex; flex-direction: column; align-items: center; text-decoration: none;}
+        #main_banner ul li:nth-child(4) div {border-bottom: 1px solid #000; font-size:21px; font-weight: bold; padding-bottom:6px; margin:25px 0 9px 0; color:#000}
+        #main_banner ul li:nth-child(4) p { text-align: center; color:#8b8b8b; }
+
+        #main_banner ul li:nth-child(5) {background:url(./img/store01.jpg)}
+
+        #main_banner ul li:nth-child(6) {background: #004b87;}
+        #main_banner ul li:nth-child(6) h2 { color: white; font-weight: normal}
+        #main_banner ul li:nth-child(6) h3 { color: white; font-size: 25px; font-weight: normal;}
+        #main_banner ul li:nth-child(6) div:nth-child(3) { width:50px; height: 1px; background: #00BFB2; margin:20px 0}
+        #main_banner ul li:nth-child(6) p {color: #fff; text-align:center}
+        #main_banner ul li:nth-child(6) form { margin-top:26px; display: flex;}
+        #main_banner ul li:nth-child(6) form input { height: 36px; width: 133px; }
+        #main_banner ul li:nth-child(6) form div { background: url(./img/btn_store.gif) center/cover no-repeat; width:39px; height: 39px;; }
+
+
+
+        #main_menu { width:100%; height:800px;  background: url("./img/main-menu-cover.jpg") no-repeat center center; background-size: cover; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center;padding: 100px 0;}
+        #main_menu h2 { font-size:40px;}
+        #main_menu p { font-size: 20px; color: #666; margin-top:10px;margin-bottom: -30px;}
+        #main_menu article {}
+
+        #main_menu .s_second { width:900px; height:600px;  display: flex; }
+        #main_menu .swiper-slide { display: flex; justify-content: center; align-items: center; }
+        
+        #main_menu .swiper-button-prev { background:url(./img/btn_arrow.png) no-repeat; width:55px; height:98px; background-size: 196%; position: absolute; left:0%;}
+        #main_menu .swiper-button-next { background:url(./img/btn_arrow.png) no-repeat -54px 0px; width:55px; height:98px; background-size: 196%; position: absolute; right:0%}
+
+        #main_store { width:100%;  background:url(img/main-store-bg.png) center; background-size:cover; padding:100px 0px;  }
+        #main_store h2 {text-align: center; font-size: 40px;}
+        #main_store p { font-size: 20px; color: #666; text-align: center;}
+        /* #main_store { height:961px; width:100%; background:url(img/main-store-bg.png); background-size:cover; } */
+        
+
+
+        #main_store #internal_store { margin-top:65px; display: flex; align-items: center; justify-content: center; gap: 21px; }
+        #main_store #internal_store a {text-decoration: none;}
+        #main_store #internal_store a span { text-decoration: none; color: #fff;  width:100%; display: block; text-align: center; margin-top: 15px; font-size: 20px;}
+
+        #main_store #internal_store a:first-child div { width:220px; height: 334px; background: url(./img/internal_store.jpg) center/cover; }
+        #main_store #internal_store a:nth-child(2) div { width:220px; height:334px; background: url(./img/internal_store2.jpg) center/cover;}
+        #main_store #internal_store a:nth-child(3) div { width:220px; height:334px; background: url(./img/internal_store3.jpg) center/cover;}
+        #main_store #internal_store a:nth-child(4) div { width:220px; height:334px; background: url(./img/internal_store4.jpg) center/cover;}
+
+        #main_container { width:100%; height:603px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+
+        #main_container h2 {font-size: 40px; color: #000; font-weight: lighter; letter-spacing: 0;}
+        #main_container p {font-size: 20px; color: #666; margin-top: 10px; text-align: center;}
+      
+        .s_third { width: 900px; height: 300px; margin-top:50px; text-align: center; position: relative; }
+        .s_third .swiper-slide {width:50px;}
+        .s_third img { width:278px; }
+
+        /* .s_third .swiper-slide:first-child div {width:278px; height: 278px; background: url(./img/insta_feed_01.jpg) center/cover } */
+        /* .s_third .swiper-slid:nth-child(2) div {background: url(./img/insta_feed_02.jpg) center/cover no-repeat;} */
+        
+        footer { width:100%; box-sizing: border-box; background: #262626; display: flex; justify-content: center; color: #9e9e9e; }
+        footer .container { margin:20px 0 }
+        footer .container ul { display: flex; justify-content: center; }
+        footer .container ul li a {color:#9e9e9e; text-decoration: none; margin:0px 15px; font-size: 16px;}
+        footer #f_logo { width:200px; height: 47px; background: url(./img/foot_logo.png) center/cover no-repeat; margin:20px auto;}
+        footer #address{text-align: center; font-size: 13px;}
+        footer #f_sns { display: flex; justify-content: center; gap:5px; margin-top:30px; }
+        footer #f_sns div:first-child {width:23px; height:23px; background: url(./img/foot_sns_blog.png) center/cover; }
+        footer #f_sns div:nth-child(2) {width:23px; height:23px; background: url(./img/foot_sns_facebook.png) center/cover; }
+        footer #f_sns div:last-child {width:23px; height:23px; background: url(./img/foot_sns_insta.png) center/cover; }
+
+
+
+    </style>
+    <!-- swiper cdn 호출 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- swiper cdn js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <section id="quick_menu">
+      <ul>
+        <li>
+          <a href="#"><img src="./img/quick01.png" alt="#"></a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/quick02.png" alt="#"></a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/quick03.png" alt="#"></a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/quick04.png" alt="#"></a>
+        </li>
+      </ul>
+    </section>
+    <header>
+        <nav>
+            <section>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </section>
+            <ul id="menu_wrap">
+                <img src="./img/logo.png" alt="#">
+                <li>
+                  <a href="#">마시그레이</a>
+                    <ul class="menu">
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <a href="#">메뉴</a>
+                    <ul class="menu">
+                        <li><a herf="#">메뉴1</a></li>
+                        <li><a herf="#">메뉴1</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <a href="#">프랜차이즈</a>
+                    <ul class="menu">
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <a href="#">매장안내</a>
+                    <ul class="menu">
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <a href="#">공지사항</a>
+                    <ul class="menu">
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#"></a></li>
+                    </ul>
+                </li>
+                <li>
+                  <a href="#">고객의소리</a>
+                    <ul class="menu">
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#">메뉴</a></li>
+                        <li><a herf="#"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="swiper s_first">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img width="100%" src="./img/main_visual01.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img width="100%" src="./img/main_visual02.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img width="100%" src="./img/main_visual03.jpg" />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            
+      
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+      
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
+
+          <section id="main_banner">
+            <ul>
+                <li id="banner1">
+                    <div></div>
+                    <div></div>
+                    <a href="#">
+                        <h2>브랜드 스토리</h2>
+                        <p>마시그래이는 표준어로 '마셔라' 라는 <br>사투리의 표현을 가져온 것으로 브랜드네임에서부터 <br>고객에게 친밀하게 다가가고자 하는 마음을 담았습니다.</p>
+                    </a>
+                </li>
+                <li id="banner2">
+                  <div class="swiper s_forth">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <img src="./img/mb02_bg.jpg" alt="#">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./img/mb03_bg.jpg" alt="#">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./img/mb04_bg.jpg" alt="#">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./img/mb05_bg.jpg" alt="#">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./img/mb06_bg.jpg" alt="#">
+                      </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+              
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev b2s_btnL b2s_btn"></div>
+                    <div class="swiper-button-next b2s_btnR b2s_btn"></div>
+              
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                  </div>
+                    <!-- <a href="#">
+                        <img src="./img/mb02_bg.jpg" alt="">
+                    </a> -->
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/franchise_ico01.png" alt="">
+                        <div>창업절차</div>
+                        <p>체계적인 마시그래이의 <br>창업시스템에 대해 알아보세요.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/franchise_ico02.png" alt="">
+                        <div>창업문의</div>
+                        <p>체계적인 마시그래이의 <br>창업시스템에 대해 알아보세요.</p>
+                    </a>
+                </li>
+                <li></li>
+                <li>
+                    <h2>STORE</h2>
+                    <h3>매장</h3>
+                    <div></div>
+                    <p>가까운 마시그래이 매장을<br>찾아보세요</p>
+                    <form action="#">
+                        <input type="text">
+                        <div></div>
+                    </form>
+                </li>
+            </ul>
+          </section>
+
+
+          <section id="main_menu">
+            <h2>MASIGRAY <strong>MENU</strong></h2>
+            <p>마시그래이의 다양한 메뉴를 맛보세요</p>
+            <article>
+              <div class="swiper s_second">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      <img src="./img/menu_slide01.png">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./img/menu_slide02.png">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./img/menu_slide03.png">
+                    </div>
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="swiper-pagination"></div>
+            
+                  <!-- If we need navigation buttons -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+            
+                  <!-- If we need scrollbar -->
+                  <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+            </article>
+          </section>
+          <section id="main_store">
+            <h2>MASIGRAY <strong>Franchiser</strong></h2>
+            <p>마시그래이 신규 매장</p>
+            <div id="internal_store">
+                <a href="#"><div></div><span>월성우방점</span></a>
+                <a href="#"><div></div><span>용산우방2차점</span></a>
+                <a href="#"><div></div><span>포항상대점</span></a>
+                <a href="#"><div></div><span>마산합포구점</span></a>
+            </div>
+          </section>
+
+          <section id="main_container">
+            <article>
+              <h2>MASIGRAY <strong>SNS</strong></h2>
+              <p>#masigray</p>
+            </article>
+            <div class="swiper s_third">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <img src="./img/insta_feed_01.jpg" alt="#">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/insta_feed_02.jpg" alt="#">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/insta_feed_03.jpg" alt="#">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/insta_feed_04.jpg" alt="#">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/insta_feed_05.jpg" alt="#">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/insta_feed_06.jpg" alt="#">
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+          
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+          
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+          </section>
+        </main>
+
+
+        <footer>
+            <section class="container">
+                <ul>
+                    <li><a href="#">점주의 방</a></li>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                    <li><a href="#">가맹문의</a></li>
+                    <li><a href="#">고객의 소리</a></li>
+                </ul>
+                <div id="f_logo"></div>
+                <div id="address">
+                  (주) 에스이엠 <span>|</span> 사업자등록번호 : 502 - 86 - 32017 <span>|</span> 대표이사 : 정영주<br>
+                  주소 : 대구광역시 수성구 만촌동 957-2번지 2층 <span>|</span> 전화 : 1899-2087 <span>|</span> 팩스 : 053-474-9522
+                </div>
+                <div id="f_sns">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+            </section>
+        </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $("nav>ul>li").mouseover(function(){
+          $("header").css({
+              "height": "350px",
+              "transition": "height 0.5s ease-in-out"  // Add transition property
+          });
+  
+          $("nav ul ul a").css({
+              "opacity": "1",
+              "transition": "opacity 0.5s ease-in-out"
+          })
+          
+      })
+      // 2뎁스 메뉴 벗어날때 안보이게
+      $("nav ul").mouseleave(function(){
+          $("header").css({
+              "height": "130px",
+              "transition": "height 0.5s ease-in-out"  // Add transition property
+          });
+  
+          $("nav ul ul a").css({
+              "opacity": "0",
+              "transition": "opacity 0.5s ease-in-out"
+          })
+      })
+    </script>
+    <script>
+      let hd = $("header").offset().top
+      console.log("hd값: "+hd)
+
+      $(window).scroll(function() {
+        let value = $(this).scrollTop();
+        console.log(value)
+      })
+    </script>
+
+
+
+    <script>
+          const swiper = new Swiper(".s_first", {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true, //슬라이드 반복 여부
+            speed:1000,
+
+            // swiper 자동재생 다음페이지 넘어가는 시간 1000에 1초
+            autoplay: {
+            delay: 2000,
+            },
+            // If we need pagination
+            pagination: {
+              el: '.swiper-pagination',
+            },
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const swiper2 = new Swiper(".s_second", {
+            // Optional parameters
+            direction: "horizontal",
+            loop: true,
+            speed:1000,
+
+            autoplay: {
+            delay: 2000,
+            },
+
+            // If we need pagination
+            pagination: {
+            el: ".swiper-pagination",
+            },
+
+            // Navigation arrows
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+            el: ".swiper-scrollbar",
+            },
+      });
+
+      const swiper3 = new Swiper(".s_third", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+        slidesPerView:3,
+        spaceBetween: 0,
+        autoplay: {
+          delay: 2000,
+        },
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+
+      const swiper4 = new Swiper(".s_forth", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+        autoplay: {
+          delay: 2000,
+        },
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    </script>
+</body>
+
+</html>
