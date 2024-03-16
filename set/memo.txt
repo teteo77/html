@@ -190,3 +190,22 @@ header nav .main_menu>li::after {content:""; position: absolute; width:0; height
 header nav .main_menu>li:hover::after{width: 100%;}
     ㄴ li::after 정리하기
         ㄴ li에::after가 어디인지 정리하기
+
+#info_wrok:check 정리하기
+save_html_clone\8KT&G\index7.html
+
+7n은 7에 배수, 3n은 3에 배수
+    ㄴ html로 달력에 토,일에 색갈줄때
+        ㄴ 토요일은 7n일요일은 7n+1로 주면 된다
+
+transform:scale(1.2)
+    ㄴ 정리하기, 네이버 마우스 호버시 작동하는 효과 줄떄 좋다
+
+text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+    ㄴ 말 줄이기
+
+save_html_clone\8KT&G\index7.html
+    ㄴ 카테고리 부분 다시 정리
