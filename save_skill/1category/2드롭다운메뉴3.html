@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ padding:0; margin:0; list-style: none; box-sizing: border-box;}
+        .so{display: none;}
+        a {text-decoration: none;}
+        header {height:100px; display: flex; justify-content: space-between; align-items: center; max-width: 1440px; margin: auto; padding: 0 20px;}
+        header h1 {}
+        header h1 a { display: block; width:174px; height:43px; background: url(img/port_logo.png); text-indent: -9999px; overflow:hidden; }
+        header nav {}
+        /* 메인메뉴 */
+        header nav .main_menu {display: flex; gap:50px}
+        header nav .main_menu::after {content:""; position: absolute; width:100%; height:300px; background:#fff; left:0; top:101px; pointer-events: none; display: none;}
+        header nav .main_menu:hover::after {display: block;}
+        header nav .main_menu>li {position: relative;}
+        header nav .main_menu>li>a {height:100px; display: flex; align-items: center; color:#111; font-size:20px; font-weight: 600;}
+        header nav .main_menu>li:last-child>a {color: #2e84f5;}
+        header nav .main_menu>li:last-child>a::before {content:url(img/port_iconLibrary.svg); width:36px; height:36px; margin-right:10px}
+        header nav .main_menu>li+li::before {content:""; position: absolute; width:4px; height:11px; background:url(img/port_gnbDots.svg); top:45px; margin-left:-27px}
+        header nav .main_menu>li::after {content:""; position: absolute; width:0; height:3px; background:#2e84f5; transition: ease all .3s;margin-top:-3px;}
+        header nav .main_menu>li:hover::after {width:100%;}
+        /* 서브메뉴 */
+        /* 너비를 충분히 줘서 서브메뉴 사이에 빈틈이 없게 해야한다.
+        그래야 서브메뉴 이동간 서브메뉴가 접히지 않는다 */
+        /* border: 1px solid red; 로 확인 가능 */
+        header nav .main_menu ul {display: none; width:130.61px;  top:100px; position: absolute; height:300px; margin-left:-25px; padding-top:15px; z-index: 300; border:1px solid red;}
+        header nav .main_menu ul a {display: block; text-align: center; padding: 5px 0; color: #666;}
+        header nav .main_menu ul a:hover {color:#000; text-decoration: underline;}
+        /* 서브메뉴가 보이는 부분 */
+        header nav .main_menu:hover ul {display: block;}
+        
+        header .top_menu {display: flex; gap:20px; align-items: center;}
+        header .top_menu a { font-size:15px; color:#666; font-weight: 400;}
+        header .top_menu i { color: #666;}
+
+        main {border-top:1px solid #ddd;}
+    </style>
+</head>
+<body>
+<header>
+    <h1><a href="#">KT&G 장학재단 홈</a></h1>
+    <nav>
+        <h2 class="so">메인메뉴</h2>
+        <ul class="main_menu">
+            <li>
+                <a href="#">사업소개</a>
+                <ul class="sub_menu">
+                    <li><a href="#">상상장학사업</a></li>
+                    <li><a href="#">특성화장학사업</a></li>
+                    <li><a href="#">사업 아카이브</a></li>
+                    <li><a href="#">지원현황</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">장학신청</a>
+                <ul class="sub_menu">
+                    <li><a href="#">신규선발</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">커뮤니티</a>
+                <ul class="sub_menu">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">온라인 문의</a></li>
+                    <li><a href="#">뉴스룸</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">재단소개</a>
+                <ul class="sub_menu">
+                    <li><a href="#">인사말</a></li>
+                    <li><a href="#">히스토리</a></li>
+                    <li><a href="#">CI소개</a></li>
+                    <li><a href="#">홍보 영상</a></li>
+                    <li><a href="#">정보 공개</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">전자도서관</a>
+            </li>
+        </ul>
+    </nav>
+    <h2 class="so">탑메뉴</h2>
+    <ul class="top_menu">
+        <li><a href="#"><i class="fa-solid fa-house"></i> <span class="so">첫페이지</span></a></li>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li>
+            <select>
+                <option>한국어</option>
+                <option>English</option>
+                <option>bahasa indonesia</option>
+                <option>pyccknn</option>
+                <option>turkee</option>
+                <option>kaaak</option>
+            </select>
+        </li>
+        <li><details>
+            <summary>검색</summary>
+            <div>
+                <input type="text" placeholder="검색어를 입력해 주세요">
+                <div><button type="submit">검색</button></div>
+                <div><button type="button">닫기</button></div>
+            </div>
+        </details></li>
+        <li><button class="burger"><span class="so">메뉴</span></button></li>
+    </ul>
+</header>
+<main></main>
+</body>
+</html>
