@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    input태그id와 
+    label태그for에input id를 넣으면 된다 
+-->
+<body>    
+    <fieldset>
+        체크박스를 기본적으로 활성화된 상태로 만들기 위해서는 checked 특성을 부여해야 합니다.
+        <legend>관심사들을 선택하세요</legend>
+        <div>
+            <input type="checkbox" id="coding" name="interest" value="coding" checked />
+            <label for="coding">코딩</label>
+        </div>
+        <div>
+            <input type="checkbox" id="music" name="interest" value="music" />
+            <label for="music">음악</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <input type="checkbox" id="auto"> 
+        <label for="auto">로그인유지</label>
+    </fieldset>
+    <fieldset>
+        <input type="radio" id="info_work" name="tab_menu" checked>
+		<input type="radio" id="info_plan" name="tab_menu">
+		<input type="radio" id="info_news" name="tab_menu">
+        <ul>
+            <li><label for="info_work">사업소개</label></li>
+            <li><label for="info_plan">전체일정</label></li>
+            <li><label for="info_news">뉴스룸</label></li>
+        </ul>
+    </fieldset>
+</body>
+</html>

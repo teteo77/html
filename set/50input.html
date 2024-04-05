@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #exwrap2:checked ~ #exwrap2_div {background: black;} */
+        #exlabel2:checked ~ #exwrap2_div {background: black; width:50px;height:100px;}
+        #exwrap2_div { width:50px;height: 50px;}
+    </style>
+</head>
+    <!-- 
+    CSS에서 "~"는 "후속 형제 선택자"입니다.
+    선택한 요소의 형제 중에서 특정한 조건을 만족하는 요소를 선택합니다.
+    -->
+<body>
+    <fieldset>
+        <legend>1ex</legend>
+        <input type="text" id="exlabel" value="벨류테스트값">
+    </fieldset>
+    <fieldset id="exwrap2">
+        <legend>2ex</legend>
+        <input type="checkbox" id="exlabel2" value="벨류테스트값">
+        <label for="exlabel2">라벨텍스트</label>
+        <div id="exwrap2_div"></div>
+    </fieldset>
+    
+    
+
+    
+</body>
+</html>

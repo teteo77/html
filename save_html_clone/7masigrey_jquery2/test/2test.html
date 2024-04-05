@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤에 의한 메뉴바 고정</title>
+    <style>
+        * {margin:0; padding:0; list-style:none; }
+        body {height:3000px;}
+        h1 {text-align: center;padding:200px 0;}
+        header {height:150px; position: fixed; width:100%;top:0;left:0;transition: ease all .3s;z-index: 100;}
+        header h2 {position: absolute; left:10px; top:50%; transform: translateY(-50%);}
+        header ul {display: flex; gap:20px; position: absolute;left:50%; top:50%; transform: translate(-50%,-50%);}
+        header a {color:#333;font-weight: bold; text-decoration: none;}
+        header.fix {background:rgb(50, 50, 63); height:80px;}
+        header.fix a {color:#fff;}
+        section {height:100vh;display: flex;justify-content: center;align-content: center;}
+        section:nth-child(2n-1) {background:#ccc;}
+        section p {width:100px; height:100px; background:green; margin:10px; transition:ease all 1s;}
+
+    </style>
+</head>
+<body>
+<h1>스크롤에 의한 메뉴바 고정</h1>    
+<header>
+    <h2>제목(로고)</h2>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+        </ul>
+    </nav>
+</header> 
+<section></section>
+<section></section>
+<section></section>
+<section></section> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script> 
+    // 스크롤에 의한 메뉴 디자인 변경
+    $(window).scroll(function() {
+        var t = $(this).scrollTop();
+        $("h2").text(t);
+        if(t > 300) {
+            $("header").addClass("fix");
+        } else {
+            $("header").removeClass("fix");
+        }
+    });
+</script>  
+</body>
+</html>

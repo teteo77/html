@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+		* {padding:0; margin:0; list-style: none; box-sizing: border-box;}
+		main { display: flex; gap:15px; justify-content: center; padding:40px 20px; max-width:1440px; margin:auto;}
+
+		/* 클릭시 배경 색갈 이동 */
+		main #info {width:40%;height:740px; display: flex; flex-direction: column; gap:15px}
+		main #info>ul {display: flex; background:#f2f2f2; border-radius: 100px; position: relative}
+		main #info>ul::before {content:"";position: absolute; width:33%; height:100%; background:#007aff; border-radius: 100px; transition:ease all .3s; left:0;}
+		main #info>#info_plan:checked ~ ul::before {left:33%;}
+		main #info>#info_news:checked ~ ul::before {left:66%;}
+		main #info>ul>li {flex:1; height:50px; position: relative}
+		/* 클릭시 글씨 하얗게 */
+		main #info input {display: none;}
+		main #info label {display: flex; width:100%; height: 50px; justify-content: center; align-items: center; font-size:20opx; color:#333; font-weight: 500; position: absolute; z-index: 100;}
+		main #info #info_work:checked~ul li:nth-child(1) label {color:#fff;}
+		main #info #info_plan:checked~ul li:nth-child(2) label {color:#fff;}
+		main #info #info_news:checked~ul li:nth-child(3) label {color:#fff;}
+		/* 클릭시 내용 보이게 */
+		main article {flex:1; display: none}
+		main #info_work:checked~article:nth-of-type(1) {display: block}
+		main #info_plan:checked~article:nth-of-type(2) {display: block}
+		main #info_news:checked~article:nth-of-type(3) {display: block}
+	</style>
+</head>
+<body>
+    <main>
+    <section id="info">
+        <h2 class="screen_out">주요서비스 안내</h2>
+		<input type="radio" id="info_work" name="tab_menu" checked>
+		<input type="radio" id="info_plan" name="tab_menu">
+		<input type="radio" id="info_news" name="tab_menu">
+        <ul>
+            <li><label for="info_work">사업소개</label></li>
+            <li><label for="info_plan">전체일정</label></li>
+            <li><label for="info_news">뉴스룸</label></li>
+        </ul>
+        <article>
+            <h3>사업소개</h3>
+            <ul>
+                <li>
+                    <p>중,고교 장학사업</p>
+                    <p>자신의 잠재력을 발견할 수 있도록 학습활동을 지원합니다.</p>
+                    <a href="#">중등 장학사업</a>
+                </li>
+                <li>
+                    <p>대학 장학사업</p>
+                    <p>안정적인 학업을 지속할 수 있도록 학습활동을 지원합니다.</p>
+                    <a href="#">대학 장학사업</a>
+                </li> 
+                <li>
+                    <p>특성화 장학사업</p>
+                    <p>다양한 분야에 있는 학생들이 비전을 이룰 수 있도록 지원합니다.</p>
+                    <a href="#">특성화 장학사업</a>
+                </li> 
+                <li>
+                    <p>커뮤니케이션</p>
+                    <p>우수한 교육 프로그램과 다양한 체험 콘텐츠를 제공합니다.</p>
+                    <a href="#">커뮤니케이션</a>
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h3>전체 일정</h3>
+			<div>
+				<div>
+					<button>이전월</button>
+					<div>
+						<select>
+							<option>2024</option>
+							<option>2023</option>
+							<option>2022</option>
+							<option>2021</option>
+						</select>
+						<span></span>
+						<select>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+					<button>다음월</button>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>일</th>
+							<th>월</th>
+							<th>화</th>
+							<th>수</th>
+							<th>목</th>
+							<th>금</th>
+							<th>토</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href="">1</a></td>
+							<td><a href="">2</a></td>
+						</tr>
+						<tr>
+							<td><a href="">3</a></td>
+							<td><a href="">4</a></td>
+							<td><a href="">5</a></td>
+							<td><a href="">6</a></td>
+							<td><a href="">7</a></td>
+							<td><a href="">8</a></td>
+							<td><a href="">9</a></td>
+						</tr>
+						<tr>
+							<td><a href="">10</a></td>
+							<td><a href="">11</a></td>
+							<td><a href="">12</a></td>
+							<td><a href="">13</a></td>
+							<td><a href="">14</a></td>
+							<td><a href="">15</a></td>
+							<td><a href="">16</a></td>
+						</tr>
+						<tr>
+
+							<td><a href="">17</a></td>
+							<td><a href="">18</a></td>
+							<td><a href="">19</a></td>
+							<td><a href="">20</a></td>
+							<td><a href="">21</a></td>
+							<td><a href="">22</a></td>
+							<td><a href="">23</a></td>
+						</tr>
+						<tr>
+							<td><a href="">24</a></td>
+							<td><a href="">25</a></td>
+							<td><a href="">26</a></td>
+							<td><a href="">27</a></td>
+							<td><a href="">28</a></td>
+							<td><a href="">29</a></td>
+							<td><a href="">30</a></td>
+
+						</tr>
+						<tr>
+							<td><a href="">31</a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+							<td><a href=""></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<p>2024-03-03<span>(일)</span></p>
+				<p>일정이 존재하지 않습니다.</p>
+			</div>
+        </article>
+        <article>
+            <h3>뉴스룸</h3>
+            <ul>
+                <li>
+                    <div><img src="img/202401_1705624326897.jpg" alt="장학증서 수여식"></div>
+					<div>
+						<p><span>New</span> 과학기술 인재육성 장학사업 장학증서 수여식 개최</p>
+						<p>KT&G장학재단은 KIST미래재단과 협약을 맺고 과학기술 인재육성 장학사업에 총 1억원을 기부했다. KIST 장학심사위원회를 통하여 국내 및 외국인 유학생 등 총 33명의 장학생을 선발하였다. [관련기사 : 세계일보]</p>
+						<p><span>등록일 : </span>2024-01-10</p>
+					</div>
+                </li>
+                <li>
+                    <div><img src="img/202401_1705624326900.jpg" alt="장학증서 수여식"></div>
+					<div>
+						<p><span>New</span> 과학기술 인재육성 장학사업 장학증서 수여식 개최</p>
+						<p>KT&G장학재단은 KIST미래재단과 협약을 맺고 과학기술 인재육성 장학사업에 총 1억원을 기부했다. KIST 장학심사위원회를 통하여 국내 및 외국인 유학생 등 총 33명의 장학생을 선발하였다. [관련기사 : 세계일보]</p>
+						<p><span>등록일 : </span>2024-01-10</p>
+					</div>
+                </li>
+            </ul>
+        </article>
+    </section>
+	</main>
+</body>
+</html>
