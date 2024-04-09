@@ -21,8 +21,8 @@
     header #header_img article form input:focus+#delete {display: block;}
     header #header_img article form button:nth-child(3) {width:60px; height:40px; border-radius: 0 4px 4px 0; margin-left:0px; background: #ff8a00; border:none;color:white;}
     main{border:1px solid red; width:1020px;  display: flex;  border: 1px solid red; margin:10px auto; padding-bottom: 10px;;}
-    main ul{display: flex; flex-wrap: wrap; justify-content: center; gap:10px;}
-    main ul li{width:241px; height:217px; border:1px solid red; text-align: right;};
+    main ul {display: flex; flex-wrap: wrap; justify-content: center; gap:10px;}
+    main ul li{ width:241px; height:217px; border:1px solid red; text-align: right;};
     main ul li:first-child {}
     main ul li:nth-child(2){ background: url(./img/category-01.png);}
     main ul li:nth-child(3) { background: url("./");}
@@ -37,11 +37,57 @@
     main ul li:nth-child(12) {background: url("./img/category-09.png")no-repeat;}
     main ul li:nth-child(13) {background: url("./img/category-10.png")no-repeat;}
     main ul li:nth-child(14) {background: url("./img/category-11.png")no-repeat;}
-    main ul li:nth-child(15) { border:none}
-    main ul li:nth-child(16) { border:none}
+    main ul li:nth-child(15) { border:none }
+    main ul li:nth-child(16) { border:none }
 
-    footer{ display: flex;}
-    footer #footer_menu { height:50px; border-top: 1px solid red; border-bottom: 1px solid red;}
+    footer { width:100%;  font-size: 12px;display: flex;flex-direction: column; align-items: center;}
+    footer #footer_menu { height:44px; border-top: 1px solid #d9d9d9; border-bottom: 1px solid #d9d9d9; width: 100%; display: flex; justify-content: center;}
+    footer #footer_menu #footer_info { width: 1020px; display: flex; align-items: center;}
+    footer #footer_menu #footer_info ul { display: flex; flex: 1;}
+    footer #footer_menu #footer_info ul li {}
+    footer #footer_menu #footer_info ul li a { color: #5f5f5f; letter-spacing: -1px; text-decoration: none;}
+    footer #footer_menu #footer_info ul li a:nth-child(2)  { color: #5f5f5f; letter-spacing: -1px; text-decoration: none; font-weight: bold;}
+    
+    footer #footer_menu #footer_info ul li::after { content:"|"; padding:0px 20px; color: #d9d9d9;}
+    footer #footer_menu #footer_info ul li:last-child::after {content: none;}
+    footer #footer_menu #footer_info article a{ display: flex; text-decoration: none; color: #5f5f5f;}
+    footer #footer_menu #footer_info article a #facebook {width:16px; height: 16px; background: url("./img/img-footer1.png")no-repeat 0 -70px; margin-right:5px;}
+    footer #footer_menu #footer_info article a #blog {width:16px; height: 16px; background: url("./img/img-footer1.png")no-repeat -16px -70px; margin-left:30px; margin-right:5px;}
+
+    footer #company_wrap{ width: 1020px;  border:1px solid red; display: flex;}
+    footer #company_wrap #company_logo{ width:140px; height: 29px; background: url("./img/img-footer1.png") no-repeat;}
+    footer #company_wrap ul {margin-left:50px; display: inline-block;}
+    footer #company_wrap ul strong { display: block;  font-size: 14px; padding: 5px 0 10px}
+    footer #company_wrap ul li {float: left;  }
+    footer #company_wrap ul li:nth-child(4) a {border: 1px solid #5f5f5f; color:black; text-decoration: none; padding:1px;}
+    footer #company_wrap ul li:nth-child(4) a::after {color: rgb(199, 199, 199); display: inline-block; vertical-align: middle; content: " ▸ "; height: 100%; padding: 0px 3px;}
+    footer #company_wrap ul li::after {content: "|"; padding:0px 5px;}
+    /* footer #company_wrap div:nth-child(2) {display: inline-block    ;}
+    footer #company_wrap div:nth-child(2) strong {display: block;}
+    footer #company_wrap div:nth-child(2) p {float: left;}
+    footer #company_wrap div:nth-child(2) p::after {content:"|"; padding:0px 10px;} */
+
+    footer #service_info { width:1020px;  border:1px solid red; display: flex;}
+    
+    footer #service_info #service_img a {text-decoration: none;}
+    footer #service_info #service_img a span:first-child{ width:38px; height:38px; background: url("./img/img-footer1.png") no-repeat 0 -30px; display: inline-block;}
+    footer #service_info #service_img a span:nth-child(2) {display: inline-block; transform: translateY(-5px);}
+    footer #service_info #service_img2 a {text-decoration: none; margin-left:25px;}
+    footer #service_info #service_img2 a span:first-child{ width:38px; height:38px; background: url("./img/img-footer1.png") no-repeat -38px -30px; display: inline-block;}
+    footer #service_info #service_img2 a span:nth-child(2) {display: inline-block; transform: translateY(-5px);}
+    footer #service_info #service_n {display: flex; align-items: center; margin-left: 20px; font-size: 18px; color: #666; font-weight: bold;}
+    footer #service_info #service_n strong { margin-left:5px; margin-right: 5px; font-size: 22px;}
+    footer #service_info #service_n strong span {font-size:18px;}
+    footer #service_info #service_n span {font-size: 12px;}
+    
+    footer #guide { width:1020px; border:1px solid red}
+    
+
+
+    
+
+
+
 </style>
 </head>
 
@@ -84,21 +130,59 @@
 </main>
 <footer>
     <section id="footer_menu">
-        <ul>
-            <li>이용약관</li>
-            <li>개인정보처리방침</li>
-            <li>포인트정책</li>
-            <li>회사소개</li>
-            <li>요기요사장님</li>
-            <li>입점문의</li>
-            <li>공지사항</li>
-        </ul>
-        <article>페이스북</article>
-        <article>블로그</article>
+        <article id="footer_info">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">포인트정책</a></li>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">요기요사장님</a></li>
+                <li><a href="#">입점문의</a></li>
+                <li><a href="#">공지사항</a></li>
+            </ul>
+            <article><a href="#"><div id="facebook"></div>페이스북</a></article>
+            <article><a href="#"><div id="blog"></div>블로그</a></article>
+        </article>
     </section>
-    <section id="company_wrap"></section>
-    <section id="service_info"></section>
-    <section id="guide"><p></p></section>
+    <section id="company_wrap">
+        <div id="company_logo"></div>
+        <ul><strong>주식회사 위대한 상상</strong>
+            <li>서울시 서초구 서초대로38길 12 마제스타시티 타워2 17층</li>
+            <li>대표이사 : 전준희</li>
+            <li>사업자등록번호:211-88-68802 <a href="#">사업자정보확인</a></li>
+            <li>통신판매업신고:제 2018-서울서초-2635호</li>
+            <li>개인정보담당자 : privacy@yogiyo.co.kr</li>
+            <li>제휴문의 : partnership@yogiyo.co.kr</li>
+            <li>고객만족센터 : support@yogiyo.co.kr</li>
+            <li>호스팅 제공자: 카페24 주식회사</li>
+        </ul>
+        <!-- <div>
+            <strong>주식회사 위대한상상</strong>
+            <p>서울시 서초구 서초대로38길 12 마제스타시티 타워2 17층</p>
+            <p>대표이사 : 전준희</p>
+            <p>사업자등록번호:211-88-68802 <a href="#">사업자정보확인</p>통신판매업신고:제 2018-서울서초-2635호
+            <p>개인정보담당자 : privacy@yogiyo.co.kr</p>
+            <p>제휴문의 : partnership@yogiyo.co.kr</p>
+            <p>고객만족센터 : support@yogiyo.co.kr</p>
+            <p>호스팅 제공자: 카페24 주식회사</p>
+        </div> -->
+    </section>
+    <section id="service_info">
+        <article id="service_img">
+            <a href="#">
+                <span></span>
+                <span>요기요<br>안심센터</span>
+            </a>
+        </article>
+        <article id="service_img2">
+            <a href="#">
+                <span></span>
+                <span>요기요 100%<br>클린리뷰</span>
+            </a>
+        </article>
+        <span id="service_n">고객만족센터 <strong>1661-5270<span>(유로)</span></strong><span>24시간, 연중무휴</span></span>
+    </section>
+    <section id="guide"><p>주식회사 위대한상상은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품/ 거래정보 및 거래와 관련하여 요기요에 등록된 판매자의 고의 또는 과실로 소비자에게 발생하는 손해에 대해 주식회사 위대한상상은 책임을 지지 않습니다. 상품 및 거래에 관하여 보다 정확한 정보는 해당 판매자에게 직접 확인하여 주시기 바랍니다. Copyright YOGIYO. All Rights Reserved.</p></section>
 </footer>
     
 </body>
