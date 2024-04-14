@@ -16,12 +16,13 @@
     header #header_img article #position_icon { background: white url("./img/sprite-icon.png") no-repeat 0 0; width:40px; height:40px; background-size: 400px; border:none; border-radius: 4px; }
     header #header_img article form {display: flex; position: relative;}
     header #header_img article form input {width:300px; height: 40px; border-radius: 4px 0 0 4px; margin-left:5px; padding-left:10px; border:none; }
+    header #header_img article form input {outline: none;}
     header #header_img article form input::placeholder { transform: translateY(2px); }
     header #header_img article form #delete { width:40px; height:40px; position: absolute; right:60px; border:none;  background: url("./img/sprite-icon.png")no-repeat -107px -214px; background-size: 360px; display: none;}
     header #header_img article form input:focus+#delete {display: block;}
     header #header_img article form button:nth-child(3) {width:60px; height:40px; border-radius: 0 4px 4px 0; margin-left:0px; background: #ff8a00; border:none;color:white;}
     header #header_img article form #gps {position: absolute; margin: 43px 0 0 5px; width:360px; height: 40px; background: white; border: none; border-radius: 4px; text-align: left;padding-left: 10px; display: none;}
-    header #header_img article form input:focus+#gps {display: block;}
+    header #header_img article form input:focus~#gps {display: block;}
     /* 같은 형제에 두가지 focus가 안되는거 같다.  다른 방법 찾아보기*/
 
 
@@ -39,11 +40,11 @@
     main ul li:nth-child(7) { background: url("./img/category-04.png")no-repeat;}
     main ul li:nth-child(8) { background: url("./img/category-05.png")no-repeat;}
     main ul li:nth-child(9) { background: url("./img/category-06.png")no-repeat;}
-    main ul li:nth-child(10) {background: url("./img/category-07.png")no-repeat;}
-    main ul li:nth-child(11) {background: url("./img/category-08.png")no-repeat;}
-    main ul li:nth-child(12) {background: url("./img/category-09.png")no-repeat;}
-    main ul li:nth-child(13) {background: url("./img/category-10.png")no-repeat;}
-    main ul li:nth-child(14) {background: url("./img/category-11.png")no-repeat;}
+    main ul li:nth-child(10) { background: url("./img/category-07.png")no-repeat;}
+    main ul li:nth-child(11) { background: url("./img/category-08.png")no-repeat;}
+    main ul li:nth-child(12) { background: url("./img/category-09.png")no-repeat;}
+    main ul li:nth-child(13) { background: url("./img/category-10.png")no-repeat;}
+    main ul li:nth-child(14) { background: url("./img/category-11.png")no-repeat;}
     main ul li:nth-child(15) { border:none }
     main ul li:nth-child(16) { border:none }
 
@@ -107,7 +108,6 @@
                 <button id="delete"></button>
                 <button>검색</button>
                 <button id="gps">현재 위치로 설정합니다</button>
-                
             </form>
         </article>
     </section>
