@@ -23,14 +23,13 @@
     header #header_img article form button:nth-child(3) {width:60px; height:40px; border-radius: 0 4px 4px 0; margin-left:0px; background: #ff8a00; border:none;color:white;}
     header #header_img article form #gps {position: absolute; margin: 43px 0 0 5px; width:360px; height: 40px; background: white; border: none; border-radius: 4px; text-align: left;padding-left: 10px; display: none;}
     header #header_img article form input:focus~#gps {display: block;}
-    /* 같은 형제에 두가지 focus가 안되는거 같다.  다른 방법 찾아보기*/
 
 
 
 
     main{border:1px solid red; width:1020px;  display: flex;  border: 1px solid red; margin:10px auto; padding-bottom: 10px;;}
     main ul {display: flex; flex-wrap: wrap; justify-content: center; gap:10px;}
-    main ul li{ width:241px; height:217px; border:1px solid red; text-align: right;};
+    main ul li{ width:241px; height:217px; border:1px solid red; text-align: right;}
     main ul li:first-child {}
     main ul li:nth-child(2){ background: url(./img/category-01.png);}
     main ul li:nth-child(3) { background: url("./");}
@@ -64,16 +63,16 @@
 
     footer #company_wrap{ width: 1020px;  border:1px solid red; display: flex; margin-top:35px;}
     footer #company_wrap #company_logo{ width:140px; height: 29px; background: url("./img/img-footer1.png") no-repeat;}
-    footer #company_wrap ul {margin-left:50px; display: inline-block;}
+    /* footer #company_wrap ul {margin-left:50px; display: inline-block;}
     footer #company_wrap ul strong { display: block;  font-size: 14px; padding: 5px 0 10px}
     footer #company_wrap ul li {float: left;  }
     footer #company_wrap ul li:nth-child(4) a {border: 1px solid #5f5f5f; color:black; text-decoration: none; padding:1px;}
     footer #company_wrap ul li:nth-child(4) a::after {color: rgb(199, 199, 199); display: inline-block; vertical-align: middle; content: " ▸ "; height: 100%; padding: 0px 3px;}
-    footer #company_wrap ul li::after {content: "|"; padding:0px 5px;}
-    /* footer #company_wrap div:nth-child(2) {display: inline-block    ;}
+    footer #company_wrap ul li::after {content: "|"; padding:0px 5px;} */
+    footer #company_wrap div:nth-child(2) {display: inline-block    ;}
     footer #company_wrap div:nth-child(2) strong {display: block;}
     footer #company_wrap div:nth-child(2) p {float: left;}
-    footer #company_wrap div:nth-child(2) p::after {content:"|"; padding:0px 10px;} */
+    footer #company_wrap div:nth-child(2) p::after {content:"|"; padding:0px 10px;}
 
     footer #service_info { width:1020px; padding-left: 120px; display: flex;  border:1px solid red; margin:10px 0;}
     
@@ -150,7 +149,7 @@
     </section>
     <section id="company_wrap">
         <div id="company_logo"></div>
-        <ul><strong>주식회사 위대한 상상</strong>
+        <!-- <ul><strong>주식회사 위대한 상상</strong>
             <li>서울시 서초구 서초대로38길 12 마제스타시티 타워2 17층</li>
             <li>대표이사 : 전준희</li>
             <li>사업자등록번호:211-88-68802 <a href="#">사업자정보확인</a></li>
@@ -159,17 +158,17 @@
             <li>제휴문의 : partnership@yogiyo.co.kr</li>
             <li>고객만족센터 : support@yogiyo.co.kr</li>
             <li>호스팅 제공자: 카페24 주식회사</li>
-        </ul>
-        <!-- <div>
+        </ul> -->
+        <div>
             <strong>주식회사 위대한상상</strong>
             <p>서울시 서초구 서초대로38길 12 마제스타시티 타워2 17층</p>
             <p>대표이사 : 전준희</p>
-            <p>사업자등록번호:211-88-68802 <a href="#">사업자정보확인</p>통신판매업신고:제 2018-서울서초-2635호
+            <p>사업자등록번호:211-88-68802 <a href="#">사업자정보확인</a></p>통신판매업신고:제 2018-서울서초-2635호
             <p>개인정보담당자 : privacy@yogiyo.co.kr</p>
             <p>제휴문의 : partnership@yogiyo.co.kr</p>
             <p>고객만족센터 : support@yogiyo.co.kr</p>
             <p>호스팅 제공자: 카페24 주식회사</p>
-        </div> -->
+        </div>
     </section>
     <section id="service_info">
         <article id="service_img">

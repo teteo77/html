@@ -200,3 +200,8 @@ text-overflow: ellipsis;
 
 save_html_clone\8KT&G\index7.html
     ㄴ 카테고리 부분 다시 정리
+
+save_html_clone\12요기요_SP\index.html
+    ㄴ 150~172번줄 li, p단위로 줄 바꿈이 된다.
+    단위로 줄바꿈 없이 채워 넣을수 있는 속성이 없나?
+    
