@@ -29,23 +29,56 @@
 
     main{border:1px solid red; width:1020px;  display: flex;  border: 1px solid red; margin:10px auto; padding-bottom: 10px;;}
     main ul {display: flex; flex-wrap: wrap; justify-content: center; gap:10px;}
-    main ul li{ width:241px; height:217px; border:1px solid red; text-align: right;}
-    main ul li:first-child {}
-    main ul li:nth-child(2){ background: url(./img/category-01.png);}
-    main ul li:nth-child(3) { background: url("./");}
-    main ul li:nth-child(4) { background: url("./");}
-    main ul li:nth-child(5) { background: url("./img/category-02.png")no-repeat;}
-    main ul li:nth-child(6) { background: url("./img/category-03.png")no-repeat;}
-    main ul li:nth-child(7) { background: url("./img/category-04.png")no-repeat;}
-    main ul li:nth-child(8) { background: url("./img/category-05.png")no-repeat;}
-    main ul li:nth-child(9) { background: url("./img/category-06.png")no-repeat;}
-    main ul li:nth-child(10) { background: url("./img/category-07.png")no-repeat;}
-    main ul li:nth-child(11) { background: url("./img/category-08.png")no-repeat;}
-    main ul li:nth-child(12) { background: url("./img/category-09.png")no-repeat;}
-    main ul li:nth-child(13) { background: url("./img/category-10.png")no-repeat;}
-    main ul li:nth-child(14) { background: url("./img/category-11.png")no-repeat;}
-    main ul li:nth-child(15) { border:none }
-    main ul li:nth-child(16) { border:none }
+    main ul li{ width:241px; height:217px; border:1px solid red; text-align: right; position: relative; display: flex; justify-content: flex-end;}
+    
+    main ul li .category_title{ position: absolute; left:7%;top:7%; text-decoration: none; color: #000; font-weight: bold;}
+    main ul li .category_img {  }
+
+    /* main ul li:first-child {position: relative;} */
+    main ul li:first-child .category_arrow { background: url("./img/sprite-icon.png") no-repeat -355px -40px; background-size: 400px; position: absolute; width: 30px; height: 30px; bottom: 15px;
+    right: 15px; display: block;}
+    main ul li:first-child .category_img { background: url("./img/230130_YGY_m2_MW_thumb_1.png") center/cover; width:239px; height: 215px;}
+    /* main ul li:nth-child(2) {position: relative;} */
+    /* main ul li:nth-child(2) .category_title { position: absolute;} */
+    main ul li:nth-child(2) .category_img { background: url("./img/category-01.png") center/cover; width:218px; height: 218px;}
+    /* main ul li:nth-child(3) { position: relative;} */
+    /* main ul li:nth-child(3) .category_title {position: absolute;} */
+    main ul li:nth-child(3) .category_img { background: url("./img/category-onedish.png") center/cover; width:218px; height: 218px;}
+    /* main ul li:nth-child(4) { position: relative;} */
+    /* main ul li:nth-child(4) .category_title {position: absolute;} */
+    main ul li:nth-child(4) .category_img {background: url("img/category-10.png") center/cover; width:218px; height: 218px;}
+    /* main ul li:nth-child(5) { position: relative;} */
+    /* main ul li:nth-child(5) .category_title {position: absolute;} */
+    main ul li:nth-child(5) .category_img { background: url("img/category-02.png") center/cover; width:218px; height: 218px;}
+    /* main ul li:nth-child(6) { position: relative;} */
+    /* main ul li:nth-child(6) .category_title {position: absolute;} */
+    main ul li:nth-child(6) .category_img {background: url("img/category-03.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(7) { position: relative;} */
+    /* main ul li:nth-child(7) .category_title {position: absolute;} */
+    main ul li:nth-child(7) .category_img {background: url("img/category-04.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(8) { position: relative;} */
+    /* main ul li:nth-child(8) .category_title {position: absolute;} */
+    main ul li:nth-child(8) .category_img {background: url("img/category-05.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(9) { position: relative;} */
+    /* main ul li:nth-child(9) .category_title {position: absolute;} */
+    main ul li:nth-child(9) .category_img {background: url("img/category-06.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(10) { position: relative;} */
+    /* main ul li:nth-child(10) .category_title {position: absolute;} */
+    main ul li:nth-child(10) .category_img {background: url("img/category-07.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(11) { position: relative;} */
+    /* main ul li:nth-child(11) .category_title {position: absolute;} */
+    main ul li:nth-child(11) .category_img {background: url("img/category-08.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(12) { position: relative;} */
+    /* main ul li:nth-child(12) .category_title {position: absolute;} */
+    main ul li:nth-child(12) .category_img {background: url("img/category-09.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(13) { position: relative;} */
+    /* main ul li:nth-child(13) .category_title {position: absolute;} */
+    main ul li:nth-child(13) .category_img {background: url("img/category-10.png") center/cover; width: 218px; height: 218px;}
+    /* main ul li:nth-child(14) { position: relative;} */
+    /* main ul li:nth-child(14) .category_title {position: absolute;} */
+    main ul li:nth-child(14) .category_img {background: url("img/category-11.png") center/cover; width: 218px; height: 218px;}
+    main ul li:nth-child(15) {}
+    main ul li:nth-child(16) {}
 
     footer { width:100%;  font-size: 12px;display: flex;flex-direction: column; align-items: center; margin-bottom: 100px;}
     footer #footer_menu { height:44px; border-top: 1px solid #d9d9d9; border-bottom: 1px solid #d9d9d9; width: 100%; display: flex; justify-content: center;}
@@ -113,22 +146,102 @@
 </header>
 <main>
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+            <a href="#">
+                <article class="category_arrow"></article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">전체보기</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">1인분 주문</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">프랜차이즈</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">치킨</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">피자/양식</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">중국집</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">한식</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">일식/돈까스</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">족발/보쌈</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">야식</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">분식</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">카페/디저트</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title">편의점/마트</article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title"></article>
+                <article class="category_img"></article>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <article class="category_title"></article>
+                <article class="category_img"></article>
+            </a>
+        </li>
     </ul>
 </main>
 <footer>
