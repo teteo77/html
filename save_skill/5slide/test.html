@@ -182,12 +182,17 @@
     // li 사이즈를 자동으로
     var w=$(".overflow").width();
     var li_num=4;
+    // w, gap, li_num,
+    // 
     function auto_li_size() {
         w=$(".overflow").width();
         // alert(w);
         
         var gap = parseInt($("#port .list").css("gap"));
         // console.log(gap)
+        console.log("w: "+w)
+        console.log("gap: "+gap)
+
 
         //if문을 3으로 반환 해주면 슬라이드가 3개만 표시된다.
         if($(window).width()<400) {
@@ -199,13 +204,15 @@
         } else {
             li_num=4;
         }
-
-
         // alert(li_num);
         var li = (w-gap*(li_num-1)) / li_num;
+        // let li = 1003-15*(4-1)/ 4
+        // 결과값 741
+        //      ㄴ 결과값은 741인데 html문서에서 확인해보면 239.
         // 값을 주면 넓이가 변하는데 
         // li에 width를 설정 해주는 연산자 인거 같다.
         $("#port .list>li").width(li);
+        
     }
     auto_li_size();
     $(window).resize(function(){
@@ -221,8 +228,11 @@
 
     // 페이지네이션 세팅(여러개씩 보일때)
     var li_total = $("#port .list>li").length;
+    console.log("li_total: "+ li_total)
     // alert(li_total);
     var page_total = Math.ceil(li_total / li_num);
+    console.log("page_total: "+page_total)
+
     function page_set() {
         $("#port .port_page").empty();
         page_total = Math.ceil(li_total / li_num);
@@ -232,6 +242,7 @@
         $("#port .port_page span").eq(0).addClass("on");
     }
     page_set();
+
     // [>]버튼 이벤트
     var port_page=0;
     $("#port>button").eq(1).click(function(){
