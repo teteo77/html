@@ -189,7 +189,6 @@
         // alert(w);
         
         var gap = parseInt($("#port .list").css("gap"));
-        // console.log(gap)
         console.log("w: "+w)
         console.log("gap: "+gap)
 
@@ -206,6 +205,7 @@
         }
         // alert(li_num);
         var li = (w-gap*(li_num-1)) / li_num;
+        console.log("liC: "+li)
         // let li = 1003-15*(4-1)/ 4
         // 결과값 741
         //      ㄴ 결과값은 741인데 html문서에서 확인해보면 239.
@@ -228,10 +228,10 @@
 
     // 페이지네이션 세팅(여러개씩 보일때)
     var li_total = $("#port .list>li").length;
-    console.log("li_total: "+ li_total)
+    // console.log("li_total: "+ li_total)
     // alert(li_total);
     var page_total = Math.ceil(li_total / li_num);
-    console.log("page_total: "+page_total)
+    // console.log("page_total: "+page_total)
 
     function page_set() {
         $("#port .port_page").empty();
