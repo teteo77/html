@@ -16,12 +16,11 @@
         header #logo_right {position: absolute; right: 13%; background-color:rgb(201,21,24); border-radius: 10px; width:8%; display: flex;}
         header #logo_right #logo {width:100%; height:100%; padding: 8.5% 20%; }
 
-        /* main { background: url("./img/bg.jpg") center/cover; width:100%; height: 50px;;} */
-        main {padding-top:95px; height: 100%; position: relative;}
-        main #one {position: relative; border:1px solid green; display: block; width:100%; height: 50%;}
+        main { position: relative; padding-top: 109px; width: 100%; height: 100%; }
+        main #one { position: absolute; width:100%; height: 100%;}
         main #one #img_text { position: absolute; width:33%; margin-top:9%; z-index: 1; left:33% }
-        /* main #one #logo_house {  width:100%; background-position: 50% 100%; background-size:cover; margin-top:15px; } */
-        main #one #logo_house { width:100%; height: 100%; object-fit:cover; }
+        main #one #logo_text {position: absolute; z-index: 1; text-align: center; margin: 238px auto 0px; width:100%}
+        main #one #logo_house { position: absolute; width:100%; }
 
         
 
@@ -47,8 +46,9 @@
     <main>
         <section id="one">
             <img id="img_text" src="./img/Asset-1-2.png">
-            <img id="logo_house" src="./img/KakaoTalk_20230525_113441376.jpg" alt="#">      
-            
+            <div id="logo_text">Since 2007, 15년 노하우의 분식 프랜차이즈<br>
+                죠스떡볶이가 업그레이드 하여 새롭게 돌아왔습니다.</div>
+            <img id="logo_house" src="./img/KakaoTalk_20230525_113441376.jpg" alt="#" >      
         </section>
 
     </main>
