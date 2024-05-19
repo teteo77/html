@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>연산자</h1>
+<ul>
+    <li>산술연산자 : +,-,*,/,%(나머지)</li>
+    <li>문자결합 : + (어느 한쪽이라도 문자일 경우)</li>
+    <li>대입연산자 : =, +=, -=, *=, /=, %=</li>
+    <li>비교연산자 : ==(===), >, <, >=, <=, !=(!==)</li>
+    <li>논리연산자 : &&(그리고), ||(또는), !(아니면)</li>
+    <li>증감연산자 : 변수++, 변수--, ++변수, --변수</li>
+    <li>삼항연산자 : 조건식 ? 참일때 실행문 : 거짓일때 실행문 </li>
+</ul>
+<h2></h2>
+<ul>
+    <li>alert(), prompt(), confirm</li>
+    <li>방문자의 나이를 입력받아 성인여부 체크하기</li>
+    <li>방문자의 생년을 입력받아 성인여부 체크하기</li>
+    <li>표준체중 구하기(키- 100) * 0.9</li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+    var num = 100;
+    num += 1;   // 101
+    num ++;     // 102, num = num+1, num += 1
+    var num2 = "원";
+    // alert(num * 2)
+    // alert("num * 2");
+    // alert(num +num2);
+    // var age = prompt("당신의 나이는?");
+
+    // if(20<=age){
+    //     alert("당신의 나이는 "+age+"세 성인 입니다.")
+    // }else {
+    //     alert("당신의 나이는 "+age+"세 청소년 입니다.")
+    // }
+    // alert("당신의 나이는 "+age+"세입니다.")
+
+    // var age = prompt("당신의 나이는?");
+    // age > 20 ? alert("당신은 성인입니다") : alert("당신은 미성년자입니다.")
+
+    // var age = prompt("생년월일은?")
+    // var date = new Date();
+    // console.log(date.getFullYear())
+    // document.write(date.getFullYear - age)
+
+    // if(date.getFullYear - age <= date.getFullYear){
+    //     alert("당신은 성인 입니다")
+    // }else {
+    //     alert("당신은 미성년저 입니다")
+    // }
+    
+    // var exit = confirm("정말 탈퇴하시겠습니까?");
+    // alert(exit)
+    // exit == true ? alert("탈퇴 되었습니다.") : alert("취소 되었습니다.")
+
+    // 표준체중 : (키cm - 100) * 0.9
+    // 결과) 키 xxxcm인 당신의 표준 체중은 xxkg입니다. 
+
+    // let key = prompt("당신의 키는?(CM)")
+    // alert("키"+key+"cm인 당신의 표준 체중은"+(key - 100)*0.9+"입니다")
+
+    let height = prompt("당신의 키는?(cm)")*1;
+    alert("키 "+height +"cm인 당신이 표준 체중은"+(height-100) * 0.9+"kg입니다.");
+
+
+
+
+    
+</script>
+    
+</body>
+</html>

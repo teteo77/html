@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+</head>
+<body>
+<h1>제어문</h1>
+<ul>
+    <li>제어문이란 프로그램의 흐름을 제어할 수 있는 실행문</li>
+    <li>조건문 : if(), else if(), </li>
+    <li>선택문 : </li>
+    <li>반복문</li>
+    <li></li>
+</ul>
+<h2>실습예제</h2>
+<ul>
+    <li>특정 사용자에게만 메세지 출력하기</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+</table>
+<script>
+    //방문자의 이름이 '안지혁'일때 [안녕하세요 지혁님] 인삿말 나오게!
+    // var name = prompt("당신의 이름은?");
+    // if(name == "김버"){
+    //     alert("안녕하세요 "+name+"님")
+    // }else if(name == "신연미"){
+    //     alert("반가워요 "+name+"님")
+    // }else if(name == "홍길동"){
+    //     alert("반가워요 "+name+"님")
+    // }else {
+    //     alert("반가워요")
+    // }
+
+    //반복문 : for()
+    // for(var i=0; i<10; i++){
+    //     document.write("<p>"+i+"안녕하세요</p>")
+    // }
+
+    //문제2) 2 x 2 =2 가 9번 나오게 만들기
+    // document.write("<h2>2단</h2>")
+    // for(var i=1; i<= 9; i++){
+    //     document.write("<p>2 x "+i+" = "+2*i+"</p>")
+    // }
+    
+    // for(var i=2; i<=9; i++){
+    //     document.write("<h2>"+i+"단</h2>")
+    //     for(var j=1; j<=9; j++){
+    //         document.write("<p>"+i+" x "+j+" = "+i*j+"</p>")
+    //     }
+    // }
+    
+    // for(var i=1; i<=10; i++){
+    //     document.write("<table border=1>")
+    //         document.write("<tr>")
+    //             document.write("<td>"+i+"</td>")
+    //         document.write("</tr>")
+    //     document.write("</table>")
+    // }
+
+    // document.write("<table cellpadding=10>")
+    // for(var j=1; j<=10; j++){
+    //     document.write("<tr>")
+    //     for(var i=1; i<=10; i++){
+    //         document.write("<td>"+i+"</td>")
+    //     }
+    //     document.write("</tr>")
+    // }
+    // document.write("</table>")
+
+    // document.write("<table cellpadding=10>")
+    // var num =1;
+    // for(var j=1; j<=10; j++){
+    //     document.write("<tr>")
+    //     for(var i=1; i<=10; i++){
+    //         document.write("<td>"+ (num++) +"</td>")
+    //     }
+    //     document.write("</tr>")
+    // }
+    // document.write("</table>")
+
+    // document.write("<table cellpadding=10>")
+    // var num =1;
+    // for(var j=1; j<=10; j++){
+    //     document.write("<tr>")
+    //     for(var i=1; i<=10; i++){
+    //         document.write("<td>😊</td>")
+    //         num++
+    //         if(num==17){
+    //             document.write("<td>😂</td>")
+    //         }
+            
+    //     }
+    //     document.write("</tr>")
+    // }
+    // document.write("</table>")
+
+    // document.write("<table cellpadding=10>")
+    // var num =1;
+    // for(var j=1; j<=10; j++){
+    //     document.write("<tr>")
+    //     for(var i=1; i<=10; i++){
+    //         if(num==17){
+    //             document.write("<td>😂</td>")
+    //         }else{
+    //             document.write("<td>😊</td>")
+    //         }
+    //         num++
+    //     }
+    //     document.write("</tr>")
+    // }
+    // document.write("</table>")
+
+    document.write("<table cellpadding=10>")
+    var num =1;
+    for(var j=1; j<=10; j++){
+        document.write("<tr>")
+        for(var i=1; i<=5; i++){
+            if(num==17){
+                document.write("<td>😂"+(num)+"</td>")
+            }else{
+                document.write("<td>😊"+(num)+"</td>")
+            }
+            num++
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>")
+
+    
+    
+    
+</script>
+</body>
+</html>

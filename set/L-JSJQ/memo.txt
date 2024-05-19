@@ -1,0 +1,20 @@
+
+03
+    ㄴ 17==num하고 같으면 우는 이모지 출력
+        ㄴ 랜덤 함수 넣어서 우는 이모지 찾는 게임 만들어 보기
+
+
+02
+    ㄴ alert(), prompt(), confirm()
+    ㄴ document.write(date.getFullYear - age)
+        ㄴ 해당값 출력하면 NaN이 나온다 이유를 모르겠다
+
+01
+    ㄴ alert
+    ㄴ 내부스크립트 : script요소(태그)로 작성, body의 마지막 내용으로 작성을 권고.
+    ㄴ 파일이 없지만 
+    <script src="01.JS"> 써주고 ctrl+ 클릭 해주면 자동 생성 해준다
+    ㄴ undefined 값이 없다는 뜻이다
+
+html이 뭐에요?
+    ㄴ 컴파일 과정이 없는 인터프린터 언어
