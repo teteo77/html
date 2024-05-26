@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+<h1>BOM(Browser Object Model)</h1>
+<ul>
+    <li>브라우저에서 제공하는 객체모델</li>
+    <li>window : open(), alert(), prompt(), cconfirm(), setInterval() : 반복실행, setTimeout() : 지연실행</li>
+    <li>screen : width, height, colorDepth</li>
+    <li>location : href, hash, host, hostname, protocol</li>
+    <li>history : back(), foward()</li>
+    <li>navigator : appCodeName, appName, language, product, paltform, userAgent</li>
+</ul>
+<script>
+    // 문제) 글출력 : 당신의 모니터는 000 x 000 (00bit)입니다.
+    document.write("당신의 모니터는 "+screen.width+" x "+screen.height+" ("+screen.colorDepth+"bit)입니다.");
+    // alert(location.href);
+    // location.href = "https://naver.com";
+    document.write("<p>"+navigator.userAgent+"</p>")
+</script>
+</body>
+</html>

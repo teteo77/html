@@ -1,3 +1,22 @@
+07
+    
+
+06
+    ㄴ DOM과 BOM차이점을 설명하세요
+    ㄴ innerText : 글자를 얻거나 변경
+    innerHTML : 글자+태그를 얻거나 변경
+
+05
+    ㄴ window가 DOM를 감싸고 있다.
+    ㄴ DOM이 html을 감싸고있다.
+
+04
+    ㄴ dday = dday / (1000*60*60*24); // 하루에 대한 1/1000 초
+        // ㄴ 이해 못했다
+        ㄴ js 하루 1/1000 초 검색해서 공부해보기
+            ㄴ https://horangi.tistory.com/396
+    ㄴ 정규 표현식
+
 
 03
     ㄴ 17==num하고 같으면 우는 이모지 출력
@@ -8,6 +27,7 @@
     ㄴ alert(), prompt(), confirm()
     ㄴ document.write(date.getFullYear - age)
         ㄴ 해당값 출력하면 NaN이 나온다 이유를 모르겠다
+            ㄴ 함수라 getFullYear() 뒤에 소괄호를 넣어줘야 한다
 
 01
     ㄴ alert

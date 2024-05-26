@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>옵션</td>
+            <td>가격</td>
+            <td>선택</td>
+        </tr>
+        <tr>
+            <td>인조가죽시트</td>
+            <td class="price">2500</td>
+            <td><input type="checkbox" id="opt1"></td>
+        </tr>
+        <tr>
+            <td>네비게이션</td>
+            <td class="price">5500</td>
+            <td><input type="checkbox" id="opt2"></td>
+        </tr>
+        <tr>
+            <td>선루프</td>
+            <td class="price">2000</td>
+            <td><input type="checkbox" id="opt3"></td>
+        </tr>
+        <tr>
+            <td>차량 기본가격</td>
+            <td class="price">20000</td>
+            <td><input type="checkbox" id="opt4" checked disabled ></td>
+        </tr>
+        <tr>
+            <td>합계</td>
+            <td colspan="2">????????</td>
+        </tr>
+    </table>
+    <button>견적내기</button>
+    <script>
+        var price = document.querySelectorAll(".price");
+        var price1 = price[0].innerHTML*1;
+        alert(price1)
+        // alert(price1);
+        // 과제) 버튼을 누르면 객체등의 가격을 가져와서 합산후 합게에 넣어주기 
+    </script>
+</body>
+</html>

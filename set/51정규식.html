@@ -1,0 +1,32 @@
+<!-- set파일에 두지말고
+javascript에 둘까 어느 파일에 둘지 결정하지 못했다 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// 정규표현객체(RegExp, 정규식)
+// var onlyNum = /^[0-9]*$/;
+// var user = prompt("당신이 좋아하는 숫자는?");
+// if(onlyNum.test(user)) {
+//     document.write("숫자만 작성하였습니다.")
+// }else {
+//     document.write("숫자가 아닙니다.");
+// }
+// document.write()
+
+var email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+var useremail = prompt("이메일을 적어주세요")
+if(email.test(useremail)){
+    document.write("이메일이에요")
+}else {
+    document.write("이메일이 아니에요")
+}
+</script>
+</body>
+</html>

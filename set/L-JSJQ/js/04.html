@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체(Object)</title>
+</head>
+<body>
+<h1>객체(Object)</h1>
+<ul>
+    <li>기능(Method)과 속성(Property)을 가지는 단위</li>
+    <li>객체.Method() : 객체안에 있는 명령어를 실행, document.write()</li>
+    <li>객체.Property : 객체안의 정보를 가져올때, document.body : getter</li>
+    <li>객체.porperty = 값 : 객체안의 정보를 설정할 때, document.body.style.color = 'red' : setter</li>
+    <li>내장객체 : 문자, 날짜, 숫자, 배열, 정규배열(정규식)</li>
+</ul>
+<h2>실습예제</h2>
+<ul>
+    <li> 객체의 생성</li>
+    <li>날짜객체 - 오늘 날짜</li>
+    <li>날짜객체 - 디데이(기념일) 계산</li>
+    <li>숫자관련 객체</li>
+    <li>배열 기본 사용법</li>
+    <li>문자객체</li>
+    <li>정규식 기본 사용법</li>
+</ul>
+<script>
+    // document.write();
+    // 객체 생성
+    var num; // 변수선언(생성)
+    var tv = new Object();
+    tv.color = "빨간색"; // setter
+    tv.width = "100cm";
+    tv.height = "50cm";
+    document.write("<p>TV의 색은 "+tv.color+"색입니다.</p>"); // getter
+    // 날짜객체 
+    var today = new Date(); // 오늘/현재시간 날짜객체 생성
+    var lastDay = new Date(2024,11,31); // 2024-12-31 날짜객체 생성
+    // 방문시간(오늘 날짜)
+    document.write(today.getFullYear());    // getFullYear() : 년도
+    document.write("<p>방문시간 : "+today.getFullYear()+"년 "+(today.getMonth()+1)+"월 "+today.getDate()+"일 "+today.getHours()+":"+today.getMinutes()+"</p>");    // 
+    // 디데이(기념일) 계산
+    // 올해는 xx일 남았습니다.
+    var dday = lastDay - today;
+    document.write("dday: "+dday+"\n");
+    dday = dday / (1000*60*60*24); // 하루에 대한 1/1000 초
+            // ㄴ 이해 못했다
+    
+    dday = Math.floor(dday); //올림처리
+    document.write("dday: "+dday)
+    document.write("<p>올해는 "+dday+"일 남았습니다.</p>")
+    // 살아온 날짜 구하기
+    // 오늘날짜 - 생년월일 = 살아온 날
+    // 저는 태어난지 xx일 되었습니다.
+
+    var borthday = new Date(1996,1,31);
+    document.write(borthday - today+"<br>")
+        // ㄴ 이해 못했다
+
+    // 숫자객체
+    var num = new Number(100)
+    var num2 = 100.5;
+    var num3 = "100px";
+    document.write(parseFloat(num3) + 100 + "px<br>")
+    // parseFloat() : 실수화
+    document.write("<p>"+Math.floor(num2)+ ":내림처리</p>");
+    document.write("<p>"+Math.ceil(num2)+ ":올림처리</p>");
+    document.write("<p>"+Math.round(num2)+ ":반올림처리</p>");
+
+    //랜덤수 만들기
+    // var ran = Math.random()
+    document.write("<p>랜덤수 : "+Math.random()*0.5+"</p>");
+    // 0~1 사이의 랜덤수 생성
+    document.write("<p>랜덤수 1~10 : "+ parseInt(Math.random()*10+1) +"</p>")
+
+    //문제) 랜덤수 :x (1~3)
+    document.write("<p>"+ parseInt(Math.random()*3+1) +"</p>")
+
+    // var nums = new Array();
+    var nums = [100, 200, 300, "문자정보", 500];
+    document.write("<p>"+nums+"</p>")
+    document.write("<p>num[0] : "+nums[0]+"</p>")
+    // 배열을 활용한 요일표현
+    var yoil = ["일","월","화","수","목","금","토"]
+    document.write("<p>방문시간 : "+today.getFullYear()+"년 "+(today.getMonth()+1)+"월 "+today.getDate()+"일 "+today.getHours()+":"+today.getMinutes()+"</p>");
+
+    // 정규표현객체(RegExp, 정규식)
+    // var onlyNum = /^[0-9]*$/;
+    // var user = prompt("당신이 좋아하는 숫자는?");
+    // if(onlyNum.test(user)) {
+    //     document.write("숫자만 작성하였습니다.")
+    // }else {
+    //     document.write("숫자가 아닙니다.");
+    // }
+    // document.write()
+
+    // 문제) 사용자에게 이메일주소를 물어서 이메일 주소가 정확한지 알려주기!
+    // var email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+    // var useremail = prompt("이메일을 적어주세요")
+
+    // if(email.test(useremail)){
+    //     document.write("이메일이에요")
+    // }else {
+    //     document.write("이메일이 아니에요")
+    // }
+    
+
+    
+</script>
+</body>
+</html>
