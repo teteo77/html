@@ -1,48 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-    <style>
-        h1 {color:red}
-        button:nth-of-type(1) {width:100px;}
-    </style>
+    <title>Document</title>
 </head>
 <body>
-<h1>DOM(Document Object Model)</h1>
-<ul>
-    <li id="green">HTML 문서의 구조와 그 정보를 말함.</li>
-    <li>선택자.명령/속성, 예) document.body.style</li>
-    <li>getElementById("green") : 아이디 선택자</li>
-    <li class="blue" style>getElementsByClassName("blue") : 클래스 선택자</li>
-    <li class="blue">getElementsByTagName("li")[0] : 태그 선택자</li>
-</ul>
-<h2>기본속성/명령어</h2>
-<ul>
-    <li>선택자.style.스타일속성 : DOM(태그)의 디자인을 바꿀때</li>
-    <li>선택자.속성 : 태그의 속성을 가져오거나 변경할 때</li>
-    <li>innerText : 글자를 얻거나 변경</li>
-    <li>innerHTML : 글자+태그를 얻거나 변경</li>
-</ul>
-<button>red</button>
-<button>orange</button>
-<button>green</button>
-<button>reset</button>
-<button>글자변경</button>
-<button>HTML 변경</button>
-<input type="color" value="red">
-<button>배경색</button>
-<input type="text" value="red">
-<button>배경색</button>
-<button>다크테마</button>
-<script>
-    document.getElementById("green").style.color = "green";
-    document.getElementsByTagName("li")[0].style.color = "red";
-    document.getElementsByClassName("blue")[0].style.color = "blue";
-    document.querySelector("li:nth-child(2)").style.color = "green";
+    <button>red</button>
+    <button>orange</button>
+    <button>green</button>
+    <button>reset</button>
+    <button>글자변경</button>
+    <button>HTML 변경</button>
+    <input type="color" value="red">
+    <button>배경색</button>
+    <input type="text" value="red">
+    <button>배경색</button>
+    <button>다크테마</button>
 
+    <!-- 버튼은 여러게 있기 때문이 All로 모두 선택해주고 배열[0]로 선택 해준다. -->
+    <!-- body는 하나 이기 때문에 Selector로만 지정한다 -->
+
+<script>
     document.querySelector("button:nth-of-type(1)").onclick = function() {
         // alert("첫번째 버튼 누름");
         document.querySelector("body").style.backgroundColor = "red";
@@ -65,7 +44,7 @@
         body.style.backgroundColor = "";
     }
     button[4].onclick = function() {
-       document.querySelector("h2").innerText = "글 변경됨"
+        document.querySelector("h2").innerText = "글 변경됨"
         // var txt = document.querySelector("h2").innerText;
         // alert(txt);
     }

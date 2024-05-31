@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li id="green">HTML 문서의 구조와 그 정보를 말함.</li>
+    <li>선택자.명령/속성, 예) document.body.style</li>
+    <li>getElementById("green") : 아이디 선택자</li>
+    <li>getElementsByClassName("blue") : 클래스 선택자</li>
+    <li>getElementsByTagName("li")[0] : 태그 선택자</li>
+</ul>
+<!-- getElementsByTagNam는
+    주어진 태그 이름을 가진 요소를 반환합니다 -->
+    
+<script>
+    document.getElementsByTagName("li")[0].style.color = "red";
+    document.getElementsByTagName("li")[3].style.color = "red";
+    document.querySelector("li:nth-child(2)").style.color = "green";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+innterText는 무조건 텍스트 형태로만 내용을 변경
+innerHTML은 태그를 적용하여 내용을 변경한다 
+    배열 [2]버튼 참고
+-->
+
+<body>
+    <h2>기본속성/명령어</h2>
+    <button>글자변경</button>
+    <button>다크테마</button>
+    <button>글변경</button>
+
+<script>
+    var body = document.querySelector("body");
+    var button = document.querySelectorAll("button");
+
+    button[0].onclick = function() {
+       document.querySelector("h2").innerText = "글 변경됨"
+        // var txt = document.querySelector("h2").innerText;
+        // alert(txt);
+    }
+
+    button[1].onclick = function(){
+        //다크테마 기능
+        // document.querySelector("body").style.backgroundColor="black"
+        // document.querySelector("body").style.color="white"
+        // body.style.backgroundColor="black"
+        // body.style.color="white"
+        // button[1].innerText="밝은테마"
+
+        //밝은테마 기능
+        // body.style.backgroundColor="white"
+        // body.style.color="black"
+        // button[1].innerText="밝은테마"
+
+        var bg = body.style.backgroundColor= "다크테마";
+        
+
+        if(bg == button[1].innerText){
+            // 다크테마
+            body.style.backgroundColor="black"
+            body.style.color="white"
+            button[1].innerText="밝은테마"
+            console.log(button[1].innerText)
+        }else{
+            // 밝은테마
+            body.style.backgroundColor="white"
+            body.style.color="black"
+            button[1].innerText="다크테마"
+            console.log(button[1].innerText)
+        }
+    }
+
+        button[2].onclick = function() {
+        button[2].innerHTML = "<strong>변경됨</strong>"
+    }
+
+
+
+</script>
+    
+</body>
+</html>
