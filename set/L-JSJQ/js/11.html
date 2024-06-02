@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체</title>
+    <style>
+        #stage {border: 1px dashed gray; width:400px; height: 400px;margin: auto; position: relative;}
+        #stage img {position: absolute; left:0; top:0; width:80px; height:100px;  transition:ease transform .3s}
+        .cs {position: fixed; left:0; top:0; width:80px; transform:translate(-11px, -13px)}
+    </style>
+</head>
+<body>
+<h1>이벤트 객체</h1>
+<p>이벤트가 가진 특정 명령/속성(정보)을 이용하기 위함</p> 
+<h2>키보드 이벤트 객체속성</h2>
+<ul>
+    <li>keyCode : 키보드값(키넘버)을 반환</li>
+    <li>key : 키명을 반환</li>
+    <li>ctrlKey : ctrl키를 눌렀을 때 true, 아니면 false값 반환</li>
+    <li>altKey :</li>
+    <li>shiftKey : shift키를 눌렀을 때 true, 아니면 false값 반환</li>
+</ul>
+<h2>마우스 이벤트 객체 속성</h2>
+<ul>
+    <li>clientX / clientY : 마우스의 화면좌표값</li>
+    <li>pageX / pageY : 마우스의 도큐먼트 좌표값</li>
+    <li>screenX / screenY : 화면(모니터)의 좌표값</li>
+    <li>offsetX / offsetY : 선택자 영역의 좌표값</li>
+</ul>
+<p id="xy">left: ???, top : ???</p>
+<img src="./img/cursor.png" class="cs">
+<img src="./img/cursor.png" class="cs">
+<img src="./img/cursor.png" class="cs">
+<img src="./img/cursor.png" class="cs">
+<img src="./img/cursor.png" class="cs">
+
+<div id="stage">
+    <img src="./img/mario.png" alt="#">
+</div>
+
+<script>
+var mario = document.querySelector("#stage img");
+var x=0; //left
+var y=0; // top
+var x_max = 320;
+var y_max= 300;
+document.onkeydown = function(e) {
+    // console.log(e)
+    // console.log(e.key)
+    if(e.keyCode ==72) { // h키를 눌렀으면
+        alert("H키 누름");
+    }
+    // 문제) 오른쪽키 누르면 경고창(페이지 이동됨)!
+    // if(e.keyCode == 39) { // h키를 눌렀으면
+    //     alert("페이지 이동됨");
+    // }
+
+    // 문제) 오른쪽키 누르면 마리오가 10px 이동
+    if(e.keyCode == 39 && x < x_max) {
+        x += 10;
+        mario.style.left= x + "px";
+        mario.style.transform = "rotateY(0)"
+    }
+    // 문제) 왼쪽키 누르면 마리오가 10px 이동
+    if(e.keyCode == 37 && x > 0) {
+        x -= 10;
+        mario.style.left= x + "px";
+        mario.style.transform = "rotateY(180deg)"
+    }
+    // 문제) 윗키
+    if(e.keyCode == 38 && y > 0){
+        y -=10;
+        mario.style.top= y + "px"
+    }
+    // 문제) 아래키
+    if(e.keyCode == 40 && y < y_max){
+        y +=10;
+        mario.style.top= y + "px"
+    }
+    // Ctrl + R
+    if(e.ctrlKey && e.keycode == 82){
+        // alert("컨트롤 키 누름")
+        mario.style.transform = "rotate(360deg)"
+        return false; //이후의 동작(이벤트) 멈춤
+    }
+}
+
+// document.onkeyup = function(e){
+//     console.log(e)
+//     if(e.onkeyup == 37,38,39,40){
+//         alert("방향키 누름")
+//     }
+// }
+
+document.onclick = function(e) {
+    console.log(e.clientX, e.clientY)
+}
+
+var cursor = document.querySelectorAll(".cs");
+document.onmouseover = function(e){
+    cursor[0].style.left = e.clientX+"px";
+    cursor[0].style.top = e.clientY+"px";
+    
+    cursor[2].style.left = e.clientX+"px";
+    cursor[2].style.top = e.clientY+"px";
+    cursor[3].style.left = e.clientX+"px";
+    cursor[3].style.top = e.clientY+"px";
+    cursor[4].style.left = e.clientX+"px";
+    cursor[4].style.top = e.clientY+"px";
+    cursor[5].style.left = e.clientX+"px";
+    cursor[5].style.top = e.clientY+"px";
+    setTimeout(function(){
+        cursor[1].style.left = e.clientX+"px";
+        cursor[1].style.top = e.clientY+"px";
+    },100)
+    // 과제) 커서 잔상효과 만들어오기
+}
+
+
+
+
+</script>
+</body>
+</html>

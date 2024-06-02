@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>지역변수 /전역변수</h1>
+<ul>
+    <li>전역변수 : 변수선언을 스코프{} 밖에서 선언</li>
+    <li>지역변수 : 변수선언을 스코프 안에서 선언, 같은 스코프아니면 같은 이름 사용가능</li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+var num = 100;
+function change() {
+    var num = 0;
+    num += 100;
+    
+}
+alert(num);
+change();
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수(function)</title>
+</head>
+<body>
+<h1>함수(function)</h1>
+<ul>
+    <li>함수는 실행문을 저장한 것</li>
+    <li>함수의 정의(선언) : function 함수명() {실행문}</li>
+    <li>함수의 실행(호출) : 함수명()</li>
+    <li>함수 정의문은 스크립트에서 가장 먼저 실행된다</li>
+    <li>함수는 재활용(반복사용), 수정/유지보수 유리</li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<button>카운트 +1</button>
+<button>카운트 +2</button>
+<button>카운트 +3</button>
+<p>0</p>
+<button>red</button>
+<button>green</button>
+<button>blue</button>
+<button>사용자 배경색</button>
+<input type="color">
+
+<script>
+// 함수의 정의
+// function changBg() {
+//     document.querySelector("body").style.background="red"
+// }
+// changBg()
+
+function changBg(color) {
+    document.querySelector("body").style.background=color
+}
+// changBg("orange")
+
+// 버튼을 누르면 +1 되게
+// 1
+var button = document.querySelectorAll('button');
+
+button[0].onclick = function() {
+    count(1);
+}
+button[1].onclick = function() {
+    count(2);
+}
+button[2].onclick = function() {
+    count(3);
+}
+
+function count(num) {
+    document.querySelector("p").innerText = document.querySelector("p").innerText*1+num;
+}
+// 문제) changeBg()버튼을 누르면 배경색 바뀌게
+
+
+button[3].onclick = function() {
+    changBg("red")
+}
+button[4].onclick = function() {
+    changBg("green")
+}
+button[5].onclick = function() {
+    changBg("blue")
+}
+
+function change_color(color) {
+}
+
+button[6].onclick = function() {
+    document.querySelector("body").style.background= document.querySelector('input').value;
+}
+
+
+
+
+
+
+</script>
+
+    
+</body>
+</html>

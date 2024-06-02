@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차 견적페이지</title>
+</head>
+<body>
+<h1>자동차 견적페이지</h1>
+<table border="1">
+    <tr>
+        <td>옵션</td>
+        <td>가격</td>
+        <td>선택</td>
+    </tr>
+    <tr>
+        <td>인조가죽시트</td>
+        <td class="price">2500</td>
+        <td><input type="checkbox" id="opt1" style="color:red"></td>
+    </tr>
+    <tr>
+        <td>네비게이션</td>
+        <td class="price">5500</td>
+        <td><input type="checkbox" id="opt2"></td>
+    </tr>
+    <tr>
+        <td>선루프</td>
+        <td class="price">2000</td>
+        <td><input type="checkbox" id="opt3"></td>
+    </tr>
+    <tr>
+        <td>차량 기본가격</td>
+        <td class="price">20000</td>
+        <td><input type="checkbox" id="opt4" checked disabled ></td>
+    </tr>
+    <tr>
+        <td>합계</td>
+        <td colspan="2" id="total">?????</td>
+    </tr>
+</table>
+<button>견적내기</button>
+<script>
+    var price = document.querySelectorAll(".price");
+    var price1 = price[0].innerText*1;
+    var price2 = price[1].innerText*1;
+    var price3 = price[2].innerText*1;
+    var price4 = price[3].innerText*1;
+    // alert(price1);
+    //과제) 버튼을 누르면 각제품의 가격을 가져와서 합산후 합계에 넣어주기
+    
+    document.querySelector("button").onclick = function(){
+        var total=20000;
+        if(document.querySelector("#opt1").checked) {
+            total += price1;
+        }
+        if(document.querySelector("#opt2").checked) {
+            total += price2;
+        }
+        if(document.querySelector("#opt3").checked) {
+            total += price3;
+        }
+        document.querySelector("#total").innerText = total;
+    }
+    // alert(document.querySelector("#opt1").checked);
+    
+</script>
+</body>
+</html>

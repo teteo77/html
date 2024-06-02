@@ -1,5 +1,53 @@
+값만 가져올꺼면 선언한 하고 innerText, innerHTML
+값을 수정할꺼면 뒤에 속성값 넣어줘라
+
+11
+    ㄴ 위 코드를 예로 들면 'click'이라는 이벤트가 발생했을 때 
+    이벤트에 관한 정보가 담기는 이벤트 객체가 생성된다.
+    이벤트가 발생하면 이벤트 객체가 생성이 되는데, 
+    그 이벤트 객체가 e라는 파라미터에 할당이 된다.
+        ㄴ https://velog.io/@ssarr_i/js-functione%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC
+        ㄴ https://velog.io/@simej1214/JS-function-e-%EB%8A%94-%EC%96%B4%EB%96%A4-%EB%9C%BB%EC%9D%BC%EA%B9%8C
+            ㄴ 다시 정리해야 한다.
+    ㄴ if(e.ctrlKey == true && e.keycode == 82){}
+        ㄴ 값이 ture나 false이면 약식을 써두 된다
+            ㄴ if(e.ctrlKey && e.keycode == 82){}
+    ㄴ 마우스기능, 슈퍼마리오 움직이기 ulile파일에 넣기
+10
+    ㄴ onclick 배웠다
+    ㄴ ondblclick 배웠다
+        ㄴ 더블클릭이라 두번 클릭해야 한다.
+    ㄴ onmouseover
+    ㄴ onmouseout
+    ㄴ onkeypress
+    ㄴ onkeydown
+    ㄴ onkeyup
+    ㄴ onfocus
+    ㄴ onblur
+    ㄴ onchange
+    ㄴ onload
+    ㄴ onresize
+    ㄴ addEventListener
+        ㄴ onclick보다 addEventListener를 사용하는게 좋다고 한다.
+        ㄴ 단순할거 쓸땐 onclick
+
+09
+    ㄴ 스코프 배웠다
+
+08
+    ㄴ 사용자가 지정한 값으로 배경을 바꿔주는걸 배웠다.
+    ㄴ 재귀함수 선생님께 다시 물어보기
+        ㄴ 08원본파필 참조
+    ㄴ 태그에 value값 가져와서 입력 해주는걸 배웠다.
+        ㄴ button[6].onclick = function() {
+    document.querySelector("body").style.background= document.querySelector('input').value;
+}
+
 07
-    
+    ㄴ onclick에 함수를 넣어서 실행하는 방법을 배웠다
+        ㄴ 
+    ㄴ document.querySelector를 이용해서 checked선택 
+        ㄴ if(document.querySelector("#opt3").checked)
 
 06
     ㄴ DOM과 BOM차이점을 설명하세요
@@ -16,6 +64,7 @@
         ㄴ js 하루 1/1000 초 검색해서 공부해보기
             ㄴ https://horangi.tistory.com/396
     ㄴ 정규 표현식
+    ㄴ *1을 하면 숫자값으로 바뀐다
 
 
 03
