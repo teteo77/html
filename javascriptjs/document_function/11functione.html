@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+'onkeydown'이라는 이벤트가 발생했을 때 
+이벤트에 관한 정보가 담기는 이벤트 객체가 생성된다.
+이벤트가 발생하면 이벤트 객체가 생성이 되는데, 
+그 이벤트 객체가 e라는 파라미터에 할당이 된다.
+
+객체 함수를 보고싶으면 매소드만 호출하면 된다.
+-->
+<body>
+
+
+<script>
+    document.onkeydown = function(e){
+        console.log(e.keyCode);
+        // ㄴ 키보드 누르면 키 번호값이 나온다
+        console.log(e.key)
+        // ㄴ 입력된 키보드 값이 나온다
+
+        if(e.keyCode == 72) { // h키를 누르면 객체 가 호출된다
+            console.log(e)
+            // ㄴ 객체 함수를 보고싶으면 매소드만 호출하면 된다.
+                // ㄴ 호출하고 싶은 함수를 써서 호출하면 된다
+                    // ㄴ ex) console.log(e.key)
+        }
+    }
+</script>
+</body>
+</html>

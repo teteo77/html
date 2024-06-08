@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+addEventListener()인터페이스의 메소드는 
+    ㄴ 지정된 EventTarget이벤트가 대상에 전달될 때마다 호출되는 함수를 설정합니다. 
+    ㄴ 단순할거 쓸땐 onclick
+
+addEventListener(type, listener)
+addEventListener(type, listener, options)
+addEventListener(type, listener, useCapture)
+
+ -->
+<body>
+<lu>
+    <li>addEventListener : 이벤트를 중첩, 다중이벤트, 동적요소/최신 이벤트에 가능<span id="add"></span></li>
+</lu>
+<script>
+document.querySelector("#add").innerHTML = "<button>동적요소</button>";
+
+document.querySelector("#add").addEventListener("click",function(){
+        alert();
+    })
+
+</script>
+</body>
+</html>
