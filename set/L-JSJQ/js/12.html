@@ -10,7 +10,8 @@
         nav ul { border:1px solid red; display: flex; justify-content: center; align-items: center; gap:5px;}
         nav li{ display: flex; align-items: center;}
         nav input[type=color] {border:none; background:none;}
-        main {border:1px dashed #ddd; padding: 20px; max-width: 800px; margin:auto; font-size:14px;}
+        main {border:1px dashed #ddd; padding: 20px; max-width: 800px; margin:auto;;}
+
     </style>
 </head>
 <body>
@@ -19,7 +20,7 @@
     <ul>
         <li>배경색 <input type="color"></li>
         <li>글자색 <input type="color"></li>
-        <li>글자크기 <input type="range" min="8" max="40" value="14"></li>
+        <li>글자크기 <input type="range" min="8" max="40"></li>
         <li><button>초기화</button></li>
     </ul>
 </nav>
@@ -71,27 +72,10 @@ Oh<br>
     </article>
 </main>
 <script>
-
-var input = document.querySelectorAll("input")
-input[0].onchange = function() {
+document.querySelectorAll("input")[0].onchange = function() {
     var bg = this.value
-    // alert(bg)
-    document.querySelector("main").style.background = bg;
+    alert(bg)
 }
-
-input[1].onchange = function() {
-    var text = this.value
-    document.querySelector("main").style.color = text;
-}
-
-input[2].onchange = function(){
-    var text_size = this.value
-    // console.log(text_size)
-    document.querySelector("main").style.fontSize = text_size+"px";
-}
-
-document.querySelector("button").onclick = function(){
-    document.querySelector("main").style.background = "#fff";
-    document.querySelector("main").style.color = "#000";
-    document.querySelector("main").style.fontSize = "14px";
-}
+</script>
+</body>
+</html>

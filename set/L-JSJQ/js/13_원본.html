@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돔조작에 유용한 함수/이벤트</title>
+    <style>
+        body {height:400vh; transition: ease all .3s; background:green}
+        .red {background:red; color:#fff}
+    </style>
+</head>
+<body>
+<h1>돔조작에 유용한 함수/이벤트</h1>
+<ul>
+    <li>forEach() : 요소의 갯수만큼 반복할 때</li>
+    <li>classList.add() : 클래스 지정(추가)</li>
+    <li>classList.remove() : 클래스 제거(삭제)</li>
+    <li>classList.toggle() : 클래스 토글</li>
+    <li>window.addEventListener("scroll", function(){}) : 스크롤이벤트</li>
+    <li>window.scrollY : 현재스크롤값 얻기</li>
+    <li>window.scrollTo(0, 500) : 스크롤 이동</li>
+    <li>window.scrollTo(0, 500) : 스크롤 이동</li>
+    <li>window.scrollTo({left:0, top:1000, behavior:"smooth"})</li>
+    <li>window.getComputedStyle(자바스크립트 선택자).CSS속성명 : 렌더링된 스타일 정보를 가져올 때</li>
+</ul>
+<button>li에 배경색 넣기</button>
+<button>클래스 추가</button>
+<button>클래스 제거</button>
+<button>클래스 토글</button>
+<button>스크롤(1000) 이동</button>
+<button>body의 배경색은?</button>
+<script>
+    var bt = document.querySelectorAll("button");
+    bt[0].onclick = function(){
+        // for(var i=0; i<7; i++) {
+        //     document.querySelectorAll("li")[i].style.background = "red";
+        // }
+        document.querySelectorAll("li").forEach(function(e){
+            e.style.background = "red";
+        })
+    }
+    // 클래스 추가
+    bt[1].onclick = function() {
+        this.classList.add("red");
+    }
+    // 클래스 제거
+    bt[2].onclick = function() {
+        bt[1].classList.remove("red");
+    }
+    // 클래스 토글
+    bt[3].onclick = function() {
+        bt[1].classList.toggle("red");
+        window.scrollTo(0,500);
+    }
+    window.addEventListener("scroll", function(){
+        var y = window.scrollY; // 현재 스크롤값
+        console.log(y);
+        //  
+        if(y>1000) {
+            document.body.classList.add("red")
+        } else {
+            document.body.classList.remove("red")
+        }
+    })
+    setTimeout(function(){
+        window.scrollTo(0,500);// 윈도우 객체에 화면에 렌더링이후 실행을 위해 지연실행
+    },10)
+    bt[4].onclick = function(){
+        window.scrollTo({left:0, top:1000, behavior:"smooth"})
+    }
+    bt[5].onclick = function() {
+        // alert(document.body.style.backgroundColor);
+        var bg = window.getComputedStyle(document.body).backgroundColor;
+        alert(bg);
+    }
+</script>
+</body>
+</html>

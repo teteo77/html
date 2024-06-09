@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돔조작에 유용한 함수/이벤트</title>
+    <style>
+        body {height:400vh;}
+        .red {background:red; color:#fff;}
+    </style>
+</head>
+<body>
+<h1>돔조작에 유용한 함수/이벤트</h1>
+<ul>
+    <li>forEach() : 요소의 갯수만큼 반복할 때</li>
+    <li>classList.add() : 클래스 지정(추가)</li>
+    <li>classList.remove() : 클래스 제거</li>
+    <li>classList.toggle() : 클래스 토글</li>
+    <li>window.addEventListener("scroll", function(){})</li>
+    <li>window.scrollY : 현제ㅐ스크롤값 얻기</li>
+    <li>window.scrollTo(0, 500) : 스크롤 이동</li>
+    <li>window.scrollTo(0, 500) : 스크롤 이동</li>
+    <li>window.scrollTo({left:0, top:1000, behavior:"smooth"})</li>
+    <li>window.getComputedStyle(자바스크립트 선탁자).CSS속성명 : 랜더링된 스타일 정보를 가져올 때</li>
+</ul>
+<button>li에 배경색 넣기</button>
+<button>클래스 추가</button>
+<button>클래스 제거</button>
+<button>클래스 토글</button>
+<button>스크롤(1000)이동 </button>
+<button></button>
+<script>
+var bt = document.querySelectorAll("button");
+var li = document.querySelectorAll("li");
+// bt[0].onclick = function(){
+//     for(var i=0; i<4; i++){
+//         li[i].style.background = "blue"
+//     }
+    
+// }
+
+bt[0].onclick = function(){
+    document.querySelectorAll("li").forEach(function(e){
+        e.style.background="red"
+    })
+}
+
+bt[1].onclick = function(){
+    this.classList.add("red");
+}
+
+bt[2].onclick = function(){
+    // document.querySelectorAll("button")[1].classList.remove(bt[1]);
+    bt[1].classList.remove("red")
+}
+
+bt[3].onclick = function(){
+    bt[1].classList.toggle("red")
+}
+
+window.addEventListener("scroll", function(){
+    var y = window.scrollY;
+    console.log(y)
+    // 현제 스크롤 값에 조건을 줘서 red클래스 추가
+
+    if (y>1000){
+        document.body.classList.add("red")
+    }else {
+        document.body.classList.remove("red");
+    }
+})
+
+setTimeout(function(){
+    window.scrollTo(0,500);
+},100)
+
+bt[4].onclick = function(){
+    window.scrollTo({left:0, top:1000, behavior:"smooth"})
+}
+
+bt[5].onclick = function(){
+    // alert(document.body.style.backgroundColor);
+    var bg = window.getComputedStyle(document.body).backgroundColor
+
+    alert(bg)
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

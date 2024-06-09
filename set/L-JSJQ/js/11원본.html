@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 객체</title>
     <style>
+        body {cursor: none;}
         #stage {border:1px dashed gray; width:400px; height:400px; margin:auto; position: relative;}
         #stage img {position: absolute; left:0; top:0; width:80px; height:100px;transform:rotate(0deg); transition:ease transform .3s }
-        .cs {position: fixed;left:0; top:0; width:80px; transform:translate(-11px, -14px)}
+        .cs {position: fixed;left:0; top:0; width:80px; transform:translate(-11px, -14px); z-index: 500;}
+        .cs:nth-of-type(2) {z-index: 400; opacity: .8;}
+        .cs:nth-of-type(3) {z-index: 300; opacity: .6;;}
+        .cs:nth-of-type(4) {z-index: 200; opacity: .4;}
+        .cs:nth-of-type(5) {z-index: 100; opacity: .2;}
+
     </style>
 </head>
 <body>
@@ -72,12 +78,6 @@
             y -= 10;
             mario.style.top = y +"px";
         }
-        // Ctrl + R
-        // if(e.ctrlKey && e.keyCode == 82) {
-        //     // alert("콘트롤 키 누름")
-        //     mario.style.transform = "rotate(360deg)";
-        //     return false; // 이후의 동작(이벤트) 멈춤
-        // }
     }
     var cursor = document.querySelectorAll(".cs");
     document.onmousemove = function(e) {
@@ -88,20 +88,23 @@
         cursor[0].style.left = e.clientX+"px";
         cursor[0].style.top = e.clientY+"px";
         // 문제) 2~4번째 이미지에 좌표로 적용
-        
-        cursor[2].style.left = e.clientX+"px";
-        cursor[2].style.top = e.clientY+"px";
-        cursor[3].style.left = e.clientX+"px";
-        cursor[3].style.top = e.clientY+"px";
-        cursor[4].style.left = e.clientX+"px";
-        cursor[4].style.top = e.clientY+"px";
         setTimeout(function(){
             cursor[1].style.left = e.clientX+"px";
             cursor[1].style.top = e.clientY+"px";
+        },50)
+        setTimeout(function(){
+            cursor[2].style.left = e.clientX+"px";
+            cursor[2].style.top = e.clientY+"px";
         },100)
-        // 과제) 커서 잔상효과 만들어오기
+        setTimeout(function(){
+            cursor[3].style.left = e.clientX+"px";
+            cursor[3].style.top = e.clientY+"px";
+        },200)
+        setTimeout(function(){
+            cursor[4].style.left = e.clientX+"px";
+            cursor[4].style.top = e.clientY+"px";
+        },300)
     }
-
 </script>
 </body>
 </html>

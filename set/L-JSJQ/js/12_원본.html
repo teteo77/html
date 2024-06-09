@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디자인 커스터마이징</title>
+    <style>
+        h1 {text-align: center;}
+        nav * {margin:0; padding:0; list-style: none; font-size:12px;}
+        nav ul {display: flex; justify-content: center; align-items: center; gap:10px}
+        nav li {display: flex; align-items: center;}
+        nav input[type=color] {border:none; background:none}
+        main {border:1px dashed #ddd; padding:20px; max-width:800px; margin:auto; font-size: 14px;}
+    </style>
+</head>
+<body>
+<h1>디자인 커스터마이징</h1>
+<nav>
+    <ul>
+        <li>배경색 <input type="color" value="#ffffff"></li>
+        <li>글자색 <input type="color"></li>
+        <li>글자크기 <input type="range" min="8" max="40" value="14"></li>
+        <li><button>초기화</button></li>
+    </ul>
+</nav>
+<main>
+    <h2>소나기</h2>
+    <p>노래 : 변우석</p>
+    <article>
+        <p>그치지 않기를 바랬죠<br>처음 그대 내게로 오던 그날에<br>잠시 동안 적시는<br>그런 비가 아니길<br>간절히 난 바래왔었죠</p>
+        <p>그대도 내 맘 아나요
+        매일 그대만 그려왔던 나를
+        오늘도 내 맘에 스며들죠
+        </p>
+        <p>그대는 선물입니다<br>
+        하늘이 내려준<br>
+        홀로 선 세상 속에<br>
+        그댈 지켜줄게요<br>
+        어느 날 문득<br>
+        소나기처럼<br>
+        내린 그대지만<br>
+        오늘도 불러 봅니다<br>
+        내겐 소중한 사람<br>
+        Oh</p>
+
+        <p>떨어지는 빗물이<br>
+        어느새 날 깨우고<br>
+        그대 생각에 잠겨요</p>
+
+        <p>이제는 내게로 와요<br>
+        언제나처럼 기다리고 있죠<br>
+        그대 손을 꼭 잡아줄게요</p>
+
+        <p>그대는 선물입니다<br>
+        하늘이 내려준<br>
+        홀로 선 세상 속에<br>
+        그댈 지켜줄게요<br>
+        어느 날 문득<br>
+        소나기처럼<br>
+        내린 그대지만<br>
+        오늘도 불러 봅니다<br>
+        내겐 소중한 사람</p>
+
+        <p>잊고 싶던 아픈 기억들도<br>
+        빗방울과 함께 흘려보내면 돼요<br>
+        때로는 지쳐도<br>
+        하늘이 흐려도<br>
+        내가 있다는 걸 잊지 말아요</p>
+
+        <p>그대는 사랑입니다<br>
+        하나뿐인 사랑<br>
+        다시는 그대와 같은<br>
+        사랑 없을 테니<br>
+        잊지 않아요<br>
+        내게 주었던<br>
+        작은 기억 하나도<br>
+        오늘도 새겨봅니다<br>
+        내겐 선물인 그댈</p>
+    </article>
+</main>
+<script>
+    var input = document.querySelectorAll("input");
+    //배경색
+    input[0].onchange = function(){
+        var bg = this.value;
+        // alert(bg);
+        document.querySelector("main").style.background = bg;
+    }
+    // 글자색
+    input[1].onchange = function(){
+        var text = this.value;
+        // alert(bg);
+        document.querySelector("main").style.color = text;
+    }
+    // 글자크기
+    input[2].onchange = function(){
+        var size = this.value;
+        // alert(size);
+        document.querySelector("main").style.fontSize = size+"px";
+    }
+    // 초기화버튼
+    document.querySelector("button").onclick = function(){
+        document.querySelector("main").style.background = "#ffffff";
+        input[0].value = "#ffffff";
+        document.querySelector("main").style.color = "#000000";
+        input[0].value = "#000000";
+        document.querySelector("main").style.fontSize = "14px";
+        input[0].value = 14;
+    }
+</script>
+</body>
+</html>

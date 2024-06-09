@@ -1,6 +1,38 @@
 <!-- 값만 가져올꺼면 innerText, innerHTML 선언만 하고 
 값을 수정할꺼면 뒤에 속성값 넣어줘라 -->
 
+document.body.style.background
+    ㄴ js로 속성 접근하는거 있었는데 찾아보기
+
+15
+    ㄴ window.getComputedStyle 정리하기
+    ㄴ slide정리하기
+    ㄴ appendChild
+        ㄴ cloneNode
+
+14
+    for문 스코프 var와 let차이 정리하기
+    한글자식 출력하는 기능 정리하기
+    퀴즈게임 skill에 정리하기
+
+
+
+13
+    for, foreach정리하기
+    this정리하기
+    classList 함수 정리하기
+        ㄴ add, remove, toggle
+        ㄴ 생각보다 자주 쓰이는거 같다 퀴즈 문제에서 쓰였다
+        ㄴ 정리하자
+    getComputedStyle
+        ㄴ 자주사용하지 않는거 같은데.. 일단 정리하자
+
+12
+    document.querySelectorAll("input")[0].onchange = function() {
+    alert();}
+        ㄴ onchanges 정리하기
+    this정리하기
+
 11
     ㄴ 위 코드를 예로 들면 'click'이라는 이벤트가 발생했을 때 
     이벤트에 관한 정보가 담기는 이벤트 객체가 생성된다.

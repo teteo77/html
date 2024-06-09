@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {margin:0; padding:0; list-style:none;}
+    body {padding:20px;}
+    h1 {text-align: center;}
+    h2 {display:none;}
+    section{overflow:hidden;max-width:800px; margin:30px auto; position: relative;}
+    section>ul {display:inline-flex;transition: ease all .3s;}
+    section>ul.no {transition: ease all 0s;}
+    section li {width:300px; height:300px;}
+    section img {width:100%; height:100%; object-fit:cover;}
+    .bt button {font-size:16px; padding:5px 10px; position: absolute; left:10px; top: 50%; transform: translateY(-50%);cursor: pointer;}
+    .bt button:nth-child(2) {left:auto; right:10px;}.page {margin:10px; display: flex; justify-content: center; gap:20px;}
+    .page span {background:#eee; width:15px; height:15px; border-radius: 8px; transition: ease all .3s;}
+    .page span.on {background:#333;width:30px;}</style>
+</head>
+<body>
+<h1>자동 무한 슬라이드</h1>
+<section id="slide">
+    <h2>작품리스트</h2>
+    <ul>
+        <li><img src="./img/1.jpg" alt="풍경1"></li>
+        <li><img src="./img/2.jpg" alt="풍경2"></li>
+        <li><img src="./img/3.jpg" alt="풍경3"></li>
+    </ul>
+    <div>
+        <span class="on"></span>
+        <span></span>
+        <span></span>
+    </div>
+</section>
+<script>
+    // [기능1] li의 폭크기를 section 폭크기와 똑같이
+    // section의 width값을 얻어 경고창으로 알려주기
+
+    var w = window.getComputedStyle(document.querySelector("section")).width;
+    // alert(w)
+    // console.log(w);
+    // 첫 li의 폭크기를 w값으로 적용
+    var li = document.querySelectorAll("section ul li");
+    var ul = document.querySelector("section ul");
+    var span = document.querySelectorAll("#page span")
+    li[0].style.width=w;
+    
+    li.forEach(function(tag,i){
+        tag.style.width=w;
+    })
+    // ㄴ 모든 li에 넓이를 w로 적용
+
+    // [기능2] 첫번째 li를 복사해서 마지막 li에 추가
+    var copy = li[0].cloneNode(true)
+    document.querySelector("ul").appendChild(copy) //appenChild() 선택자 자식으로 마지막 부분에 추가
+
+    // [기능3] 슬라이드 기능
+    //ul이 왼쪽으로 w만큼 이동
+    var page=0; // ul에 margin-left값 저장 변수
+    setInterval(function(){
+        page++;
+        if(page<4){
+            ul.style.marginLeft= page*-800+"px";
+            span[1].classLis.add("on");
+            if(page==3){ //지연실행은 트랜지션 후에 실행되도록 하기 위함ㄴ
+                setTimeout(function(){
+                    ul.style.transition= "none";
+                    page=0;
+                    ul.style.marginLeft= page*-800+"px";
+                    setTimeout(function(){
+                        ul.stye.transition="ease all 0.3s"
+                    },100)
+                }, 310)
+            }
+        }else{
+            page=0;
+            ul.style.marginLeft= page*-800+"px";
+        }    
+    },2000)
+    
+
+
+</script>
+</body>
+</html>
