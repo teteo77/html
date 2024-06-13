@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {height:100vh; transition: ease all .3s; background:green}
+        .red {background:red; color:#fff}
+    </style>
+</head>
+<body>
+<ul>
+    <li>classList.add() : 클래스 지정(추가)</li>
+    <li>classList.remove() : 클래스 제거(삭제)</li>
+    <li>classList.toggle() : 클래스 토글</li>
+</ul>
+<button>li에 배경색 넣기</button>
+<button>클래스 추가</button>
+<button>클래스 제거</button>
+<button>클래스 토글</button>
+</body>
+<script>
+    var bt = document.querySelectorAll("button");
+    
+    bt[0].onclick = function(){
+        document.querySelectorAll("li").forEach(function(e){
+            e.style.background = "red";
+        })
+    }
+    // 클래스 추가
+    bt[1].onclick = function() {
+        this.classList.add("red");
+    }
+    // 클래스 제거
+    bt[2].onclick = function() {
+        bt[1].classList.remove("red");
+    }
+    // toggle은 on/off switch의 개념으로 스위치를 켰다, 껐다 하는 기능을 가지고 있습니다.
+    // add()와 remove() 메서드를 한번에 쓸 수 있는 합쳐진 개념입니다. 
+    bt[3].onclick = function() {
+        bt[1].classList.toggle("red");
+    }
+</script>
+</html>

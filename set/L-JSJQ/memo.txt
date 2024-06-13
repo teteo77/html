@@ -15,8 +15,6 @@ document.body.style.background
     한글자식 출력하는 기능 정리하기
     퀴즈게임 skill에 정리하기
 
-
-
 13
     for, foreach정리하기
     this정리하기

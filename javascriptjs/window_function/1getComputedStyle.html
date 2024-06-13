@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {background-color: darkgrey;}
+    </style>
+</head>
+<body>
+<button>body속성값 가져오기</button>
+    
+<script>
+    var bt = document.querySelectorAll("button");
+
+        bt[0].onclick = function() {
+        // alert(document.body.style.backgroundColor);
+        var bg = window.getComputedStyle(document.body).backgroundColor;
+        alert(bg);
+    }
+</script>
+</body>
+</html>

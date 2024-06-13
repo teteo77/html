@@ -4,107 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-    *{margin:0; padding:0;}
-
-    main { width: 100%; overflow: hidden; background: black;}
-    .content_container { width: 100%; height: 100%;}
-    
-    .bg-outline {padding: 0 50px; box-sizing: border-box; position: fixed;
-    z-index: 0; top: 0; left: 0; pointer-events: none;}
-    
-    .bg-gradient {height: 931px;}
-
-    .content_wrap { width: 100%; height: 100%; position: relative;}
-    @keyframes draw-line{
-        100%{stroke-dashoffset: 0;}
-    }
-
-    /* 2 svg line animation 추가 */
-    .content_wrap svg line{ 
-        stroke:#ccc; stroke-width:1;
-        stroke-dasharray: 4500;
-        stroke-dashoffset: 4500;
-        animation: draw-line 5s linear;
-        animation-delay: 0.3s;
-        animation-fill-mode: forwards;
-    }
-        /* 1 html에 있는 style을 line으로 이동 */
-    .bg-outline {padding: 0 50px; box-sizing: border-box; position: fixed; z-index: 0;
-        top: 0; left: 0; pointer-events: none;}
-    .bg-outline .outline { width: 100%; height: 100%; position: absolute; z-index: 0;}
-    /* .bg-outline .outline { width: 100%; height: 100%; z-index: 0;} */
-
-    .content_inner { width: 100%; max-width: 1280px; height: 100%; margin: 0 auto; position: relative;}
-    /* .content_inner { width: 100%; max-width: 1280px; height: 100%; margin: 0 auto; } */
-    /* .content_inner svg line{stroke:#ccc;stroke-width:1} */
-        /* 1 html에 있는 style을 line으로 이동 */
-
-    /* .bg-outline .outline line {stroke-dasharray: 4500;stroke-dashoffset: 4500;animation: draw-line 5s linear;
-    animation-delay: 0.3s; animation-fill-mode: forwards;} */
-
-    .bg-cir{
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-    left: 26.4062%;
-    top: 13.6017%;
-    border: 1px solid rgb(77, 152, 240);
-    height: 18px;
-    width: 18px;
-    /* transform: translate3d(-3.8697px, -0.7786px, 0px); */
-    /* background: green; */
-    /* transition: margin-left 3s; */
-    }
-
-    .bg-cir:hover{
-        margin-left:50px;
-    }
-    </style>
 </head>
 <body>
-    <main id="main">
-        <div class="bg-gradient"></div>
-
-        <div class="content_container bg-outline">
-            <!-- 배경 -->
-            <div class="content_wrap">
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="outline">
-                    <line x1="0" y1="0" x2="0" y2="100%"></line>
-                    <line x1="100%" y1="0" x2="100%" y2="100%"></line>
-                </svg>
-                <!--배경 선-->
-                <div class="content_inner">
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="outline">
-                        <line x1="0" y1="0" x2="0" y2="100%"></line>
-                        <line x1="100%" y1="0" x2="100%" y2="100%"></line>
-                    </svg>
-                <!--배경 선-->
-                </div>
-            </div>
-        </div>
-
-        <div class="main_content content_container">
-        <!-- 3 메인 컨텐츠 부분 -->
-            <div class="main visual content_wrap"></div>
-            <!-- 3-2 동그라미 -->
-            <div class="bg-cir"></div>
-        </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
     <script>
-        // 3-3 동그라미 움직이기 위한 함수 추가
-        // let num= Math.floor(Math.random() * 20);
-        let num= setInterval(() => Math.floor(Math.random() * 2), 2000);
-        // $(".bg-cir").css("background", "orange");
-        // $(".bg-cir").css({"margin-left": num+"s", "margin-top": num+"s"});
-        $(".bg-cir").css("margin-left", num+"s");
-        
+        // 웹페이지의 특정 부분을 주기적으로 업데이트해줘야 하거나, 
+        // 어떤 API로 부터 변경된 데이터를 주기적으로 받아와야 하는 경우가 있는데요. 
+        // 이럴 때는 자바스크립트의 setInterval() 함수를 사용할 수 있습니다.
 
-    //     $('body').css({
-    //     'margin' : '0px',
-    //     'padding' : '0px'
-    // })
+        // setInterval() 함수는 어떤 코드를 일정한 시간 간격을 두고 반복해서 실행하고 싶을 때 사용합니다.
+        // 함수 API는 setTimeout() 함수와 대동소이한데요. 첫번째 인자로 실행할 코드를 담고 있는 함수를 받고, 두번째 인자로 반복 주기를 밀리초(ms) 단위로 받습니다.
+
+        // setInterval(() => console.log("1-1", new Date()), 2000);
+    </script>
+    <script>
+        // 다른 예로, 0과 9 사이의 수를 무작위로 생성하여 2초마다 출력해보겠습니다.
+        // setInterval(() => console.log("1-2", Math.floor(Math.random() * 10)), 2000);
+    </script>
+    <script>
+        // 숫자를 변수에 저장해놓고 2초 마다 1씩 증가시키는 것도 가능합니다.
+        let count = 0;
+        setInterval(() => console.log("1-3", ++count), 2000);
+    </script>
+    <script>
+        // Timeout ID는 setInterval()S 함수를 호출할 때 마다 내부적으로 생성되는 타이머 객체를 가리키고 있습니다.
+        // 이 값을 인자로 clearInterval() 함수를 호출하면 코드가 주기적으로 실행되는 것을 중단시킬 수 있습니다.
+
+        // const intervalId = setInterval(() => console.log("1-4",new Date()), 2000);
+        // clearInterval(intervalId);
+        // console.log("1-3 취소했기 때문에 아무것도 출력 안됨")
+
     </script>
 </body>
 </html>
