@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    p {margin:0;}
+    #ex {background: red; color:#fff; position: fixed; left:0; top:0; padding:20px; white-space: nowrap;}
+</style>
+</head>
+<body>
+<h1>이벤트와 애니메이션</h1>
+<h2>이벤트</h2>
+<ul>
+    <li>click() / dbclick() : 클릭 / 더블클릭 했을 때</li>
+    <li>load() : 선택자의(html을 포함한) 자손을 포함한 외부소스가 로딩이 되었을 때</li>
+    <li>ready() : 선택자의 html 태극 로딩되었을 때</li>
+    <li>mouseover() / mouseout() : 마우스 올렸을 때/벗어났을 때 <button>마우스 이벤트</button></li>
+    <li>mousemove() / mousedown() / mouseup() : 마우스 움직일때 / 눌렀을 때 / 때였을 때 </li>
+    <li>keydown() / keyup() : 키눌렀을 때 / 떼었을 때</li>
+    <li>focus() / blur() : 포커스 얻었을 때 / 잃었을 때</li>
+    <li>scroll() : 스크롤 했을 때</li>
+    <li>change() : value값이 변경되었을 때</li>
+    <li>resize() : window 사이즈가 변경 되었을 때</li>
+    <li>on() : 이벤트리스너(이벤트 감시자), 여러개의 이벤트를 걸거나, 동적요소에 이벤트를 걸때, 근래 나온 최신 이벤트를 걸때</li>
+</ul>
+<h2>효과 애니메이션</h2>
+<ul>
+    <li>hide() / show() / toggle() : 숨김 / 보임 / 토글<button>toggle</button> </li>
+    <li>fadeIn() / fadeOut() / fadeToggle() : 부드럽게 보임 <button>fadeToggle</button> </li>
+    <li>slideUp() / slideDown() / slideToggle() : 위로 가려짐 / 아래로 보임 / 토글 <button>slideToggle</button></li>
+    <li>animate() <button>animate</button></li>
+    <li></li>
+</ul>
+<p id="ex">예시글 입니다.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+// $("button").eq(0).mouseover(function(){
+//     alert("마우스 버튼에 오버");
+//     }
+// )
+// $("button").eq(0).mouseout(function(){
+//     alert("마우스 버튼에서 아웃");
+// })
+
+
+//토글
+$("button").eq(1).click(function(){
+    $("#ex").toggle();
+})
+
+$("button").eq(2).click(function(){
+    $("#ex").fadeToggle();
+})
+
+$("button").eq(3).click(function(){
+    $("#ex").slideToggle();
+})
+// animate();
+
+// var x = $("body").width() - $("#ex").width();
+
+// var x = $("body").width() - $("#ex").outerWidth();
+// $("#ex").animate({left:x},1000);
+
+var x = $("body").width() - $("#ex").width();
+var y = $(document).height() - $("#ex").height();
+var x2 = $("body").width() - $("body").width();
+var y2 = $(document).height() - $(document).height();
+$("#ex").animate({left:x},1000);
+$("#ex").animate({top:y},1000);
+$("#ex").animate({left:x2},1000);
+$("#ex").animate({top:y2},1000);
+
+
+
+
+$("button").eq(4).click(function(){
+
+})
+
+
+</script>
+</body>
+</html>

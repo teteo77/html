@@ -30,17 +30,21 @@
         <li><img src="img/3.jpg" alt="풍경3"></li>
     </ul>
     <div class="page">
-        <span></span>
+        <span class="on"></span>
         <span></span>
         <span></span>
     </div>
 </section>  
 <script>
     // [기능1] li의 폭크기를 section 폭크기와 똑같이
-    var w = window.getComputedStyle(document.querySelector("section")).width;
-    document.querySelectorAll("li").forEach(function(tag){
-        tag.style.width = w;
-    })
+    var w;
+    setTimeout(function(){
+        w = window.getComputedStyle(document.querySelector("section")).width;
+        document.querySelectorAll("li").forEach(function(tag){
+            tag.style.width = w;
+        })
+    },50)
+    
     
     // [기능2] 첫번째 li를 복사해서 마지막 li에 추가
     var copy = document.querySelector("li:nth-child(1)").cloneNode(true);
@@ -50,26 +54,24 @@
     // ul이 왼쪽으로 w만큼 이동(margin-left)
     var page=0; // 현재 페이지
     var ul = document.querySelector("ul");
+    var span = document.querySelectorAll(".page span");
     setInterval(function(){
+        // 삼항연산자: 조건식?참:거짓
+        document.querySelector(".on").classList.remove("on");
         page++;
-        if(page<4) {
-            ul.style.marginLeft = page*-800+"px";
-            if(page==3) { 
-                setTimeout(function(){// 지연실행은 트랜지션 후에 실행되도록 하기 위함
-                    ul.style.transition = "none";
-                    page=0;
-                    ul.style.marginLeft = page*-800+"px";
-                    setTimeout(function(){
-                        ul.style.transition = "ease all 0.3s";
-                    },100)
-                },310)
-            }
-        }else {
+        span[page>=3?0:page].classList.add("on");
+        var move = parseFloat(window.getComputedStyle(document.querySelector("#slide")).width); // section의 폭값(움직일 값)
+        console.log(move);
+        ul.style.marginLeft = page*-move+"px";
+        if(page>=3) {
             page=0;
-            ul.style.marginLeft = page*-800+"px";
-            
+            setTimeout(function(){// 지연실행은 트랜지션 후에 실행되도록 하기 위함
+                ul.style.transition = "none";
+                ul.style.marginLeft = page*-move+"px";
+            },310)
+        }else {
+            ul.style.transition = "ease all 0.3s";
         }
-        
     },2000)
     
 </script>

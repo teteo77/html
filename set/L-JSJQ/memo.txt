@@ -4,6 +4,39 @@
 document.body.style.background
     ㄴ js로 속성 접근하는거 있었는데 찾아보기
 
+18
+    ㄴ toggle 햄버거 기능 만들때 참조
+    ㄴ outerWidth
+        ㄴ 정리하기
+    ㄴ width()
+        ㄴ width()는 함수다. 사용자 현제 웹 크기 값을 알수있다.
+        ㄴ 정리하기
+
+17
+    ㄴ 
+
+16
+    ㄴ https://cdnjs.com/
+        ㄴ jquery
+        ㄴ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            ㄴ 이렇게만 넣어줘도 된다 한다.
+    ㄴ releases.jquery.com
+    ㄴ $("ul").css
+        ㄴ 단수면 단수 다수면 다수를 잡아준다
+    ㄴ eq를 js로 바꾸면 foreach인가? 바꾸면 어떤거지?
+        ㄴ eq정리하기
+            ㄴ document.querySelectorAll를 jq로 바꾸면 eq인가?
+    ㄴ $("body").css("background", "#000").css("color", "#fff")
+        ㄴ 체인방식 정리하기
+    ㄴ nth-of-type과 nth-child차이 정리하기
+    ㄴ prepend, append
+        ㄴ 정리하기
+    ㄴ css는 하위 계층이 조상을 선택하는게 
+    안되기 때문에 js로 해줘야 한다
+    ㄴ val()
+
+
+
 15
     ㄴ window.getComputedStyle 정리하기
     ㄴ slide정리하기

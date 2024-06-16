@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+
+<style>
+    /* .green li:nth-child(4){ background: tan;} */
+    /* body {background: black;} */
+    /* body.dark {color:#fff; background:#000;} */
+    body { min-height: 300vh;}
+    ul:nth-child(3) button:nth-child(4) { background: black;}
+    #ex {border: 1px dashed gray; padding:10px; display: flex; justify-content: center; gap:10px;}
+    #ex span {padding: 10px 20px; background:red; color:#fff; }
+    
+    
+</style>
+</head>
+<body class="dark">
+<h1>jQuery 기본</h1>
+<ul id = "red">
+    <li>제이쿼리(jQuery)는 자바스크립트로 만든 라이브러리 (프레임워크: 리액트, 뷰, 앵글러...)</li>
+    <li>releases.jquery.com</li>
+    <li>버전 1.x(구 브라우저 호환), 버전 2.x (구 브라우저 호환 제거, 가벼워짐), 3.x(구 브라우저 호환 안됨, 기능 강화)</li>
+    <li>uncompressed(원번), minified(압축), slim(간소화 버전), slim minidied(간소화+압축)</li>
+    <li>선택자를 jQuery면 명령어도 JQuery 여야함.</li>
+</ul>
+<h2>기본 메서드</h2>
+<ul class="green">
+    <li>$(), jQuery</li>
+    <li>css() : style 속성을 변경/가져올 때</li>
+    <li>attr() : 태그의 속성을 변경/가져올 때</li>
+    <li>text() : 글자를 변경/가져올 때</li>
+    <li>html() : 글자+html을 변경/가져올 때</li>
+    <li>addClass() / removeClass() / toggleClass() : 클레스 추가/ 삭제/ 토글</li>
+    <li>eq(): jquery선택자의 인데그번호로 재선택</li>
+    <li>get(0) : jquery 선택자에 자바스크립트 명령어를 사용할 경우</li>
+    <li>click(): 클릭이벤트</li>
+    <li>val() : value 속성값을 변경 / 가져올때</li>
+</ul>
+<button>다크테마</button> <input type="color" value="#ff0000">
+<button>배경색 바꾸기</button> <button>테마반전</button>
+<h2>수치관련</h2>
+<ul>
+    <li>width() / height() : 폭/높이값을 적용, 가져올 때</li>
+    <button>이버튼에 폭값은?</button> <button>높이를 100으로</button>
+    <li>offset().top / offset().left <button>현재 이버튼의 자표는?</button></li>
+    <li>scrollTop() : 스크롤 값을 얻거나 적용</li> <button>현제 스크롤값은? </button>
+</ul>
+<h2>객체 편집 메서드</h2>
+
+<ul id="edit">
+    <li>before() / after() : 선택자 앞/뒤에 추가 <button>원본 앞에 추가</button><button>원본 뒤에 추가</button></li>
+    <li>prepend() / append() : 선택자 자식 맨앞/맨뒤로 추가 <button>첫자식으로 추가</button><button>마지막 자식으로 추가</button></li>
+    <li>clone() : 선택자들 복사 <button>복사</button></li>
+    <li>remove() : 선택자들 삭제 <button>삭제</button></li>
+    <li>empty() : 선택자 안의 내용(자손)을 비움 <button>비우기</button></li>
+</ul>
+    <div id="ex">
+        <span>원본 앞에 추가</span>
+    </div>
+
+<h2>기타 메서드</h2>
+<ul>
+    <li>parent() : 선택자의 부모를 선택 <button>부모에 보더넣기</button></li>
+    <li>parents(".on") : 직계조상중의 클래스 on을 선택</li>
+    <li>children("span") : 선택자 자식중의 span만 선택</li>
+    <li>find(".on") : 선택자 자손중에 클래스 on을 선택</li>
+    <li>next() / prev() : 선택자 다음/이전(형제)요소 선택</li>
+    <li>each() : 선택자 개별적으로 실행 <button>li 선넣기</button></li>
+</ul>
+
+<!-- 
+    자바스크립트 필수
+    - 변수의 활용
+    - 함수(function), 객채(내장객체), 이벤트
+
+ -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+    // document.querySelector("ul").style.backgroundColor = "red";
+    // $("ul").css("background-color","red");
+    // var bg = $("ul").css("background-color","red");
+    // alert(bg);
+    // var id = $("ul").attr("id");
+    // alert(id);
+    // 문제) 클래스 green을 yellow로 변경
+    // 문제) 알럿으로 두번째 ul의 클래스값을 경고창으로 나오게
+        // $(".green").attr("class", "yellow");
+    // alert($("ul:nth-of-type(2)").attr("class"));
+
+    // 문제) 경고창에 #green 네번째 li의 글자를 경고창으로
+    // alert($(".green li:nth-child(4)").text())
+
+    // 문제) 같은 내용으로 li의 html을 경고창으로
+    // alert($(".green li:nth-child(4)").html())
+
+    // 문제) 6번째 li에 red 클래스를 추가
+    // $(".green li:nth-child(6)").css("background"," blue")
+
+    // 문제) 6번째 li의 클레스 값을 경고창으로
+    // var cl = $(".green li:nth-child(6)").attr("class");
+    // alert(cl)
+
+    // 문제) 버튼을 누르면 다크테마 적용되게
+    $("button").eq(0).click(function(){
+        // $("body").css("background", "#000")
+        // $("body").css("color", "#fff")
+        $("body").css("background", "#000").css("color", "#fff")
+    })
+
+    var color = $("input").eq(0).val()
+    // alert(color)
+
+    // 문제) '배경색 바꾸기' 버튼을 누르면 선택된 색으로 적용되게
+
+    // $("button").eq(1).click(function(){
+    //     var color = $("input").eq(0).val()
+    //     $("body").css("background", color)
+    // })
+
+    // 문제) '테마반전' 버튼을누르면 body태그에 dark 클레스가 toggle되게
+    
+    $("button").eq(2).click(function(){
+        $("body").toggleClass(("dark"))
+    })
+    
+    // 문제) 이버튼의 폭값을 경고창으로
+    $("button").eq(3).click(function(){
+        var w = $(this).width()
+        alert(w)
+    })
+
+    // 문제) 이버튼의 높이를 100px로
+    $("button").eq(4).click(function(){
+        $(this).height(100)
+    })
+
+    $("button").eq(5).click(function(){
+        var y = $(this).offset().top;
+        var x = $(this).offset().left;
+        alert(x+", "+y )
+    })
+
+    // 문제 ) 현재 스크롤값은? 버튼을 누르면 작동되게
+    $("button").eq(6).click(function(){
+        var t = $(window).scrollTop();
+        alert(t)
+    })
+
+    // before()
+    $("button").eq(7).click(function() {
+        $("#ex span").before("<span>추가됨</span>")
+    })
+
+    // after()
+    $("button").eq(8).click(function() {
+        $("#ex span").after("<span>추가됨</span>")
+    })
+
+    // prepend()
+    $("button").eq(9).click(function(){
+        $("#ex").prepend("<span>prepend9click</span>")
+    })
+
+    // append()
+    $("button").eq(10).click(function(){
+        $("#ex").append("<span>append10click</span>")
+    })
+
+    // clone()
+    $("button").eq(11).click(function(){
+        var copy = $("#edit li").eq(4).clone();
+        $("ex").append(copy);
+    })
+
+    // remove
+    $("button").eq(12).click(function(){
+        $("#ex span").remove();
+    })
+
+    // empty
+    $("button").eq(13).click(function(){
+        $("#ex span").empty();
+    })
+
+    //parent()
+    $("button").eq(14).click(function(){
+        $(this).parent().css("border", "1px solid red")
+    })
+
+    // each()
+    $("button").eq(15).click(function(){
+        $("#edit li").each(function(index, item){
+            $(item).css("border", (index+1)+"px solid red")
+        })
+    })
+
+
+</script>
+</body>
+</html>
