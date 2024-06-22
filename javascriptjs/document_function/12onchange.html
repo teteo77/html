@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav * {margin:0; padding:0; list-style: none; font-size:12px;}
+        nav ul {display: flex; justify-content: center; align-items: center; gap:10px}
+        nav li {display: flex; align-items: center;}
+        nav input[type=color] {border:none; background:none}
+        main {border:1px dashed #ddd; padding:20px; max-width:800px; margin:auto; font-size: 14px;}
+    </style>
+</head>
+<!-- 
+onchange : value 값이 변경되었을 때 새로 입력한 값으로 변경한다
+-->
+<body>
+<nav>
+    <ul>
+        <li>배경색 <input type="color" value="#ffffff"></li>
+        <li>글자색 <input type="color"></li>
+        <li>글자크기 <input type="range" min="8" max="40" value="14"></li>
+        <li><button>초기화</button></li>
+    </ul>
+</nav>
+<main>
+    <h2>소나기</h2>
+    <p>노래 : 변우석</p>
+    <article>
+        <p>그치지 않기를 바랬죠<br>처음 그대 내게로 오던 그날에<br>잠시 동안 적시는<br>그런 비가 아니길<br>간절히 난 바래왔었죠</p>
+        <p>그대도 내 맘 아나요
+        매일 그대만 그려왔던 나를
+        오늘도 내 맘에 스며들죠
+        </p>
+    </article>
+</main>
+
+<script>
+    var input = document.querySelectorAll("input");
+
+    input[0].onchange = function(){
+        var bg = this.value;
+        console.log(bg)
+        document.querySelector("main").style.background = bg;
+    }
+    // 글자색
+    input[1].onchange = function(){
+        var text = this.value;
+        // alert(bg);
+        document.querySelector("main").style.color = text;
+    }
+    // 글자크기
+    input[2].onchange = function(){
+        var size = this.value;
+        // alert(size);
+        document.querySelector("main").style.fontSize = size+"px";
+    }
+    // 초기화버튼
+    document.querySelector("button").onclick = function(){
+        document.querySelector("main").style.background = "#ffffff";
+        input[0].value = "#ffffff";
+        document.querySelector("main").style.color = "#000000";
+        input[0].value = "#000000";
+        document.querySelector("main").style.fontSize = "14px";
+        input[0].value = 14;
+    }
+</script>
+</body>
+</html>
