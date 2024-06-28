@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수학 게임</title>
+
+<style>
+    
+</style>
+</head>
+<!-- 
+수학 연산 게임
+
+1. 덧셈 뺄셈에 값을 입력해서 정답을 맞추는 게임을 제작한다.
+
+홈페이지에 들어가면 바로 게임이 시작된다.
+
+정답을 맞추면 새로운 문제로 표시 되게 한다. 틀리면 다시 맞추게 한다.
+
+한문제 풀때마다 점수가 1점 올라간다
+
+오지선다로 답을 선택한다.
+
+제한 시간은 1분이다.
+
+유지보수 할수 있게 다시 소스 정리
+
+-->
+
+<body>
+<section id="score_wrap">
+    <p>현제스코어: <span></span></p>
+    
+</section>
+<section id="add_wrap">
+    <div id="add_problem">
+        <p></p>
+        <p></p>
+    </div>
+    <input type="text" id="add_answer">
+    <button id="add_answer_send">제출</button>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    var score= 0;
+    // $("#score_wrap p").eq(0).append(score)
+
+    var add_num1 = Math.floor(Math.random() * 3)
+    var add_num2 = Math.floor(Math.random() * 3)
+    $("#add_problem p").eq(0).text(add_num1)
+    $("#add_problem p").eq(1).text(add_num2)
+    var sum = add_num1 + add_num2;
+
+    $("#add_answer_send").click(function () {
+        var add_answer_check = $("#add_answer").val()
+        if (add_answer_check == sum) {
+            // console.log("정답입니다")
+            alert("정답입니다")
+            // score += 1
+            // score = $("#score_wrap p").eq(0).text(score)
+            $("#score_wrap p span").eq(0).text(score += 1)
+            
+            console.log(score)
+            add_num1 = Math.floor(Math.random() * 3)
+            add_num2 = Math.floor(Math.random() * 3)
+            $("#add_problem p").eq(0).text(add_num1)
+            $("#add_problem p").eq(1).text(add_num2)
+            sum = add_num1 + add_num2;
+        } else {
+            // console.log("오답입니다")
+            alert("오답입니다")
+        }
+    })
+    
+    console.log("123")
+
+
+
+</script>
+</body>
+
+</html>

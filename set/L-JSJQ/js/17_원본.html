@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포켓몬스터 사전</title>
+    <style>
+        * {margin:0; padding:0; list-style:none;}
+        body {padding:20px;}
+        h1 {text-align: center; padding:30px}
+        nav {border:1px solid #eee; padding:10px}
+        nav input {display:block; margin:auto; padding:5px 20px; margin-bottom:10px; text-align: center;}
+        nav div {display: flex; justify-content: center; gap:10px;}
+        nav button {padding:5px 10px}
+        ul {border:5px solid #eee; padding:20px; margin-top:20px; display: flex; justify-content: center; gap:10px; min-height:150px; align-items: flex-start; flex-wrap: wrap;}
+        ul:empty::before {content:"등록된 포켓몬이 없습니다."}
+        ul li {background:#eee; padding:10px 20px; border-radius: 20px; cursor: pointer;}
+        ul li.chk {background:#aaa}
+        ul li.chk::after {content:"✔"; position: absolute; margin:-10px 0 0 5px}
+    </style>
+</head>
+<body>
+<h1>포켓몬스터 사전</h1>
+<nav>
+    <input type="text" placeholder="포켓몬을 입력해 주세요">
+    <div>
+        <button>추가</button>
+        <button>삭제</button>
+        <button>복사</button>
+        <button>비우기</button>
+        <button>초기화</button>
+    </div>
+</nav>
+<ul>
+    <li>피카츄</li>
+    <li>잠만보</li>
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // '추가' 버튼
+    $("button").eq(0).click(function(){
+        var mon = $("input").val();
+        $("ul").append("<li>"+mon+"</li>");
+    })
+
+    // 선택기능: li클릭했을 클릭한 이것(!)에 토글클래스(chk)
+    $("li").click(function(){
+        $(this).toggleClass("chk");
+    })
+
+    // 삭제기능
+    $("button").eq(1).click(function(){
+        $(".chk").remove();
+    })
+
+    // 복사기능
+    $("button").eq(2).click(function(){
+        var copy = $(".chk").clone();
+        $("ul").append(copy)
+    })
+
+    // 비우기
+    $("button").eq(3).click(function(){
+        $("ul").empty();
+    })
+
+    // 초기화
+    var reset = $("ul").html();
+    $("button").eq(4).click(function(){
+        // location.reload()
+        $("ul").html(reset);
+    })
+</script>
+
+</body>
+</html>

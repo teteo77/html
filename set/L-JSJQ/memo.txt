@@ -4,6 +4,18 @@
 document.body.style.background
     ㄴ js로 속성 접근하는거 있었는데 찾아보기
 
+19
+    ㄴ Math.random()
+        ㄴ 정리하기
+    ㄴ#stage #time {background:#02cc5d; color:#d30606; width: 100%;position: absolute; height:10px;bottom:-20px;}
+    #stage #time.play {width:0; background:#d30606;transition: linear all 10s;}
+        ㄴ 정리하기
+    ㄴ if(play)
+        ㄴ 정리하기
+    ㄴ 절대값이 뭐지?
+    ㄴ button을 눌렀을때 true와 false값으로 어떻게 변하나?
+        ㄴ 정리하기
+
 18
     ㄴ toggle 햄버거 기능 만들때 참조
     ㄴ outerWidth

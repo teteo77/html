@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG게임 따라하기</title>
+    <style>
+        * {margin:0; padding:0;}
+        body {padding:50px;}
+        h1 {text-align: center; padding:50px 0;}
+        #stage {background:#efefef; border:5px solid #ddd; width:100%; height:calc(100vh - 255px); position: relative;}
+        #stage #char {width:76px; height:96px; position: absolute; background:0 0 / 344px url(img/act.png); z-index: 100; }
+        
+        #stage #score {position: absolute; right:0; top:-30px; font:bold 20px/20px tahoma; color:#333}
+        #stage #score::before {content: ""; position: absolute; width:20px; height:20px; background: url(img/coin.png) center /contain; margin-left:-30px;}
+        #stage #tr {position: absolute;left:-9999px; }
+        #stage #tr.open {margin-top:-33px;}
+        #stage #time {background:#02cc5d; width: 100%;position: absolute; height:10px;bottom:-20px; }
+        #stage #time.play {width:0; transition: linear all 10s;background:#d30606;}
+        #start_bt {cursor: pointer; position: fixed; left:50%; top:50%; transform: translate(-50%,-50%);font-size:20px; padding:5px 15px;}
+        #ending {position: fixed; left:50%; top:50%; transform: translate(-50%,-50%);margin-top:50px;display: none;}
+        #ending button {font-size:20px; padding: 10px 20px; display: block; margin:15px auto 0; cursor: pointer;}
+    </style>
+</head>
+<body>
+<h1>RPG 게임 따라하기</h1>    
+<div id="stage">
+    <div id="char"></div>
+    <img src="img/tr_close.png" id="tr">
+    <p id="score">0</p>
+    <div id="time"></div>
+    <button id="start_bt">시작하기</button>
+    <div id="ending">
+        <p>당신의 코인은 <span>xxxx</span>개 입니다.</p>
+        <button>REPLAY</button>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // 게임내용) 캐릭터를 키보드로 조작해서 보물상자를 열어 코인을 모으는 내용
+    /*
+        1) 키보드로 캐릭터 조작
+        2) 랜덤으로 보물상자 나오게
+        3) 시간체크 기능 + 게임플레이
+        4) 점수 기능
+    */
+   // 1) 키보드로 캐릭터 조작
+    var x = 0; // left
+    var y = 0; // top
+    var x_max = $("#stage").width() - $("#char").width();
+    var y_max =  $("#stage").height() - $("#char").height();
+    var key37 = false; // 왼쪽
+    var key38 = false; // 위
+    var key39 = false; // 오른쪽
+    var key40 = false; // 아래
+    var speed = 50; // 움직이는 속도
+    // 0, -130, -255, -384
+    var play = false; // 게임현재 상태
+    $(document).keydown(function(e){
+        if(play) {
+            if(e.keyCode == 39 && key39 == false) { // 오른쪽키
+                key39 = true;
+                move_right();
+            }
+            if(e.keyCode == 37 && key37 == false) { 
+                key37 = true;
+                move_left();
+            }
+            // 문제) 아래키
+            if(e.keyCode == 40 && key40 == false) { 
+                key40 = true;
+                move_down();
+            }
+            // 문제) 윗키
+            if(e.keyCode == 38 && key38 == false) { 
+                key38 = true;
+                move_up();
+            } 
+        }
+        
+    })
+
+    $(document).keyup(function(){
+        key37 = false;
+        key38 = false;
+        key39 = false;
+        key40 = false;
+    })
+    function move_right() {
+        if(key39==true && x < x_max) {
+            x += 10;
+            $("#char").css("background-position-y", "-384px");
+            $("#char").css("background-position-x", "-="+86+"px");
+            $("#char").css("left", x);
+            setTimeout(function(){
+                move_right()
+            },speed)
+            chkScore();
+        }
+    }
+    function move_left() {
+        if(key37==true && x > 0) {
+            x -= 10;
+            $("#char").css("background-position-y", "-255px");
+            $("#char").css("background-position-x", "-="+86+"px");
+            $("#char").css("left", x);
+            setTimeout(function(){
+                move_left()
+            },speed)
+            chkScore();
+        }
+    }
+    function move_up() {
+        if(key38==true && y > 0) {
+            y -= 10;
+            $("#char").css("background-position-y", "-130px");
+            $("#char").css("background-position-x", "-="+86+"px");
+            $("#char").css("top", y);
+            setTimeout(function(){
+                move_up()
+            },speed);
+            chkScore()
+        }
+    }
+    function move_down() {
+        if(key40==true && y < y_max) {
+            y += 10;
+            $("#char").css("background-position-y", 0);
+            $("#char").css("background-position-x", "-="+86+"px");
+            $("#char").css("top", y);
+            setTimeout(function(){
+                move_down()
+            },speed)
+            chkScore();
+        }
+    }
+
+    // 2) 랜덤으로 보물상자 나오게
+    var ranX = Math.floor(Math.random()*($("#stage").width() - $("#tr").width())); // 랜덤수 1~보물상자 위치의 최대값
+    var ranY = Math.floor(Math.random()*($("#stage").height() - $("#tr").height()));
+    function ranTr() {
+        $("#tr").css("left",ranX)
+        $("#tr").css("top",ranY)
+    }
+    ranTr();
+
+    // 3) 시간체크 기능 + 게임플레이
+    // 시간체크
+    $("#start_bt").click(function(){
+        play = true;
+        // 버튼 안보이게
+        // $("#start_bt").css("display","none");
+        // $("#start_bt").hide();
+        $(this).hide();
+        // 시간바 시작
+        $("#time").addClass("play");
+        // 10초후 게임오버 메세지
+        setTimeout(function(){
+            $("#ending").show();
+            play = false;
+        },10000)
+    })
+    // 4) 점수 기능
+    var score = 0; 
+    function chkScore() {
+        var x_center = parseInt($("#char").css("left")) + 38;
+        var y_center = parseInt($("#char").css("top")) + 48;
+        var tr_Xcenter = parseInt($("#tr").css("left")) + 53;
+        var tr_Ycenter = parseInt($("#tr").css("top")) + 43;
+        console.log("-------");
+        console.log(x_center);
+        console.log(y_center);
+        console.log(tr_Xcenter);
+        console.log(tr_Ycenter);
+        // if(캐릭터가 보물위치에 가까이 가면) {
+        //     점수 +100
+        // }
+    }
+    
+</script>
+</body>
+</html>
