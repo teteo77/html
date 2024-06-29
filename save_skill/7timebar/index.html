@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+    #time {background:#02cc5d; width: 98%; height:10px; margin-bottom: 20px;}
+    #time.play {width:0; transition: linear all 10s;background:orange;}
+
+    #start_bt {}
+    #ending_bt {display: none;}
+
+    
+
+
+</style>
+</head>
+<body>
+    <div id="time"></div>
+    <button id="start_bt">시작하기</button>
+
+    <button id="ending_bt">다시하기</button>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $("#start_bt").click(function(){
+        $("#time").addClass("play");
+
+        setTimeout(function(){
+            $("#ending_bt").show();
+        },1000)
+    })
+
+    $("#ending_bt").click(function(){
+        $(this).hide();
+        // $("#time").css("width", "98%")
+        // $("#time").css("background", "#02cc5d")
+        $("#time").toggleClass("play")
+        
+
+    })
+
+</script>
+</body>
+</html>

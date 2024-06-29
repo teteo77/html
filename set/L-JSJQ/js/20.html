@@ -21,11 +21,15 @@
 
 한문제 풀때마다 점수가 1점 올라간다
 
-오지선다로 답을 선택한다.
-
-제한 시간은 1분이다.
+사지선다로 답을 선택한다.
+    ㄴ 답이 필수적으로 하나 들어가야 하는데 어떻게 해야 하지
 
 유지보수 할수 있게 다시 소스 정리
+
+
+
+제한 시간은 1분이다.
+    ㄴ 위 기능 끝나면 모드 따로 추가
 
 -->
 
@@ -41,6 +45,11 @@
     </div>
     <input type="text" id="add_answer">
     <button id="add_answer_send">제출</button>
+    <br>
+    <button class="add_answer_select"></button>
+    <button class="add_answer_select"></button>
+    <button class="add_answer_select"></button>
+    <button class="add_answer_select"></button>
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -53,6 +62,23 @@
     $("#add_problem p").eq(0).text(add_num1)
     $("#add_problem p").eq(1).text(add_num2)
     var sum = add_num1 + add_num2;
+    console.log("sum: "+sum)
+    // console.log("sum: "+typeof(sum))
+    
+    function add_width(min, max){
+        // var add_num3 = Math.floor(Math.random() * (sum + (min - max + 1)) + max)
+        var add_num3 = Math.floor(Math.random() * (sum + (max - min + 1)) + min)
+        console.log(add_num3)
+        return add_num3;
+    }
+    // (max - min + 1)를 곱해 범위를 조정하고 min을 더해 원하는 범위의 정수를 얻습니다. 
+    // -10과 10 사이의 정수가 생성됩니다.
+    add_width(-10, 10)
+    $(".add_answer_select").eq(0).text(add_width(-10,10))
+    $(".add_answer_select").eq(1).text(add_width(-10,10))
+    $(".add_answer_select").eq(2).text(add_width(-10,10))
+    $(".add_answer_select").eq(3).text(add_width(-10,10))
+
 
     $("#add_answer_send").click(function () {
         var add_answer_check = $("#add_answer").val()
