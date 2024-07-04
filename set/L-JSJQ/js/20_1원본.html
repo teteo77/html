@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>남들이 보는 당신은 어떤 유형일까?</title>
+    <style>
+        /* * {margin: auto; padding: 0; list-style: none;} */
+        h1 {text-align: center;}
+        label {cursor: pointer;}
+        #title {text-align: center; }
+        nav {display: flex; justify-content: center; gap:20px;}
+        nav button:not(#start_bt) {display:none}/*시작전*/
+        nav.play #start_bt {display:none}/*게임중*/
+        nav.play button:not(#start_bt) {display:block}
+        li {display: none;}
+        li.on {display: flex; flex-wrap: wrap; gap:20px}
+        li.on p {width:100%;}
+        #question, #result {display:none}
+
+    </style>
+</head>
+<body>
+<h1>심리테스트 만들기</h1>
+<h2 id="title">남들이 보는 당신은 어떤 유형일까?</h2>
+<nav>
+    <button id="start_bt">시작하기</button>
+    <button class="bt">이전</button>
+    <button class="bt" disabled>다음</button>
+    <button id="result_bt">결과보기</button>
+</nav>
+<main>
+    <section id="question">
+        <ul>
+            <li>
+                <p>Q1. 하루 중 기분이 가장 좋은 시간대는?</p>
+                <label><input type="radio" name="q1" value="2">아침</label>
+                <label><input type="radio" name="q1" value="4">오후나 이른 저녁</label>
+                <label><input type="radio" name="q1" value="6">늦은 밤</label>
+            </li>
+
+            <li>
+                <p>Q2. 나는 사람들과 이야기할 때, 보통</p>
+                <label><input type="radio" name="q2" value="7">상대방을 터치하며</label>
+                <label><input type="radio" name="q2" value="6">내 몸을 만지작 거리거나 내머리를 만지며</label>
+                <label><input type="radio" name="q2" value="5">한 손이나 양 손을 허리에 올리고</label>
+                <label><input type="radio" name="q2" value="4">내 팔짱을 끼고 서서</label>
+                <label><input type="radio" name="q2" value="2">두 손을 마주 잡고</label>
+            </li>
+
+            <li>
+                <p>Q3. 나는 편히 앉을 때, 보통</p>
+                <label><input type="radio" name="q3" value="6">다리를 꼬고 앉는다</label>
+                <label><input type="radio" name="q3" value="4">다리를 굽힌채 나란히 두고 앉는다</label>
+                <label><input type="radio" name="q3" value="2">다리를 쭉 펴고 앉는다</label>
+                <label><input type="radio" name="q3" value="1">한 쪽 다리를 접어 깔고 앉는다</label>
+            </li>
+
+
+            <li>
+                <p>Q4. 나는 재밌는 일이 생겼을 때, 보통</p>
+                <label><input type="radio" name="q4" value="6">즐거움을 숨기지 않고 크게 웃는다</label>
+                <label><input type="radio" name="q4" value="5">가벼운 미소를 짓는다</label>
+                <label><input type="radio" name="4q" value="4">웃지만 크지 않게 웃는다</label>
+                <label><input type="radio" name="q4" value="3">소리를 내지 않으며 웃는다</label>
+            </li>
+
+            <li>
+                <p>Q5. 내가 가장 좋아하는 색깔은?</p>
+                <label><input type="radio" name="q5" value="7">검정</label>
+                <label><input type="radio" name="q5" value="6">빨강 또는 주황</label>
+                <label><input type="radio" name="q5" value="5">노랑 또는 연파랑 </label>
+                <label><input type="radio" name="q5" value="4">녹색</label>
+                <label><input type="radio" name="q5" value="3">진파랑 또는 보라 </label>
+                <label><input type="radio" name="q5" value="2">하양</label>
+                <label><input type="radio" name="q5" value="1">갈색 또는 회색</label>
+            </li>
+
+            <li>
+                <p>Q6. 나는 사람이 많이 모이는 장소에서, 보통</p>
+                <label><input type="radio" name="q6" value="6">관종처럼 등장해서 관종처럼 논다</label>
+                <label><input type="radio" name="q6" value="4">차분히 들어가서 사람구경 한다</label>
+                <label><input type="radio" name="q6" value="2">시선 끌지 않도록 조용히 있는다</label>
+            </li>
+
+            <li>
+                <p>Q7. 나는 무언가에 집중한 채 열심히 하다가 방해 받으면</p>
+                <label><input type="radio" name="q7" value="6">휴식의 기회를 반갑게 맞이한다</label>
+                <label><input type="radio" name="q7" value="4">짜증이 나지만 티를 내진 않는다</label>
+                <label><input type="radio" name="q7" value="2">짜증이 나서 투덜 거린다 </label>
+            </li>
+
+            <li>
+                <p>Q8. 내가 잠들기 직전 취하는 포즈는, 보통</p>
+                <label><input type="radio" name="q8" value="7">몸을 똑바로 피고 누운 포즈</label>
+                <label><input type="radio" name="q8" value="6">엎드린 채로 몸을 쭉 편 포즈 </label>
+                <label><input type="radio" name="q8" value="4">옆으로 누워 웅크린 포즈</label>
+                <label><input type="radio" name="q8" value="2">한 팔을 베고 있는 포즈</label>
+                <label><input type="radio" name="q8" value="1">머리를 이불 밑에 넣은 포즈</label>
+            </li>
+
+            <li>
+                <p>Q9. 내가 평소에 자주 꾸는 꿈은?</p>
+                <label><input type="radio" name="q9" value="6">꿈을 잘 꾸지 않는다 </label>
+                <label><input type="radio" name="q9" value="5">날아오르거나 떠오르는 꿈</label>
+                <label><input type="radio" name="q9" value="4">떨어지는 꿈 </label>
+                <label><input type="radio" name="q9" value="2">무언가를 찾는 꿈</label>
+                <label><input type="radio" name="q9" value="2">싸우거나 애쓰는 꿈</label>
+                <label><input type="radio" name="q9" value="1">기분 좋은 느낌의 꿈</label>
+            </li>
+        </ul>
+
+    </section>
+    <section id="result"> 
+        <article>
+            <h3>20점 이하</h3>
+            <p>남들이 보는 당신은 소심하고 우유부단 합니다. </p>
+            <p>본인의 일도 누군가가 대신해서 결정해줘야만하고, 타인이나 어떤 일에 연루되는 것을 피하는 사람입니다. 또한, 걱정을 사서하는 타입이기도 합니다. 당신을 잘 모르는 남들은 당신을 지루하다고 생각하기도 합니다.</p>
+        </article>
+
+        <article>
+            <h3>21~30점</h3>
+            <p>남들이 보는 당신은 집요하며 깐깐한 사람으로 신중하고 조심스러워하며 느리지만 발전하는 편입니다.</p> 
+            <p>당신이 무슨 일인가 충동적으로 하는 모습을 본다면 친구들이 충격을 받을지도 모릅니다. 무슨일이든 꼼꼼히 계획하며 다음 결정을 하는 것을 선호합니다. 깐깐하기 때문에 NO 라고 말할 수 있는 사람이기도 합니다.</p>
+        </article>
+
+        <article>
+            <h3>31~40점</h3>
+            <p>남들이 보는 당신은 현명하고 신중하며 현실적입니다. </p>
+            <p>사람을 사귈 때 급하거나 가볍게 접근하지 않으며, 가까워진 사람에게는 매우 잘해주며 자신도 같은 대우를 해주길 기대합니다. 당신의 참모습을 아는 사람들은 당신의 신뢰를 흔드는 것이 어렵다는 것과 그 신뢰가 무너지면 다시 되돌리기 어렵다는 것을 알고 있을 겁니다.</p>
+        </article>
+
+        <article>
+            <h3>41~50점</h3>
+            <p>남들이 보는 당신은 매우 매력있는 타입이기도 하며, 때로는 이성적이면서도 즐거운 사람이라고 생각합니다. </p>
+            <p> 주위의 이목을 사로잡는 사람이지만 적당한 눈치도 있으며 교만해지지 않는 사람이기도 합니다. 또한 다정하며 친절하고, 이해심이 많아 다른 사람을 도울 줄 아는 분위기 메이커 역할을 하기도 합니다.</p>
+        </article>
+
+        <article>
+            <h3>51~60점</h3>
+            <p>남들이 보는 당신은 변덕스러우며, 충동적인 사람이라고 생각합니다. </p>
+            <p>또한 리더형으로 빠른 결정을 내릴 줄 아는 사람이기도 합니다. 무엇이든 시도해볼 줄 아는 과감한 모험형 타입으로 겁이 없으며 호기심이 매우 많습니다. 당신의 친구들은 당신이 발하는 강렬함에 이끌립니다.</p>
+        </article>
+
+        <article>
+            <h3>60점 이상</h3>
+            <p>남들이 보는 당신은 취급 주의형이라고 생각하며, 약간의 허영심이 있고 남을 지배하고 싶은 욕구가 강합니다. </p>
+            <p>남이 해주는 칭찬에 약하지만 막상 본인은 남들에게 칭찬을 잘 해주지 못하는 양면의 성격이 있습니다. 의외로 당신의 당당한 성격을 부러워하고 우러러보는 사람들이 있지만 당신은 그러한 사람들은 잘 보지 못합니다.</p>
+        </article>
+    </section> <!-- result end -->
+</main>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // 1) 시작버튼 기능
+    // 2) 다음/이전 버튼 기능  > li 클래스 넣었다 빼기 슬라이드 이전 page-- 다음페이지page++ li선택자 .eq . $("li".removeClass("on")) /$("li".eq(page).addclass("on"))
+    // 3) 다음버튼>if문 **마지막 문제일 때 결과화면 호출
+
+    var page = 0;
+    // 시작하기 버튼
+    $("#start_bt").click(function(){
+        $("#title").hide();
+        $("#start_bt").hide();
+        $("#question").show();
+        $("li").eq(page).addClass("on");
+        bt();
+    })
+    function bt() {
+        if(page==0) {// 첫문제일때
+            $(".bt").hide();
+            $(".bt").eq(1).show(0);
+        } else if(page==8) { // 마지막 문제
+            $(".bt").hide();
+            $(".bt").eq(0).show(0);
+            $("#result_bt").show();
+        } else {
+            $(".bt").show();
+            $("#result_bt").hide();
+        }
+    }
+    // 이전버튼
+    $(".bt").eq(0).click(function(){
+        page--;
+        $("li").removeClass("on");
+        $("li").eq(page).addClass("on")
+        bt();
+    });
+    // 다음버튼
+    $(".bt").eq(1).click(function(){
+        page++;
+        $("li").removeClass("on");
+        $("li").eq(page).addClass("on")
+        bt();
+    });
+    // 결과보기
+    $("#result_bt").click(function(){
+        $("#question").hide();
+        $("#result").show();
+        // 모든 value 값의 합산
+        // console.log($("li:eq("+0+") input").val()*1);
+        var score = 0;
+        $("li").each(function(index, item){
+            score += $("li:eq("+index+") input").val()*1;
+        })
+        // 합산값에 따른 결과페이지
+        if(score <= 20) {
+            var result = 0;
+        } else if(score <= 30) {
+            var result = 1;
+        }else if(score <= 40) {
+            var result = 2;
+        }else if(score <= 50) {
+            var result = 3;
+        }else if(score <= 60) {
+            var result = 4;
+        }else {
+            var result = 5;
+        }
+         
+        $("#result article").hide();
+        $("#result article").eq(result).show();
+    })
+</script>
+</body>
+</html>

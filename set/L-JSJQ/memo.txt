@@ -4,6 +4,20 @@
 document.body.style.background
     ㄴ js로 속성 접근하는거 있었는데 찾아보기
 
+21
+    ㄴ ajax 비동기 통신
+    ㄴ xml 데이터를 받는 표준 포맷
+    ㄴ json
+        ㄴ xml이 무거워서 json사용
+
+20
+    ㄴ cleraTimeout()
+        ㄴ setTimeout()을 취소한다.
+        ㄴ 정리하기
+    ㄴ var var ran2 = Math.ceil(Math.random() * 20) - 10; -10 ~ 10
+        ㄴ 1~20 값에서 -10~10 오차 범위를 설정한다
+        ㄴ 정리하기
+
 19
     ㄴ Math.random()
         ㄴ 정리하기

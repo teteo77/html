@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명언 API 활용</title>
+    <style>
+        #result span {color: green; font-size:12px; font-style: italic;}
+    </style>
+</head>
+<body>
+<h1>명언 API 활용</h1>    
+<ul>
+    <li>API 주소 : https://ljj.kr/tool/api.php</li>
+    <li>count 파라메터 : 명언갯수</li>
+    <li>category 파라메터 : 카테고리 지정</li>
+    <li>카테고리 : 건강과 행복, 도전과 격언, 사랑과 우정, 시간, 인간관계, 자기계발, 지혜와 가치, 창의성과 영감</li>
+    <li></li>
+</ul>
+<select>
+    <option>--카테고리--</option>
+    <option>건강과 행복</option>
+    <option>도전과 격언</option>
+    <option>사랑과 우정</option>
+    <option>시간</option>
+    <option>인간관계</option>
+    <option>자기계발</option>
+    <option>지혜와 가치</option>
+    <option>창의성과 영감</option>
+</select>
+<button>명언 불러오기</button>
+<ul id="result">
+
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $("button").eq(0).click(function(){
+        $.ajax({
+            // 과제) 사용자가 카테고리 선택해서 불러올수 있게!
+            
+            url: "https://ljj.kr/tool/api.php?count=20&category=건강과 행복",
+            type: "get",
+            dataType : "json",
+            success: function(data){
+                console.log(data);  // 전체데이터(배열 객체)
+                console.log(data[1]); // 한개의 데이터(한개의 객체)
+                console.log(data[1].author); // 한개의 데이터(한개의 객체안에 있는 하나의 정보)
+                $("#result").empty();
+                data.forEach(function(item){
+                    $("#result").append("<li>"+item.text+"<span> - "+item.author+"</span></li>")
+                })
+            },
+            error: function() {
+                alert("데이터 로딩 오류");
+            }
+        })
+    })
+</script>
+</body>
+</html>

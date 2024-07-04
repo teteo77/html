@@ -25,11 +25,16 @@ index, array매개 변수도 있는데 쓰는 방법을 모르겠다.
         <li></li>
         <li></li>
     </ul>
-
+    <button>li에 배경색 넣기</button>
 <script>
-    document.querySelectorAll("li").forEach(function(e){
-        e.style.background = "red";
+    var bt = document.querySelectorAll("button");
+    bt[0].onclick= function(){
+        document.querySelectorAll("li").forEach(function(e){
+        e.style.background = "orange";
     })
+
+    }
+
 </script>
 </body>
 </html>

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>틀린그림찾기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 40px;
+        }
+        button, input {cursor: none;}
+        body {
+            background: rgba(255, 246, 232, 0.667);
+            cursor: none;
+        }
+
+        #stage {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+            margin: auto;
+            width: 920px;
+            height: 450px;
+            gap: 20px;
+            display: flex;
+            border: 1px solid #000;
+        }
+        #stage>div {
+            flex:1; position: relative;
+        }
+        #stage img {display:block; width:100%; height:100%; object-fit: cover; filter: blur(20px);}
+        #stage.play img {filter:none}
+        #stage button {position: absolute; width:60px; height:60px; text-indent: -9999px; overflow: hidden; background:none; border: none;}
+        #stage button:nth-of-type(1) { left:195px; top:215px;}
+        #stage button:nth-of-type(2) { left:285px; top:155px;}
+        .cs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            transform: translate(-11px, -13px);
+            z-index: 500;
+            pointer-events: none;
+        }
+        #start_bt {
+            display: block;
+            margin: 50px auto;
+            width: 500px;
+            height: 80px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        #start_bt:hover {
+            background-color: antiquewhite;
+            color: brown
+        }
+
+        #stage button::after {
+            content: "";
+            background: url(img/check.png) center no-repeat;
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            left:10px; top:-30px;
+            display: none;
+        }
+        #stage button.on::after { display:block}
+
+        #stage #time {
+            background: #02cc5d;
+            width: 100%;
+            position: absolute;
+            height: 20px;
+            bottom: 0px;
+        }
+
+        #stage #time.play {
+            width: 0;
+            transition: linear all 10s;
+            background: #d30606;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> 츄츄의 틀린그림찾기</h1>
+    <div id="stage">
+        <div>
+            <img src="img/left.jpg" alt="left">
+            <button>정답1</button>
+            <button>정답2</button>
+        </div>
+        <div>
+            <img src="img/right.jpg" alt="right">
+            <button>정답1</button>
+            <button>정답2</button>
+        </div>
+      
+        <div id="time"></div>
+    </div>
+    <button id="start_bt">시작하기</button>
+    <img src="img/cursor.png" class="cs">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        // 커서 디자인
+        var cursor = document.querySelectorAll(".cs");
+        document.onmousemove = function (e) {
+            cursor[0].style.left = e.clientX + "px";
+            cursor[0].style.top = e.clientY + "px";
+        }
+
+        // 정답1 버튼
+        $("#stage button:nth-of-type(1)").click(function() {
+            $("#stage button:nth-of-type(1)").addClass("on");
+        })
+        // 정답2 버튼
+        $("#stage button:nth-of-type(2)").click(function() {
+            $("#stage button:nth-of-type(2)").addClass("on");
+        })
+
+        $("#start_bt").click(function () {
+            // 시간바 시작
+            $("#time").addClass("play");
+            // 문제 보이게
+            $("#stage").addClass("play");
+            $(this).hide();
+        })
+
+        // 결과화면
+    </script>
+</body>
+</html>

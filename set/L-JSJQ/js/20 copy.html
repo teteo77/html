@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수학 게임</title>
+
+<style>
+    #add_problem {font-size: 30px; font-weight: bold; display: flex; gap:50px; justify-content: center;}
+    #bt {display: flex; justify-content: center; gap:20px;}
+    #bt button {font-size:20px; padding: 10px 20px;}
+
+</style>
+</head>
+
+<body>
+<section id="score_wrap">
+    <p>현제스코어: <span>0</span></p>
+    
+</section>
+<section id="add_wrap">
+    <div id="add_problem">
+        <p></p>
+        <p></p>
+    </div>
+    <div id="bt">
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    var score= 0;
+    var answer= 0;
+    function add() {
+        var add_num1 = Math.ceil(Math.random() * 98)
+        var add_num2 = Math.ceil(Math.random() * 98)
+        $("#add_problem p").eq(0).text(add_num1)
+        $("#add_problem p").eq(1).text(add_num2)
+        answer = add_num1 + add_num2;
+    }
+    add();
+
+    // [버튼만들기]
+    // 1. 정답구하기
+
+    // 2. 문제 출제 처리
+    function ran(){
+        // var ran = Math.ceil(Math.random() * 10); // 1~10
+        var ran2 = Math.ceil(Math.random() * 20) - 10;
+        if(ran2 == 0){
+            console.log("오답이 같음")
+            return answer + 1;
+        }else{
+            console.log("정답: "+answer+", 오답: "+(answer+ran2));
+            return answer+ran2;
+        }
+        
+    }
+    
+    function q(){
+        $("#bt button").each(function(index, item){
+        $(item).text(ran())
+    })
+        var num = Math.floor(Math.random() * 4)
+        $("#bt button").eq(num).text(answer);
+        $("#bt button").eq(num).addClass("correct");
+
+    }
+    q()
+
+    // 3. 버튼기능
+    $("#bt button:not(.corrent)").click(function(){
+        alert("오답입니다.")
+    })
+    $("#bt button.corrent").click(function(){
+        alert("정답입니다.")
+    })
+    
+    $("#bt button").eq(0).text(ran())
+    $("#bt button").eq(1).text(ran())
+    $("#bt button").eq(2).text(ran())
+    $("#bt button").eq(3).text(ran())
+
+
+    $("#add_answer_send").click(function () {
+        var add_answer_check = $("#add_answer").val()
+        if (add_answer_check == sum) {
+            // console.log("정답입니다")
+            alert("정답입니다")
+            // score += 1
+            // score = $("#score_wrap p").eq(0).text(score)
+            $("#score_wrap p span").eq(0).text(score += 1)
+            
+            console.log(score)
+            add_num1 = Math.floor(Math.random() * 3)
+            add_num2 = Math.floor(Math.random() * 3)
+            $("#add_problem p").eq(0).text(add_num1)
+            $("#add_problem p").eq(1).text(add_num2)
+            sum = add_num1 + add_num2;
+        } else {
+            // console.log("오답입니다")
+            alert("오답입니다")
+        }
+    })
+
+
+
+
+</script>
+</body>
+
+</html>

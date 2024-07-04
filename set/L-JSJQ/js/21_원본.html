@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비동기 통신(ajax)</title>
+</head>
+<body>
+<h1>비동기 통신(ajax)</h1>
+<ul>
+    <li>동기통신 : 한페이지가 하나의 기능, 페이지간 이동을 하며 통신하는 형태</li>
+    <li>비동기통신 : (페이지 이동없이) 다른페이지의 내용을 불러와 실행하는 형태</li>
+</ul>
+<h2>자바스크립트 버전</h2>
+<button>데이터 불러오기</button>
+<p></p>
+<h2>jQuery 버전</h2>
+<button>데이터 불러오기</button>
+<p></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // 순수스크립트
+    document.querySelector("button").onclick = function(){
+        var xhr = new XMLHttpRequest(); // 비동기통신 객체;
+        xhr.open("GET","http://ctrlcv.kr/dj09/js/21.json", true)// 전송타입, 불러올 URL, 비동기여부
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState==4 && xhr.status == 200) { // 4:요청완료, HTTP 상태 코드 성공(200)
+                var response = JSON.parse(xhr.responseText);
+                document.querySelector("p").innerText = response.message;
+            } else {
+                alert("에러남")
+            }
+        }
+        xhr.send();
+    }
+    // jQuery 버전
+    $("button").eq(1).click(function(){
+        $.ajax({
+            url: "21.json",
+            type: "get",
+            dataType : "json",
+            success: function(data){
+                $("p").eq(1).text(data.message)
+            },
+            error: function() {
+                alert("데이터 로딩 오류");
+            }
+        })
+    })
+</script>
+</body>
+</html>
